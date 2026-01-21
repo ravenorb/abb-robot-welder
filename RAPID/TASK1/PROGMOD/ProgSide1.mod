@@ -31,6 +31,18 @@ MODULE ProgSide1
     PERS bool bRover:=TRUE;
     PERS bool bLongWeld:=FALSE;
     
+    ! Boolian initialization for Parts menu selection.
+    PERS bool bPart1:=FALSE;
+    PERS bool bPart2:=FALSE;
+    PERS bool bPart3:=FALSE;
+    PERS bool bPart4:=FALSE;
+    PERS bool bPart5:=FALSE;
+    PERS bool bPart6:=FALSE;
+    PERS bool bPart7:=FALSE;
+    PERS bool bPart8:=FALSE;
+    PERS bool bPart9:=FALSE;
+    PERS bool bPart10:=FALSE;
+    
 	
 	TASK PERS welddata weld7:=[15.24,16.6963,[7,0,0,0,0,0,0,0,0],[7,0,0,0,0,0,0,0,0]];
 	TASK PERS welddata weld6:=[16.2983,16.6963,[6,0,0,0,0,0,0,0,0],[6,0,0,0,0,0,0,0,0]];
