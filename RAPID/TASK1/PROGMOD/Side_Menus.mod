@@ -16,20 +16,16 @@
     VAR num regManualmenu03:=0;
     VAR num regManualmenu04:=0;
     
-	PROC rToolsMenu()
-		rManual;
-	ENDPROC
-	
-	PROC rPartsMenu()
-		rSelFrame;
-	ENDPROC
-	
 	PROC rManual()
+		rToolsMenu;
+	ENDPROC
+
+	PROC rToolsMenu()
 		TPErase;
 		TPWrite "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
 		TPWrite "!!!           SAFETY FIRST           !!!";
 		TPWrite "!!!                                  !!!";
-		TPWrite "!!!      Select Manual Operation     !!!";
+		TPWrite "!!!       Select Tool Operation      !!!";
 		TPWrite "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
 		TPWrite " ";
 		TPWrite " ";
