@@ -73,7 +73,27 @@ MODULE LogicZ
     PROC rRun()
         ClkReset clock1;
         ClkStart clock1;
-      IF A_onlySide1 = TRUE THEN
+        IF bPart1 THEN
+            RunPart_1;
+        ELSEIF bPart2 THEN
+            RunPart_2;
+        ELSEIF bPart3 THEN
+            RunPart_3;
+        ELSEIF bPart4 THEN
+            RunPart_4;
+        ELSEIF bPart5 THEN
+            RunPart_5;
+        ELSEIF bPart6 THEN
+            RunPart_6;
+        ELSEIF bPart7 THEN
+            RunPart_7;
+        ELSEIF bPart8 THEN
+            RunPart_8;
+        ELSEIF bPart9 THEN
+            RunPart_9;
+        ELSEIF bPart10 THEN
+            RunPart_10;
+        ELSEIF A_onlySide1 = TRUE THEN
             rA_Pos_Side1;
             
         ELSEIF  B_onlySide1 = TRUE THEN 
