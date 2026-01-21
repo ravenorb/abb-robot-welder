@@ -1,0 +1,1043 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Resource Name="bull_text" Language="tr">
+  <Text Name="0">
+    <Value>BullsEye</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="1">
+    <Value>Iptal</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="2">
+    <Value>Evet</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="3">
+    <Value>Hayir</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="4">
+    <Value>Tamam</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="5">
+    <Value>Hizli Hareket</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="6">
+    <Value>Gün1</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="7">
+    <Value>Son</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="8">
+    <Value>Tamamlandi</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="9">
+    <Value>Tekrarla</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="10">
+    <Value>Kabul</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="11">
+    <Value>Tasi</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="12">
+    <Value>Sonraki</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="13">
+    <Value>FineCheck’de bir hata vardi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="14">
+    <Value>Tam degerlendirme yapilsin mi?</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="15">
+    <Value>TCP’de degisiklik yapilmadi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="16">
+    <Value>Alet degistirme</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="17">
+    <Value>Gün1 iznini asti.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="18">
+    <Value>Gün1 degeri güncellenecek.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="19">
+    <Value>Alet güncellenmeli mi?</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="20">
+    <Value>Eski</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="21">
+    <Value>Yeni</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="22">
+    <Value>Isin hareket etti!</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="23">
+    <Value>Alet baslatilacak.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="24">
+    <Value>Altprogram ayarlari yeniden yapilmalidir.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="25">
+    <Value>Çözüm Çakisma Hatasi!</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="26">
+    <Value>Sonuç belirlenemedi</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="27">
+    <Value>istenen tekrarlanabilirlik içinde.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="28">
+    <Value>Son üç ölçümün ortalamasi</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="29">
+    <Value>yeni TCP olarak verilecektir.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="30">
+    <Value>Düzeltmek için asagidaki islemleri düsünün.  </Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="31">
+    <Value>1. Tekrarlanabilirligi yükseltin:</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="32">
+    <Value>mm</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="33">
+    <Value>2. Yeni baslangiç konumu deneyin.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="34">
+    <Value>Robot Dogruluk Sorunu!</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="35">
+    <Value>Bileske TCP yanlisligi</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="36">
+    <Value>+/- üzerinde</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="37">
+    <Value>  TCP güncellenecektir ancak</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="38">
+    <Value>robot kalibrasyonunu kontrol etmelisiniz.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="39">
+    <Value>Robot Dogruluk Sorunu!</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="40">
+    <Value>TCP, robot yanlisligindan dolayi</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="41">
+    <Value>belirlenemiyor.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="42">
+    <Value>TCP sapmasi=+/-</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="43">
+    <Value>Robot kalibrasyonu kontrol edin.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="44">
+    <Value>Referans Noktasi Tanimla</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="45">
+    <Value>'JOG' dügmesine basin ve robotu</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="46">
+    <Value>isaretleyiciye getirin.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="47">
+    <Value>Bitince 'Baslat' dügmesine basin.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="48">
+    <Value>Isaretleyicide Göster</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="49">
+    <Value>Gün1   --  Gün1 TCP göster.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="50">
+    <Value>Son   --  Son TCP göster.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="51">
+    <Value>Hedef Tanimla</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="52">
+    <Value>Robot tanimlanan noktada.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="53">
+    <Value>Tekrarla --  Noktayi yeniden tanimla</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="54">
+    <Value>Tamamlandi --  Sonraki komutla devam et</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="55">
+    <Value>Tanimlama tamamlandi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="56">
+    <Value>Program yürütme devam edecektir</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="57">
+    <Value>**Robot Hareket Edebilir**</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="58">
+    <Value>Tanimlama islemi atlandi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="59">
+    <Value>Program yürütme devam edecektir.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="60">
+    <Value>Kabul --  Konumu geçerli olarak ayarla.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="61">
+    <Value>Hizli hareket --  Manuel hizli hareket ettir ve yeniden baslat.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="62">
+    <Value>Iptal --  Tanimi atla.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="63">
+    <Value>BullsEye, Tek Isin kullanir</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="64">
+    <Value>Kalibrasyon Ünitesi Yazilimi:</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="65">
+    <Value>Cycle Time Corp.,</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="66">
+    <Value>Copyright Haziran 1995.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="67">
+    <Value>Bullseye, patentli oldugu ülkeler: ABD,</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="68">
+    <Value>Kanada, Japonya, Isveç ve Almanya.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="69">
+    <Value>Bu kurulumda kullanilan alet bir</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="70">
+    <Value>MIG hamlaç.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="71">
+    <Value>Gaz basligindan en az</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="72">
+    <Value>10 mm düz tel çiktigindan</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="73">
+    <Value>emin olun.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="74">
+    <Value>Bu kurulumda kullanilan alet</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="75">
+    <Value>Alet yönünü belirlemek için</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="76">
+    <Value>yapay uzantiya ihtiyaç duyuyor</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="77">
+    <Value>Devam etmeden önce</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="78">
+    <Value>bu aygiti kurun.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="79">
+    <Value>Kurulum baslatiliyor…</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="80">
+    <Value>Kurulum tamamlandi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="81">
+    <Value>Ortalama Sapma = +/-</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="82">
+    <Value>Maks. Sapma = +/-</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="83">
+    <Value>Güncelleme baslatiliyor…</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="84">
+    <Value>Güncelleme tamamlandi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="85">
+    <Value>QuickCheck Baslatiliyor...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="86">
+    <Value>QuickCheck tamamlandi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="87">
+    <Value>XY sapmasi bulunuyor…</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="88">
+    <Value>XYZ sapmasi bulunuyor…</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="89">
+    <Value>'Ince' kontrol gerçeklestiriliyor...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="90">
+    <Value>TCP ölçülüyor...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="91">
+    <Value>Ara TCP tamamlandi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="92">
+    <Value>'Kaba' kontrol gerçeklestiriliyor...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="93">
+    <Value>TCP ölçülemedi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="94">
+    <Value>Alet düzeltme baslatiliyor…</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="95">
+    <Value>Alet düzeltme tamamlandi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="96">
+    <Value>Alet düzeltme basarisiz.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="97">
+    <Value>Isin bulunuyor…</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="98">
+    <Value>Isin belirlendi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="99">
+    <Value>Isin belirlenemedi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="100">
+    <Value>Istenen BullsEye islemi</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="101">
+    <Value>basariliydi. BullsEye simdi</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="102">
+    <Value>tamamlandi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="103">
+    <Value>BullsEye Durumu</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="104">
+    <Value>Kurulum için seçilen alet</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="105">
+    <Value>veya baslatma için seçilen zaten</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="106">
+    <Value>kurulu. Üste yazma</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="107">
+    <Value>seçilmedi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="108">
+    <Value>Ana programa dönülüyor…</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="109">
+    <Value>BullsEye istenilen alet hakkinda</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="110">
+    <Value>bilgileri bulamadi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="111">
+    <Value>Aleti yeniden baslatmayi deneyin.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="112">
+    <Value>Ana programa dönülüyor…</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="113">
+    <Value>BullsEye istenilen alet için</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="114">
+    <Value>verileri bulamadi. Modül</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="115">
+    <Value>BE_Data, eksik</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="116">
+    <Value>olabilir.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="117">
+    <Value>BullsEye koleksiyonu</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="118">
+    <Value>dolu.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="119">
+    <Value>Baska alet eklenemez.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="120">
+    <Value>BullsEye istenilen alet</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="121">
+    <Value>hakkinda bilgi</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="122">
+    <Value>bulamadi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="123">
+    <Value>Aleti yeniden baslatmayi deneyin.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="124">
+    <Value>Belirtilen</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="125">
+    <Value>be_device verisindeki dijital giris</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="126">
+    <Value>geçerli bir giris degil.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="127">
+    <Value>Ana programa dönülüyor…</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="128">
+    <Value>Takma ad</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="129">
+    <Value>BullsEye girisi için zaten belirlendi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="130">
+    <Value>BullsEye eklem limitlerini</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="131">
+    <Value>asmadan tarama islemini</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="132">
+    <Value>tamamlayamadi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="133">
+    <Value>Yeni bir Baslangiç konumu deneyin.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="134">
+    <Value>BullsEye tekilligi geçmeden</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="135">
+    <Value>tarama islemini</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="136">
+    <Value>tamamlayamadi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="137">
+    <Value>BullsEye kabul edilebilir yatirma açisi</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="138">
+    <Value>kullanarak tarama islemini</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="139">
+    <Value>tamamlayamadi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="140">
+    <Value>Yeni bir Baslangiç konumu deneyin.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="141">
+    <Value>Robot BaseFrame’i</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="142">
+    <Value>sistem parametrelerinden</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="143">
+    <Value>okunamadi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="144">
+    <Value>Istenilen ilk model</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="145">
+    <Value>yariçapi, InitPatternRad</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="146">
+    <Value>sifirdan küçük veya sifira esit.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="147">
+    <Value>BullsEye tespit isini</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="148">
+    <Value>belirleyemedi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="149">
+    <Value>Tarama aygiti</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="150">
+    <Value>dogru çalisiyor mu?</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="151">
+    <Value>BullsEye tespit isini yönünü</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="152">
+    <Value>belirleyemedi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="153">
+    <Value>Tarama baslangicinda alet</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="154">
+    <Value>Isini kirdigindan dolayi</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="155">
+    <Value>tarama basarisiz.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="156">
+    <Value>Olasi nedenler…</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="157">
+    <Value>  - Hatali robot kalibrasyonu.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="158">
+    <Value>  - Yanlis alet boyutlari.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="159">
+    <Value>  - Gevsek alet montaji.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="160">
+    <Value>Tarama isini hiç kesmediginden</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="161">
+    <Value>tarama basarisiz.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="162">
+    <Value>  - Hatali tarama ekipmani.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="163">
+    <Value>Belirtilen</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="164">
+    <Value>be_scan verisindeki tarama sayisi,</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="165">
+    <Value>NumOfScans sifir veya</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="166">
+    <Value>tamsayi degil.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="167">
+    <Value>Alet çapi</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="168">
+    <Value>sifir veya</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="169">
+    <Value>negatif bulundu. Kontrol edin:</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="170">
+    <Value>be_design parametreleri tam olmalidir.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="171">
+    <Value>Makul tarama sayisi içinde</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="172">
+    <Value>alet sonu</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="173">
+    <Value>bulunamadi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="174">
+    <Value>Robot Hassasiyet Sorunu!</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="175">
+    <Value>Robot hassasiyetinden dolayi TCP</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="176">
+    <Value>belirlenemez.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="177">
+    <Value>TCP sapmasi = +/-</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="178">
+    <Value>BullsEye isin yönünü</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="179">
+    <Value>bulamadi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="180">
+    <Value>Tarama ekipmanini kontrol edin.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="181">
+    <Value>BullsEye bu alet için</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="182">
+    <Value>TCP’de degisikligi</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="183">
+    <Value>belirleyemedi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="184">
+    <Value>be_refpos’a bu alet için</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="185">
+    <Value>verileri yazamadi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="186">
+    <Value>BullsEye bu alet için</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="187">
+    <Value>be_reftool’a</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="188">
+    <Value>verileri yazamadi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="189">
+    <Value>BullsEye bu alet için</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="190">
+    <Value>be_refbeam’e</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="191">
+    <Value>verileri yazamadi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="192">
+    <Value>Bu robot için baz çerçeve tanimi</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="193">
+    <Value>bulunurken bir sorun</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="194">
+    <Value>olustu.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="195">
+    <Value>Bu alet zaten</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="196">
+    <Value>ayarlanmis.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="197">
+    <Value>BullsEye bu alet için</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="198">
+    <Value>referans verileri</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="199">
+    <Value>sifirlayamadi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="200">
+    <Value>Kurulum prosedürü</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="201">
+    <Value>basarisiz.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="202">
+    <Value>Ana programa dönülüyor…</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="203">
+    <Value>Ilk baslangiç konumu</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="204">
+    <Value>tanimlanmadi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="205">
+    <Value>Kurulum iptal edilmelidir.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="206">
+    <Value>Alet,</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="207">
+    <Value>BullsEye ile ayarlanmadi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="208">
+    <Value>Baslangiç konumu</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="209">
+    <Value>degistirildi. Kurulum</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="210">
+    <Value>altprogrami yenilenmelidir.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="211">
+    <Value>BullsEye tarama ekipmaninin</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="212">
+    <Value>hareket ettirildigini belirledi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="213">
+    <Value>Kurulumu çalistirin.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="214">
+    <Value>BullsEye, alette</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="215">
+    <Value>'tam kontrol' yapmayi denedi ancak</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="216">
+    <Value>alet ölçülemedi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="217">
+    <Value>Kurulumu çalistirin.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="218">
+    <Value>TCP’yi yeni ölçülen degerlerle</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="219">
+    <Value>güncellememeyi</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="220">
+    <Value>Seçtiniz.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="221">
+    <Value>BullsEye alet yönünü</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="222">
+    <Value>tararken aleti dogru sekilde</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="223">
+    <Value>ölçemedi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="224">
+    <Value>Tüm referans verileri</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="225">
+    <Value>tanimlanmadi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="226">
+    <Value>Kurulumu çalistirin.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="227">
+    <Value>Hizli Kontrol için referans noktasi</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="228">
+    <Value>tanimlanmadi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="229">
+    <Value>Kurulumu çalistirin.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="230">
+    <Value>BullsEye istenilen dogrulukla</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="231">
+    <Value>bir TCP ile</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="232">
+    <Value>örtüstüremedi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="233">
+    <Value>'Ileri Adim' kurulum sirasinda</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="234">
+    <Value>desteklenmiyor.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="235">
+    <Value>'Baslat' ile yeniden baslatin.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="236">
+    <Value>Kullanimi Düzlemi okunurken</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="237">
+    <Value>bir hata görüldü.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="238">
+    <Value>Bilinmeyen hata gerçeklesti.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="239">
+    <Value>Isaretleyici</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="240">
+    <Value>Aleti Verileri Eslesmiyor!</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="241">
+    <Value>BullsEye veritabaninda</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="242">
+    <Value>kayitli veriler aletle</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="243">
+    <Value>eslesmiyor.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="244">
+    <Value>Kurulum prosedürü tekrarlanmalidir.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="245">
+    <Value>BullsEye Hatasi</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="246">
+    <Value>Hareket araligi testi basarisiz.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="247">
+    <Value>BullsEye, bu aleti kullanarak baslangiç konumundan</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="248">
+    <Value>taramalari tamamlayamiyor.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="249">
+    <Value>Yeni bir konum veya alet deneyin.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="250">
+    <Value>Hafif isin hareketinden dolayi</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="251">
+    <Value>kurulum bilgileri</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="252">
+    <Value>yeniden hesaplandi ve Gün1 TCP</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="253">
+    <Value>geçerli </Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="254">
+    <Value>TCP’ye sifirlandi.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="255">
+    <Value>Degistir</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="256">
+    <Value>Gün1’den Degistir</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="257">
+    <Value>Bükme ve Yatirma açilari</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="258">
+    <Value>5 dereceden büyük olmalidir.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="259">
+    <Value>BullsEye otomatik olarak 5 derece kullanacaktir.</Value>
+    <Comment>none</Comment>
+  </Text>
+</Resource>

@@ -1,0 +1,1047 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Resource Name="bull_text" Language="nl">
+  <Text Name="0">
+    <Value>BullsEye</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="1">
+    <Value>Annuleren</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="2">
+    <Value>Ja</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="3">
+    <Value>Nee </Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="4">
+    <Value>OK </Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="5">
+    <Value>Jog</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="6">
+    <Value>Day1</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="7">
+    <Value>Laatste</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="8">
+    <Value>Gereed</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="9">
+    <Value>Opnieuw uitvoeren</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="10">
+    <Value>Accepteren</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="11">
+    <Value>Move</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="12">
+    <Value>Volgende</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="13">
+    <Value>Er is een fout opgetreden in FineCheck.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="14">
+    <Value>Moet er een complete evaluatie worden gemaakt?</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="15">
+    <Value>Geen wijziging doorgevoerd aan het TCP.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="16">
+    <Value>Het gereedschap meer gewijzigd</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="17">
+    <Value>dan toegestaan op Day1.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="18">
+    <Value>Waarde Day1 wordt bijgewerkt.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="19">
+    <Value>Moet het gereedschap worden bijgewerkt?</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="20">
+    <Value>Oud</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="21">
+    <Value>Nieuw</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="22">
+    <Value>De balk is verplaatst!</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="23">
+    <Value>Gereedschap wordt geïnitialiseerd.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="24">
+    <Value>De instelprocedure moet opnieuw worden uitgevoerd.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="25">
+    <Value>Fout oplossingsconvergentie!</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="26">
+    <Value>Het resultaat kan niet worden bepaald</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="27">
+    <Value>binnen de gevraagde herhaalbaarheid.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="28">
+    <Value>Een gemiddelde van de laatste 3 metingen</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="29">
+    <Value>wordt als het nieuwe TCP gegeven.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="30">
+    <Value>Overweeg de volgende acties om te corrigeren.  </Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="31">
+    <Value>1. Vergroot herhaalbaartheid tot</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="32">
+    <Value>mm </Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="33">
+    <Value>2. Probeer een nieuwe startpositie.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="34">
+    <Value>Probleem robotnauwkeurigheid!</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="35">
+    <Value>Het resulterende TCP heeft een onnauwkeurigheid</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="36">
+    <Value>van meer dan +/-</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="37">
+    <Value>  Het TCP wordt bijgewerkt, maar u</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="38">
+    <Value>moet de robotkalibratie controleren.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="39">
+    <Value>Probleem robotnauwkeurigheid!</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="40">
+    <Value>Het TCP kan niet worden bepaald door</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="41">
+    <Value>onnauwkeurigheid van de robot.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="42">
+    <Value>TCP-afwijking=+/-</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="43">
+    <Value>Controleer robotkalibratie</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="44">
+    <Value>Referentiepunt definiëren</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="45">
+    <Value>Druk op 'JOG', jog de</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="46">
+    <Value>robot vervolgens naar de aanwijzer.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="47">
+    <Value>Druk na voltooien op 'Start'.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="48">
+    <Value>Bij aanwijzer weergeven</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="49">
+    <Value>Day1 -- TCP dag1 weergeven.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="50">
+    <Value>Laatste -- Laatste TCP weergeven.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="51">
+    <Value>Doel definiëren</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="52">
+    <Value>Robot is op het gedefinieerde punt.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="53">
+    <Value>Opnieuw -- Punt opnieuw definiëren</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="54">
+    <Value>Gereed -- Doorgaan met volgende instructie</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="55">
+    <Value>Definitie is voltooid.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="56">
+    <Value>Programma-uitvoering gaat door</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="57">
+    <Value>**Robot kan bewegen**</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="58">
+    <Value>Definitieproces is overgeslagen.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="59">
+    <Value>Programma-uitvoering gaat door.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="60">
+    <Value>Accepteren -- Positie als stroom instellen.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="61">
+    <Value>Jog -- Handmatig joggen en herstarten.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="62">
+    <Value>Annuleren -- Definitie overslaan.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="63">
+    <Value>BullsEye gebruikt enkelvoudige balk</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="64">
+    <Value>Software kalibratie-eenheid van</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="65">
+    <Value>Cycle Time Corp.,</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="66">
+    <Value>copyright juni 1995.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="67">
+    <Value>Bullseye is gepatenteerd in: de VS,</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="68">
+    <Value>Canada, Japan, Zweden en Duitsland.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="69">
+    <Value>Het gereedschap dat in deze configuratie wordt gebruikt is een </Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="70">
+    <Value>MIG toorts.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="71">
+    <Value>Zorg dat er ten minste</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="72">
+    <Value>10mm aan recht draad uitsteekt</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="73">
+    <Value>uit de gasbeker.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="74">
+    <Value>Voor het gereedschap dat in deze configuratie wordt gebruikt is</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="75">
+    <Value>een kunstmatige extensie nodig om</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="76">
+    <Value>de gereedschapsoriëntatie te bepalen</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="77">
+    <Value>Vergeet niet voordat u doorgaat</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="78">
+    <Value>dit apparaat te installeren.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="79">
+    <Value>Configuratie starten...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="80">
+    <Value>Configuratie is voltooid.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="81">
+    <Value>Gemiddelde afwijking = +/-</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="82">
+    <Value>Max. afwijking = +/-</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="83">
+    <Value>Bijwerken starten...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="84">
+    <Value>Bijwerken is voltooid.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="85">
+    <Value>QuickCheck starten...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="86">
+    <Value>QuickCheck is voltooid.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="87">
+    <Value>XY-afwijking zoeken...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="88">
+    <Value>XYZ-afwijking zoeken...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="89">
+    <Value>'Fine' check uitvoeren...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="90">
+    <Value>TCP meten...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="91">
+    <Value>Tussen-TCP voltooid.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="92">
+    <Value>'Rough' check uitvoeren...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="93">
+    <Value>Kan TCP niet meten.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="94">
+    <Value>Rechtmaken gereedschap starten...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="95">
+    <Value>Rechtmaken gereedschap is voltooid.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="96">
+    <Value>Rechtmaken gereedschap mislukt.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="97">
+    <Value>Balk zoeken...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="98">
+    <Value>Balk is gevonden.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="99">
+    <Value>Balk niet gevonden.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="100">
+    <Value>De aangevraagde BullsEye handeling</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="101">
+    <Value>is geslaagd. BullsEye is nu</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="102">
+    <Value>voltooid.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="103">
+    <Value>BullsEye status</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="104">
+    <Value>Het gereedschap dat is geselecteerd voor configuratie</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="105">
+    <Value>of initialisatie is al</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="106">
+    <Value>geïnstalleerd. Er is geen overschrijven</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="107">
+    <Value>geselecteerd.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="108">
+    <Value>Terug naar hoofdprogramma...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="109">
+    <Value>BullsEye kan geen informatie vinden</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="110">
+    <Value>over het aangevraagde gereedschap.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="111">
+    <Value>Probeer het gereedschap opnieuw te initialiseren.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="112">
+    <Value>Terug naar hoofdprogramma...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="113">
+    <Value>BullsEye kan geen gegevens vinden</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="114">
+    <Value>voor het aangevraagde gereedschap. De</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="115">
+    <Value>module, BE_Data, kan</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="116">
+    <Value>ontbreken.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="117">
+    <Value>De BullsEye set is</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="118">
+    <Value>vol.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="119">
+    <Value>Er kunnen geen gereedschappen meer worden toegevoegd.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="120">
+    <Value>BullsEye kan geen informatie</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="121">
+    <Value>vinden over het aangevraagde</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="122">
+    <Value>gereedschap.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="123">
+    <Value>Probeer het gereedschap opnieuw te initialiseren.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="124">
+    <Value>De digitale invoer, opgegeven</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="125">
+    <Value>in de be_device gegevens is geen</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="126">
+    <Value>geldige invoer.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="127">
+    <Value>Terug naar hoofdprogramma...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="128">
+    <Value>De alias is al ingesteld</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="129">
+    <Value>voor de BullsEye invoer.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="130">
+    <Value>BullsEye kan het scannen</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="131">
+    <Value>niet voltooien zonder</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="132">
+    <Value>de verbindingslimieten te overschrijden.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="133">
+    <Value>Probeer een nieuwe startpositie.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="134">
+    <Value>BullsEye kan het scannen</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="135">
+    <Value>niet voltooien zonder</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="136">
+    <Value>door singulariteit te gaan.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="137">
+    <Value>BullsEye kan het scannen</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="138">
+    <Value>niet voltooien bij gebruik van</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="139">
+    <Value>een acceptabele kantelhoek.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="140">
+    <Value>Probeer een nieuwe startpositie.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="141">
+    <Value>Het basisframe van de robot</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="142">
+    <Value>niet niet worden gelezen uit systeem</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="143">
+    <Value>parameters.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="144">
+    <Value>De aangevraagde initiële patroon</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="145">
+    <Value>radius, InitPatternRad, is</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="146">
+    <Value>kleiner dan of gelijk aan nul.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="147">
+    <Value>BullsEye kan de</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="148">
+    <Value>detectiebalk niet vinden.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="149">
+    <Value>Werkt de scanner</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="150">
+    <Value>correct?</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="151">
+    <Value>BullsEye kan de oriëntatie van</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="152">
+    <Value>de detectiebalk niet bepalen.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="153">
+    <Value>Een scan is mislukt omdat het</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="154">
+    <Value>gereedschap door de balk ging bij</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="155">
+    <Value>het starten van de scan.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="156">
+    <Value>Mogelijke oorzaken...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="157">
+    <Value> - Onjuiste robotkalibratie.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="158">
+    <Value> - Onjuiste gereedschapsafmetingen.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="159">
+    <Value> - Losse gereedschapsmontage.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="160">
+    <Value>Een scan is mislukt omdat het</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="161">
+    <Value>gereedschap niet door de balk is gegaan.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="162">
+    <Value> - Onjuiste scanapparatuur.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="163">
+    <Value>Het aantal opgegeven scans</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="164">
+    <Value>in de be_scan gegevens,</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="165">
+    <Value>NumOfScans, is nul of geen</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="166">
+    <Value>geheel getal.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="167">
+    <Value>De diameter van het gereedschap</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="168">
+    <Value>blijt nul te zijn, of</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="169">
+    <Value>negatief. Controleer of</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="170">
+    <Value>be_design parameters OK zijn.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="171">
+    <Value>Het uiteinde van het gereedschap kan</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="172">
+    <Value>niet worden gevonden binnen </Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="173">
+    <Value>een redelijk aantal scans.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="174">
+    <Value>Probleem robotnauwkeurigheid!</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="175">
+    <Value>Het TCP kan niet worden bepaald door</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="176">
+    <Value>onnauwkeurigheid van de robot.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="177">
+    <Value>TCP-afwijking=+/-</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="178">
+    <Value>BullsEye kan de oriëntatie</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="179">
+    <Value>van de balk niet vinden.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="180">
+    <Value>Controleer de scanapparatuur.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="181">
+    <Value>BullsEye kon niet</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="182">
+    <Value>de wijziging in het</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="183">
+    <Value>TCP bepalen.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="184">
+    <Value>schrijven naar de be_refpos</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="185">
+    <Value>gegevens voor dit gereedschap.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="186">
+    <Value>BullsEye kon niet</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="187">
+    <Value>schrijven naar de be_reftool</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="188">
+    <Value>gegevens voor dit gereedschap.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="189">
+    <Value>BullsEye kon niet</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="190">
+    <Value>schrijven naar de be_refbeam</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="191">
+    <Value>gegevens voor dit gereedschap.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="192">
+    <Value>Er was een probleem met het vinden</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="193">
+    <Value>van de basisframedefinitie</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="194">
+    <Value>voor deze robot.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="195">
+    <Value>Dit gereedschap is al</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="196">
+    <Value>geconfigureerd.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="197">
+    <Value>BullsEye kan de referentiegegevens</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="198">
+    <Value>niet resetten voor</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="199">
+    <Value>dit gereedschap.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="200">
+    <Value>De configuratieprocedure</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="201">
+    <Value>is mislukt.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="202">
+    <Value>Terug naar hoofdprogramma...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="203">
+    <Value>De initiële startpositie</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="204">
+    <Value>is niet gedefinieerd.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="205">
+    <Value>De configuratie moet worden afgebroken.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="206">
+    <Value>Het gereedschap is niet</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="207">
+    <Value>geconfigureerd met BullsEye.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="208">
+    <Value>De startpositie is</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="209">
+    <Value>gewijzigd. De configuratie</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="210">
+    <Value>routine moet opnieuw worden uitgevoerd.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="211">
+    <Value>BullsEye heeft gedetecteerd dat</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="212">
+    <Value>scanapparatuur verplaatst is.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="213">
+    <Value>Voer de configuratie uit.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="214">
+    <Value>BullsEye probeerde een </Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="215">
+    <Value>'full-check' op het gereedschap uit te voeren, maar</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="216">
+    <Value>kon het gereedschap niet meten.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="217">
+    <Value>Voer de configuratie uit.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="218">
+    <Value>U heeft ervoor gekozen het TCP</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="219">
+    <Value>niet bij te werken met de nieuwe gemeten</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="220">
+    <Value>waarden.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="221">
+    <Value>BullsEye kon het gereedschap</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="222">
+    <Value>niet correct meten tijdens het scannen</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="223">
+    <Value>op gereedschapsoriëntatie.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="224">
+    <Value>Niet alle referentiegegevens zijn</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="225">
+    <Value>gedefinieerd.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="226">
+    <Value>Voer de configuratie uit.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="227">
+    <Value>De referentiepositie voor</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="228">
+    <Value>Quick-Check was niet gedefinieerd.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="229">
+    <Value>Voer de configuratie uit.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="230">
+    <Value>BullsEye kon niet convergeren</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="231">
+    <Value>naar een TCP met de gewenste</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="232">
+    <Value>nauwkeurigheid.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="233">
+    <Value>'Stap vooruit' wordt niet</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="234">
+    <Value>ondersteund tijdens configuratie.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="235">
+    <Value>Probeer het opnieuw met 'Start'.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="236">
+    <Value>Er is een fout opgetreden tijdens het</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="237">
+    <Value>lezen van het gebruikersvlak.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="238">
+    <Value>Er is een onbekende fout opgetreden.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="239">
+    <Value>Aanwijzer</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="240">
+    <Value>Gereedschapsgegevens komen niet overeen!</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="241">
+    <Value>De gegevens die zijn opgelsagen in de BullsEye</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="242">
+    <Value>database komen niet overeen</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="243">
+    <Value>met uw gereedschap.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="244">
+    <Value>De instelprocedure moet opnieuw worden uitgevoerd.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="245">
+    <Value>BullsEye-fout</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="246">
+    <Value>Test bewegingsbereik heeft gefaald.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="247">
+    <Value>BullsEye kan geen scans voltooien van</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="248">
+    <Value>deze startpositie met dit gereedschap.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="249">
+    <Value>Probeer een nieuwe startpositie of gereedschap.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="250">
+    <Value>Als gevolg van een lichte balkbeweging
+</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="251">
+    <Value>zijn de installatiegegevens
+</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="252">
+    <Value>opnieuw berekend en is TCP Day1
+</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="253">
+    <Value>gereset naar de huidige </Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="254">
+    <Value>TCP.
+</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="255">
+    <Value>Wijzigen</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="256">
+    <Value>Wijzigen van Dag1</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="257">
+    <Value>Draai- en kantelhoeken moeten</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="258">
+    <Value>groter dan 5 graden zijn.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="259">
+    <Value>BullsEye gebruikt automatisch 5 graden.</Value>
+    <Comment>none</Comment>
+  </Text>
+</Resource>

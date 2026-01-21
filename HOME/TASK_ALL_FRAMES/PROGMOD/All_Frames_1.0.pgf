@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<Program>
+	<Module>LogicZ.mod</Module>
+	<Module>ProgSide2.mod</Module>
+	<Module>ProgSide1.mod</Module>
+	<Module>Side_Menus.mod</Module>
+	<Module>MainModule.mod</Module>
+	<Module>SetupWO.mod</Module>
+	<Module>mTSC.mod</Module>
+	<Module>BE_User1.mod</Module>
+	<Module>Weldtest.mod</Module>
+	<Module>playweld.mod</Module>
+</Program>

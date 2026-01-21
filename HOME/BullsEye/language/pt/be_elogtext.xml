@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Domain elogDomain="PROC" domainNo="11" lang="pt" elogTextVersion="1.0" xmlns="urn:abb-robotics-elog-text" min="1500" max="1549">
+  <Message number="1501" eDefine="">
+    <Title>Erro de texto do BullsEye</Title>
+    <Description>O BullsEye não consegue acessar o texto.<p /><p />Índice atribuído: <arg format="%s" ordinal="1" /><p />Tabela de texto: <arg format="%s" ordinal="2" /></Description>
+    <Consequences>O BullsEye não poderá gerar caixas de diálogo de mensagem apropriadas.</Consequences>
+    <Actions>Relate este erro a seu representante de suporte ABB.</Actions>
+  </Message>
+  <Message number="1502" eDefine="">
+    <Title>Mensagem obsoleta BullsEye</Title>
+    <Description>Mensagem obsoleta BullsEye</Description>
+  </Message>
+  <Message number="1503" eDefine="">
+    <Title>Erro do BullsEye</Title>
+    <Description>Falha no teste de intervalo de movimento.</Description>
+  </Message>
+  <Message number="1504" eDefine="">
+    <Title>Erro do BullsEye</Title>
+    <Description>O recurso RangeCheck não tem suporte para objetos de trabalho coordenados.</Description>
+  </Message>
+  <Message number="1505" eDefine="">
+    <Title>Erro do BullsEye</Title>
+    <Description>O recurso RangeCheck não tem suporte para transformações de uframe.</Description>
+  </Message>
+  <Message number="1506" eDefine="">
+    <Title>Dados do BullsEye carregados</Title>
+    <Description>Os dados de referência armazenados foram carregados com sucesso.</Description>
+  </Message>
+  <Message number="1507" eDefine="">
+    <Title>Erro do BullsEye</Title>
+    <Description>Nenhum arquivo de dados de referência foi encontrado.</Description>
+    <Causes>Nenhum dado anterior foi armazenado.</Causes>
+  </Message>
+  <Message number="1508" eDefine="">
+    <Title>Erro do BullsEye</Title>
+    <Description>O arquivo de dados de referência já foi carregado.</Description>
+  </Message>
+  <Message number="1509" eDefine="">
+    <Title>Erro do BullsEye</Title>
+    <Description>Ocorreu um erro durante o descarregamento do módulo de dados de referência. </Description>
+    <Actions>Para redefinir o programa, mova o ponteiro do programa para a rotina principal e reinicie a sua execução.</Actions>
+  </Message>
+  <Message number="1510" eDefine="">
+    <Title>Erro do BullsEye</Title>
+    <Description>Ocorreu um erro durante a leitura de dados a partir do módulo de dados de referência armazenados.</Description>
+  </Message>
+  <Message number="1511" eDefine="">
+    <Title>Dados do BullsEye salvos</Title>
+    <Description>Os dados de referência foram salvos com sucesso.</Description>
+  </Message>
+  <Message number="1512" eDefine="">
+    <Title>Erro do BullsEye</Title>
+    <Description>Ocorreu um erro ao salvar os dados de referência.</Description>
+  </Message>
+  <Message number="1513" eDefine="">
+    <Title>Ferramenta BullsEye inicializada</Title>
+    <Description>A ferramenta, <arg format="%s" ordinal="1" />, foi inicializada na coleção de dados BullsEye.<p />Tarefa: <arg format="%s" ordinal="2" /></Description>
+  </Message>
+  <Message number="1514" eDefine="">
+    <Title>Ferramenta BullsEye adicionada</Title>
+    <Description>A ferramenta, <arg format="%s" ordinal="1" />, foi adicionada na coleção de dados BullsEye.<p />Tarefa: <arg format="%s" ordinal="2" /></Description>
+  </Message>
+  <Message number="1515" eDefine="">
+    <Title>Ferramenta BullsEye removida</Title>
+    <Description>A ferramenta, <arg format="%s" ordinal="1" />, foi removida da coleção de dados BullsEye.<p />Tarefa: <arg format="%s" ordinal="2" /></Description>
+    <Consequences>O BullsEye não poderá mais avaliar esta ferramenta.</Consequences>
+    <Actions>Execute a instrução de configuração BESetupToolJ para adicionar e inicializar a ferramenta.</Actions>
+  </Message>
+  <Message number="1516" eDefine="">
+    <Title>Erro de ES BullsEye</Title>
+    <Description>Nome de entrada inválido: <arg format="%s" ordinal="1" /><p />Ferramenta: <arg format="%s" ordinal="2" /><p />Tarefa: <arg format="%s" ordinal="3" /></Description>
+    <Consequences>Nenhuma conexão para a entrada digital foi estabelecida. A inicialização falhou.</Consequences>
+    <Actions>Verifique se a entrada especificada existe no sistema.</Actions>
+  </Message>
+  <Message number="1517" eDefine="">
+    <Title>Erro do BullsEye</Title>
+    <Description>A ferramenta, <arg format="%s" ordinal="1" />, não está incluída na coleção de dados BullsEye.<p />Tarefa: <arg format="%s" ordinal="2" /></Description>
+    <Consequences>O BullsEye não poderá avaliar esta ferramenta.</Consequences>
+    <Actions>Execute a instrução de configuração BESetupToolJ para adicionar e inicializar a ferramenta.</Actions>
+  </Message>
+  <Message number="1518" eDefine="">
+    <Title>Erro de ES BullsEye</Title>
+    <Description>O BullsEye tentou reconectar um sinal de ES conectado previamente.<p />Nome da entrada: <arg format="%s" ordinal="1" /><p />Ferramenta: <arg format="%s" ordinal="2" /><p />Tarefa: <arg format="%s" ordinal="3" /></Description>
+    <Actions>Se o problema persistir, execute a instrução BESetupToolJ para reinicializar a ferramenta.</Actions>
+  </Message>
+  <Message number="1519" eDefine="">
+    <Title>RangeCheck de BullsEye falhou</Title>
+    <Description>Verificação do limite da junção falhou para uma Flexão de <arg format="%s" ordinal="1" /> e uma Inclinação de <arg format="%s" ordinal="2" /><p />Tarefa: <arg format="%s" ordinal="3" /></Description>
+    <Consequences>O BullsEye não poderá avaliar esta ferramenta.</Consequences>
+    <Actions>Tente uma posição de início diferente ou relocalize o dispositivo BullsEye.  Se não for encontrada nenhuma posição aceitável, tente reduzir a Flexão e Inclinação solicitada nos dados a serem digitalizados.  Contudo, saiba que a redução destes valores pode reduzir a precisão.</Actions>
+  </Message>
+  <Message number="1520" eDefine="">
+    <Title>RangeCheck de BullsEye falhou</Title>
+    <Description>Verificação de singularidade falhou para uma Flexão de <arg format="%s" ordinal="1" /> e uma Inclinação de <arg format="%s" ordinal="2" /><p />Tarefa: <arg format="%s" ordinal="3" /></Description>
+    <Consequences>O BullsEye não poderá avaliar esta ferramenta.</Consequences>
+    <Actions>Tente uma posição de início diferente ou relocalize o dispositivo BullsEye.</Actions>
+  </Message>
+  <Message number="1521" eDefine="">
+    <Title>RangeCheck de BullsEye falhou</Title>
+    <Description>Nenhuma solução encontrada nas verificações de Limites de junção e Singularidade aceitáveis.<p />Foi especificada uma Flexão de <arg format="%s" ordinal="1" /> e uma Inclinação de <arg format="%s" ordinal="2" />.<p />Tarefa: <arg format="%s" ordinal="3" /></Description>
+    <Consequences>O BullsEye não poderá avaliar esta ferramenta.</Consequences>
+    <Actions>Tente uma posição de início diferente ou relocalize o dispositivo BullsEye.  Se não for encontrada nenhuma posição aceitável, tente reduzir a Flexão e Inclinação solicitada nos dados a serem digitalizados.  Contudo, saiba que a redução destes valores pode reduzir a precisão.</Actions>
+  </Message>
+  <Message number="1522" eDefine="">
+    <Title>RangeCheck de BullsEye falhou</Title>
+    <Description>Nenhuma solução encontrada nas verificações de Limites de junção e Singularidade aceitáveis com espaço livre da placa adequado.<p />Foi especificada uma Flexão de <arg format="%s" ordinal="1" /> e uma Inclinação de <arg format="%s" ordinal="2" />.<p />Tarefa: <arg format="%s" ordinal="3" /></Description>
+    <Consequences>O BullsEye não poderá avaliar esta ferramenta.</Consequences>
+    <Actions>Tente uma posição de início diferente ou relocalize o dispositivo BullsEye.  Se não for encontrada nenhuma posição aceitável, tente reduzir a Flexão e Inclinação solicitada nos dados a serem digitalizados.  Contudo, saiba que a redução destes valores pode reduzir a precisão.</Actions>
+  </Message>
+  <Message number="1523" eDefine="">
+    <Title>Erro de leitura do BaseFrame do BullsEye</Title>
+    <Description>O BullsEye não conseguiu ler a definição BaseFrame para o robô.<p />Tarefa: <arg format="%s" ordinal="1" /></Description>
+    <Consequences>O BullsEye não poderá avaliar esta ferramenta.</Consequences>
+    <Actions>O Motion Configuration Database (MOC) talvez tenha proteções excessivas implementadas. Certifique-se de que a definição da estrutura da base possa ser acessada.</Actions>
+  </Message>
+  <Message number="1524" eDefine="">
+    <Title>BullsEye TCP extendido</Title>
+    <Description>A instrução BETcpExtend foi usada para deslocar o TCP de <arg format="%s" ordinal="1" />.<p />Tarefa: <arg format="%s" ordinal="2" /><p />Nova extensão: <arg format="%s" ordinal="3" /><p />Alterar: <arg format="%s" ordinal="4" /></Description>
+  </Message>
+  <Message number="1525" eDefine="">
+    <Title>Configuração de BullsEye completa</Title>
+    <Description>Configuração completa para:<p />Ferramenta: <arg format="%s" ordinal="1" /><p />Tarefa: <arg format="%s" ordinal="2" /><p />Novo objeto de trabalho: <arg format="%s" ordinal="3" /><p />Novo TCP: <arg format="%s" ordinal="4" /><p />Desvio máx, médio: <arg format="%s" ordinal="5" /></Description>
+  </Message>
+  <Message number="1526" eDefine="">
+    <Title>Configuração de BullsEye falhou</Title>
+    <Description>A configuração para Ferramenta, <arg format="%s" ordinal="1" />, falhou.<p />Tarefa: <arg format="%s" ordinal="2" /></Description>
+    <Consequences>O BullsEye não poderá avaliar esta ferramenta.</Consequences>
+    <Actions>1. Verifique registro de erros para mensagens adicionais.<p />2. Verifique parâmateros da configuração, dispositivo do sensor e posições de início antes de tentar novamente a configuração.</Actions>
+  </Message>
+  <Message number="1527" eDefine="">
+    <Title>Erro do BullsEye</Title>
+    <Description>A posição de início para Ferramenta, <arg format="%s" ordinal="1" />, não está definida.<p />Tarefa: <arg format="%s" ordinal="2" /></Description>
+    <Consequences>O BullsEye não poderá avaliar esta ferramenta.</Consequences>
+    <Actions>Execute a instrução de configuração BESetupToolJ para definir a posição.</Actions>
+  </Message>
+  <Message number="1528" eDefine="">
+    <Title>Feixe de BullsEye movido</Title>
+    <Description>O feixe foi movido ou a calibração alterada.<p />Ferramenta: <arg format="%s" ordinal="1" /><p />Tarefa: <arg format="%s" ordinal="2" /></Description>
+    <Consequences>O BullsEye não poderá avaliar esta ferramenta.</Consequences>
+    <Actions>Execute a instrução de configuração BESetupToolJ para definir a posição do feixe.</Actions>
+  </Message>
+  <Message number="1529" eDefine="">
+    <Title>TCP atualizado do BullsEye</Title>
+    <Description>O TCP para ferramenta, <arg format="%s" ordinal="1" />, foi atualizado por BEUpdateTool.<p />Tarefa: <arg format="%s" ordinal="2" /><p />Novo TCP: <arg format="%s" ordinal="3" /><p />Alterar: <arg format="%s" ordinal="4" /><p />Tempo decorrido: <arg format="%s" ordinal="5" /></Description>
+  </Message>
+  <Message number="1530" eDefine="">
+    <Title>Erro do BullsEye</Title>
+    <Description>Não foi possível determinar a localização do feixe.<p />Ferramenta: <arg format="%s" ordinal="1" /><p />Tarefa: <arg format="%s" ordinal="2" /></Description>
+    <Consequences>O BullsEye não poderá avaliar esta ferramenta.</Consequences>
+    <Actions>1.  Verifique se o dispositivo do sensor está funcionando corretamente.<p />2.  Execute a instrução de configuração BESetupToolJ para definir a posição do feixe.</Actions>
+  </Message>
+  <Message number="1531" eDefine="">
+    <Title>Erro do BullsEye</Title>
+    <Description>A posição de início foi alterada.<p />Ferramenta: <arg format="%s" ordinal="1" /><p />Tarefa: <arg format="%s" ordinal="2" /></Description>
+    <Consequences>O BullsEye não poderá avaliar esta ferramenta.</Consequences>
+    <Actions>Execute a instrução de configuração BESetupToolJ para redefinir a nova posição de início.</Actions>
+  </Message>
+  <Message number="1532" eDefine="">
+    <Title>Erro do BullsEye</Title>
+    <Description>A ferramenta, <arg format="%s" ordinal="1" />, não está configurada.<p />Tarefa: <arg format="%s" ordinal="2" /></Description>
+    <Consequences>O BullsEye não poderá avaliar esta ferramenta.</Consequences>
+    <Actions>Execute a instrução de configuração BESetupToolJ para adicionar e inicializar a ferramenta.</Actions>
+  </Message>
+  <Message number="1533" eDefine="">
+    <Title>Erro do BullsEye</Title>
+    <Description>Uma medição total de TCP falhou.<p />Ferramenta: <arg format="%s" ordinal="1" /><p />Tarefa: <arg format="%s" ordinal="2" /></Description>
+    <Consequences>O BullsEye não poderá avaliar esta ferramenta.</Consequences>
+    <Actions>Se o problema persistir, execute a instrução de configuração BESetupToolJ para adicionar e inicializar a ferramenta.</Actions>
+  </Message>
+  <Message number="1534" eDefine="">
+    <Title>TCP de Dia1 de BullsEye atualizado</Title>
+    <Description>O TCP de Dia1 foi atualizado devido a uma alteração na localização do feixe.<p />Ferramenta: <arg format="%s" ordinal="1" /><p />Tarefa: <arg format="%s" ordinal="2" /></Description>
+    <Consequences>Novo TCP: <arg format="%s" ordinal="3" /><p />Alterar: <arg format="%s" ordinal="4" /></Consequences>
+  </Message>
+  <Message number="1535" eDefine="">
+    <Title>TCP de Dia1 de BullsEye atualizado</Title>
+    <Description>O operador permitiu que o TCP de Dia1 seja atualizado.<p />Ferramenta: <arg format="%s" ordinal="1" /><p />Tarefa: <arg format="%s" ordinal="2" /></Description>
+    <Consequences>Novo TCP: <arg format="%s" ordinal="3" /><p />Alterar: <arg format="%s" ordinal="4" /></Consequences>
+  </Message>
+  <Message number="1536" eDefine="">
+    <Title>Novo TCP de BullsEye rejeitado</Title>
+    <Description>O operador rejeitou a medição de TCP.<p />Ferramenta: <arg format="%s" ordinal="1" /><p />Tarefa: <arg format="%s" ordinal="2" /></Description>
+    <Consequences>O TCP permanecerá sem alterações.<p />TCP original: <arg format="%s" ordinal="3" /><p />TCP medido: <arg format="%s" ordinal="4" /></Consequences>
+  </Message>
+  <Message number="1537" eDefine="">
+    <Title>TCP atualizado do BullsEye</Title>
+    <Description>O TCP para ferramenta, <arg format="%s" ordinal="1" />, foi atualizado por BECheckTcp.<p />Tarefa: <arg format="%s" ordinal="2" /><p />Novo TCP: <arg format="%s" ordinal="3" /><p />Alterar: <arg format="%s" ordinal="4" /><p />Tempo decorrido: <arg format="%s" ordinal="5" /></Description>
+  </Message>
+  <Message number="1538" eDefine="">
+    <Title>Depuração de BullsEye ativa</Title>
+    <Description>Modo de depuração foi ativado.<p />Tarefa: <arg format="%s" ordinal="1" /></Description>
+  </Message>
+  <Message number="1539" eDefine="">
+    <Title>Depuração de BullsEye desativada</Title>
+    <Description>Modo de depuração foi desativado.<p />Tarefa: <arg format="%s" ordinal="1" /></Description>
+  </Message>
+  <Message number="1540" eDefine="">
+    <Title>Erro do BullsEye</Title>
+    <Description>Ocorreu um erro.  A causa não foi identificada.<p />Tarefa: <arg format="%s" ordinal="1" /></Description>
+    <Actions>Se o problema persistir, tente:<p />1.  Execute a instrução de configuração BESetupToolJ para reinicializar a ferramenta.<p />2.  Contate o representante de suporte da ABB se o problema não puder ser corrigido.</Actions>
+  </Message>
+  <Message number="1541" eDefine="">
+    <Title>TCP de BullsEye OK</Title>
+    <Description>O TCP para ferramenta, <arg format="%s" ordinal="1" />, não foi atualizado por BECheckTcp, porque está na tolerância.<p />Tarefa: <arg format="%s" ordinal="2" /><p />TCP medido: <arg format="%s" ordinal="3" /><p />TCP atual: <arg format="%s" ordinal="4" /><p />Tempo decorrido: <arg format="%s" ordinal="5" /></Description>
+  </Message>
+</Domain>

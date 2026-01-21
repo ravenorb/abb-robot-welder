@@ -1,0 +1,103 @@
+%%%
+VERSION:1
+LANGUAGE:ENGLISH
+%%%
+
+MODULE BE_Data (SYSMODULE,NOSTEPIN,READONLY)
+  ! This module was created programatically.
+  ! Creation Date: 2000-05-17
+  ! Creation Time: 23:31:30
+
+  LOCAL CONST pos CurToolList{5}:=[[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]];
+  LOCAL CONST be_reftool RefToolList{5}:=[[[FALSE,[[0,0,0],[0,0,0,0]],[0,[0,0,0],[0,0,0,0],0,0,0]],0.4,5,14,FALSE],[[FALSE,[[0,0,0],[0,0,0,0]],[0,[0,0,0],[0,0,0,0],0,0,0]],0,0,0,FALSE],[[FALSE,[[0,0,0],[0,0,0,0]],[0,[0,0,0],[0,0,0,0],0,0,0]],0,0,0,FALSE],[[FALSE,[[0,0,0],[0,0,0,0]],[0,[0,0,0],[0,0,0,0],0,0,0]],0,0,0,FALSE],[[FALSE,[[0,0,0],[0,0,0,0]],[0,[0,0,0],[0,0,0,0],0,0,0]],0,0,0,FALSE]];
+  LOCAL CONST be_refpos RefPosList{5}:=[[[0,0,0],[[1195.57,-154.487,665.61],[0.265707,-0.629441,0.678973,0.268698],[-1,0,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]],[[0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0,0,0]],[[1195.56,-154.495,824.972],[0.265692,-0.629446,0.678985,0.268672],[-1,0,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]],FALSE,[[0,0,0,0,0,0],[0,0,0,0,0,0]],[FALSE,FALSE,FALSE,FALSE,FALSE,FALSE],TRUE],[[0,0,0],[[0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0,0,0]],[[0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0,0,0]],[[0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0,0,0]],FALSE,[[0,0,0,0,0,0],[0,0,0,0,0,0]],[FALSE,FALSE,FALSE,FALSE,FALSE,FALSE],FALSE],[[0,0,0],[[0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0,0,0]],[[0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0,0,0]],[[0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0,0,0]],FALSE,[[0,0,0,0,0,0],[0,0,0,0,0,0]],[FALSE,FALSE,FALSE,FALSE,FALSE,FALSE],FALSE],[[0,0,0],[[0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0,0,0]],[[0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0,0,0]],[[0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0,0,0]],FALSE,[[0,0,0,0,0,0],[0,0,0,0,0,0]],[FALSE,FALSE,FALSE,FALSE,FALSE,FALSE],FALSE],[[0,0,0],[[0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0,0,0]],[[0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0,0,0]],[[0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0,0,0]],FALSE,[[0,0,0,0,0,0],[0,0,0,0,0,0]],[FALSE,FALSE,FALSE,FALSE,FALSE,FALSE],FALSE]];
+  LOCAL CONST be_refbeam RefBeamList{5}:=[[[0,0,0],[FALSE,FALSE,"",[[0,0,0],[0,0,0,0]],[[0,0,0],[0,0,0,0]]],[[[0,0,0],[0,0,0,0]],[[0,0,0],[0,0,0,0]],[[0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0,0,0]],[[0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0,0,0]]],FALSE],[[0,0,0],[FALSE,FALSE,"",[[0,0,0],[0,0,0,0]],[[0,0,0],[0,0,0,0]]],[[[0,0,0],[0,0,0,0]],[[0,0,0],[0,0,0,0]],[[0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0,0,0]],[[0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0,0,0]]],FALSE],[[0,0,0],[FALSE,FALSE,"",[[0,0,0],[0,0,0,0]],[[0,0,0],[0,0,0,0]]],[[[0,0,0],[0,0,0,0]],[[0,0,0],[0,0,0,0]],[[0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0,0,0]],[[0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0,0,0]]],FALSE],[[0,0,0],[FALSE,FALSE,"",[[0,0,0],[0,0,0,0]],[[0,0,0],[0,0,0,0]]],[[[0,0,0],[0,0,0,0]],[[0,0,0],[0,0,0,0]],[[0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0,0,0]],[[0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0,0,0]]],FALSE],[[0,0,0],[FALSE,FALSE,"",[[0,0,0],[0,0,0,0]],[[0,0,0],[0,0,0,0]]],[[[0,0,0],[0,0,0,0]],[[0,0,0],[0,0,0,0]],[[0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0,0,0]],[[0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0,0,0]]],FALSE]];
+  LOCAL CONST be_tooldesign ToolDsgnList{5}:=[[TRUE,30,18,50,6,6,TRUE,TRUE,1.2,[150,120,100,100],[250,150,100,100]],[FALSE,0,0,0,0,0,FALSE,FALSE,0,[0,0,0,0],[0,0,0,0]],[FALSE,0,0,0,0,0,FALSE,FALSE,0,[0,0,0,0],[0,0,0,0]],[FALSE,0,0,0,0,0,FALSE,FALSE,0,[0,0,0,0],[0,0,0,0]],[FALSE,0,0,0,0,0,FALSE,FALSE,0,[0,0,0,0],[0,0,0,0]]];
+  LOCAL CONST be_scan ScanList{5}:=[[2,8,8,45,35,25],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0]];
+  LOCAL CONST be_device DeviceList{5}:=[["diBE_SEN1",TRUE,[6,45,100,100],[40,45,100,100],0.1,FALSE,TRUE,TRUE],["",FALSE,[0,0,0,0],[0,0,0,0],0,FALSE,FALSE,FALSE],["",FALSE,[0,0,0,0],[0,0,0,0],0,FALSE,FALSE,FALSE],["",FALSE,[0,0,0,0],[0,0,0,0],0,FALSE,FALSE,FALSE],["",FALSE,[0,0,0,0],[0,0,0,0],0,FALSE,FALSE,FALSE]];
+  LOCAL CONST be_setup SetupList{5}:=[["tWeldGun","",TRUE],["","",FALSE],["","",FALSE],["","",FALSE],["","",FALSE]];
+  LOCAL CONST num nBEToolCount:=1;
+  !@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+  LOCAL PROC GetCurToolList(
+    VAR pos Value{*})
+
+    Value:=CurToolList;
+  ERROR
+    RAISE;
+  ENDPROC
+
+
+  LOCAL PROC GetRefToolList(
+    VAR be_reftool Value{*})
+
+    Value:=RefToolList;
+  ERROR
+    RAISE;
+  ENDPROC
+
+
+  LOCAL PROC GetRefPosList(
+    VAR be_refpos Value{*})
+
+    Value:=RefPosList;
+  ERROR
+    RAISE;
+  ENDPROC
+
+
+  LOCAL PROC GetRefBeamList(
+    VAR be_refbeam Value{*})
+
+    Value:=RefBeamList;
+  ERROR
+    RAISE;
+  ENDPROC
+
+
+  LOCAL PROC GetToolDsgnList(
+    VAR be_tooldesign Value{*})
+
+    Value:=ToolDsgnList;
+  ERROR
+    RAISE;
+  ENDPROC
+
+
+  LOCAL PROC GetScanList(
+    VAR be_scan Value{*})
+
+    Value:=ScanList;
+  ERROR
+    RAISE;
+  ENDPROC
+
+
+  LOCAL PROC GetDeviceList(
+    VAR be_device Value{*})
+
+    Value:=DeviceList;
+  ERROR
+    RAISE;
+  ENDPROC
+
+
+  LOCAL PROC GetSetupList(
+    VAR be_setup Value{*})
+
+    Value:=SetupList;
+  ERROR
+    RAISE;
+  ENDPROC
+
+
+  LOCAL PROC GetnBEToolCount(
+    VAR num Value)
+
+    Value:=nBEToolCount;
+  ERROR
+    RAISE;
+  ENDPROC
+
+
+ENDMODULE

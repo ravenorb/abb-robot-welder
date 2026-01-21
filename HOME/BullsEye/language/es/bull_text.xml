@@ -1,0 +1,1047 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Resource Name="bull_text" Language="es">
+  <Text Name="0">
+    <Value>BullsEye</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="1">
+    <Value>Cancelar</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="2">
+    <Value>Sí</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="3">
+    <Value>No </Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="4">
+    <Value>OK </Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="5">
+    <Value>Movimiento</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="6">
+    <Value>Día1</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="7">
+    <Value>Último</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="8">
+    <Value>Terminado</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="9">
+    <Value>Rehacer</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="10">
+    <Value>Aceptar</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="11">
+    <Value>Mover</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="12">
+    <Value>Sigu.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="13">
+    <Value>Se ha producido un error en FineCheck.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="14">
+    <Value>¿Desea realizar una evaluación completa?</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="15">
+    <Value>No se ha hecho ningún cambio en el TCP.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="16">
+    <Value>La herramienta ha cambiado en exceso</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="17">
+    <Value>del margen del día 1.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="18">
+    <Value>El valor del día 1 se actualizará.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="19">
+    <Value>¿Debe actualizarse la herramienta?</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="20">
+    <Value>Anterior</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="21">
+    <Value>Nuevo</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="22">
+    <Value>¡El haz se ha movido!</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="23">
+    <Value>La herramienta se inicializará.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="24">
+    <Value>Debe repetir el procedimiento de configuración.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="25">
+    <Value>¡Error de convergencia de solución!</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="26">
+    <Value>No fue posible determinar el resultado</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="27">
+    <Value>dentro de la repetibilidad solicitada.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="28">
+    <Value>Se devolverá una media de las últimas 3 mediciones</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="29">
+    <Value>como nuevo TCP.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="30">
+    <Value>Para corregir, considere las acciones siguientes.  </Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="31">
+    <Value>1. Aumente la repetibilidad a</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="32">
+    <Value>mm </Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="33">
+    <Value>2. Pruebe una nueva posición de inicio.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="34">
+    <Value>¡Problema de exactitud del robot!</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="35">
+    <Value>El TCP resultante tiene una imprecisión</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="36">
+    <Value>de más de +/-</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="37">
+    <Value>  El TCP se actualizará, pero usted</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="38">
+    <Value>debe comprobar la calibración del robot.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="39">
+    <Value>¡Problema de exactitud del robot!</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="40">
+    <Value>No fue posible determinar el TCP a causa</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="41">
+    <Value>de la inexactitud del robot.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="42">
+    <Value>Desviación del TCP =+/-</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="43">
+    <Value>Compruebe la calibración del robot.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="44">
+    <Value>Definir punto de referencia</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="45">
+    <Value>Presione 'MOVER' y mueva</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="46">
+    <Value>el robot hasta el puntero.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="47">
+    <Value>Presione 'Inicio' al terminar.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="48">
+    <Value>Mostrar en el puntero</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="49">
+    <Value>Día1 -- Mostrar el TCP del día 1.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="50">
+    <Value>Último -- Mostrar el último TCP.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="51">
+    <Value>Definir objetivo</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="52">
+    <Value>El robot se encuentra en el punto definido.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="53">
+    <Value>Rehacer -- Redefinir el punto</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="54">
+    <Value>Terminado -- Continuar con la instrucción siguiente</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="55">
+    <Value>La definición ha finalizado.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="56">
+    <Value>La ejecución del programa continuará</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="57">
+    <Value>**El robot se puede mover**</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="58">
+    <Value>El proceso de definición se ha omitido.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="59">
+    <Value>La ejecución del programa continuará.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="60">
+    <Value>Aceptar -- Definir la posición como actual.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="61">
+    <Value>Mover -- Mover manualmente y reiniciar.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="62">
+    <Value>Cancelar -- Omitir la definición.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="63">
+    <Value>BullsEye utiliza un solo haz</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="64">
+    <Value>Software de unidad de calibración de</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="65">
+    <Value>Cycle Time Corp.,</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="66">
+    <Value>Copyright June 1995.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="67">
+    <Value>Bullseye está patentado en: EE.UU.,</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="68">
+    <Value>Canadá, Japón, Suecia y Alemania.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="69">
+    <Value>La herramienta utilizada en esta configuración es una </Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="70">
+    <Value>antorcha MIG.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="71">
+    <Value>Asegúrese de que al menos haya</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="72">
+    <Value>10 mm de alambre recto asomando</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="73">
+    <Value>del capuchón de gas.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="74">
+    <Value>La herramienta utilizada en esta configuración requiere</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="75">
+    <Value>una extensión artificial para</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="76">
+    <Value>determinar la orientación de la herramienta</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="77">
+    <Value>Asegúrese de instalar</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="78">
+    <Value>este dispositivo antes de continuar.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="79">
+    <Value>Iniciando la configuración...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="80">
+    <Value>La configuración ha finalizado.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="81">
+    <Value>Desviación media = +/-</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="82">
+    <Value>Desviación máxima = +/-</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="83">
+    <Value>Iniciando actualización...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="84">
+    <Value>La actualización ha finalizado.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="85">
+    <Value>Iniciando QuickCheck...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="86">
+    <Value>El proceso QuickCheck ha finalizado.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="87">
+    <Value>Determinando la desviación XY...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="88">
+    <Value>Determinando la desviación XYZ...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="89">
+    <Value>Ejecutando una comprobación 'fina'...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="90">
+    <Value>Midiendo el TCP...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="91">
+    <Value>Determinación de TCP intermedio finalizada.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="92">
+    <Value>Ejecutando una comprobación 'aproximada'...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="93">
+    <Value>Imposible medir el TCP.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="94">
+    <Value>Iniciando enderezamiento de herramienta...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="95">
+    <Value>El enderezamiento de la herramienta ha finalizado.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="96">
+    <Value>Fallo de enderezamiento de herramienta.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="97">
+    <Value>Determinando el haz...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="98">
+    <Value>El haz ha sido localizado.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="99">
+    <Value>Fallo de localización de haz.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="100">
+    <Value>La operación de BullsEye solicitada</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="101">
+    <Value>se realizó correctamente. Ahora BullsEye</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="102">
+    <Value>ha finalizado.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="103">
+    <Value>Estado de BullsEye</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="104">
+    <Value>La herramienta seleccionada para su configuración</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="105">
+    <Value>o inicialización ya está</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="106">
+    <Value>instalada. No se seleccionó ninguna</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="107">
+    <Value>sobrescritura:</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="108">
+    <Value>Volviendo al programa principal...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="109">
+    <Value>BullsEye no ha encontrado información</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="110">
+    <Value>sobre la herramienta seleccionada.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="111">
+    <Value>Pruebe a reinicializar la herramienta.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="112">
+    <Value>Volviendo al programa principal...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="113">
+    <Value>BullsEye no ha encontrado datos</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="114">
+    <Value>para la herramienta seleccionada. El</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="115">
+    <Value>módulo, BE_Data, podría</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="116">
+    <Value>faltar.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="117">
+    <Value>La colección de BullsEye está</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="118">
+    <Value>llena.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="119">
+    <Value>No es posible añadir más herramientas.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="120">
+    <Value>BullsEye no ha encontrado</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="121">
+    <Value>información sobre la herramienta</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="122">
+    <Value>solicitada.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="123">
+    <Value>Pruebe a reinicializar la herramienta.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="124">
+    <Value>La entrada digital especificada</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="125">
+    <Value>en los datos de be_device no es</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="126">
+    <Value>una entrada válida.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="127">
+    <Value>Volviendo al programa principal...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="128">
+    <Value>El alias ya ha sido</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="129">
+    <Value>definido para la entrada de BullsEye.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="130">
+    <Value>BullsEye no ha podido completar</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="131">
+    <Value>el proceso de barrido sin</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="132">
+    <Value>sobrepasar los límites del eje.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="133">
+    <Value>Pruebe una nueva posición de inicio.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="134">
+    <Value>BullsEye no ha podido completar</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="135">
+    <Value>el proceso de barrido sin</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="136">
+    <Value>pasar por una singularidad.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="137">
+    <Value>BullsEye no ha podido completar</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="138">
+    <Value>el proceso de barrido con</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="139">
+    <Value>un ángulo de inclinación aceptable.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="140">
+    <Value>Pruebe una nueva posición de inicio.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="141">
+    <Value>La base de coordenadas del robot</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="142">
+    <Value>no pudo leerse de los parámetros</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="143">
+    <Value>del sistema.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="144">
+    <Value>El radio del patrón inicial</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="145">
+    <Value>solicitado, InitPatternRad, es</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="146">
+    <Value>menor que o igual a cero.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="147">
+    <Value>BullsEye no ha encontrado</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="148">
+    <Value>el haz de detección.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="149">
+    <Value>¿Funciona correctamente</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="150">
+    <Value>el dispositivo de barrido?</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="151">
+    <Value>BullsEye no ha podido determinar</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="152">
+    <Value>la orientación del haz de detección.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="153">
+    <Value>El barrido ha fallado porque la</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="154">
+    <Value>herramienta interrumpía el haz</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="155">
+    <Value>al principio del barrido.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="156">
+    <Value>Causas posibles...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="157">
+    <Value> - Mala calibración del robot.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="158">
+    <Value> - Dimensiones incorrectas de la herramienta.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="159">
+    <Value> - Montura de herramienta suelta.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="160">
+    <Value>El barrido ha fallado porque la</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="161">
+    <Value>herramienta no ha llegado a interrumpir.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="162">
+    <Value> - Equipo de barrido defectuoso.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="163">
+    <Value>El número de barridos especificado</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="164">
+    <Value>en los datos de be_scan,</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="165">
+    <Value>NumOfScans, es cero o no es</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="166">
+    <Value>un entero.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="167">
+    <Value>El diámetro de herramienta</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="168">
+    <Value>encontrado es cero o</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="169">
+    <Value>negativo. Compruebe que</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="170">
+    <Value>los parámetros de be_design sean correctos.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="171">
+    <Value>No se ha encontrado el extremo de</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="172">
+    <Value>la herramienta con un </Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="173">
+    <Value>número razonable de barridos.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="174">
+    <Value>¡Problema de exactitud del robot!</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="175">
+    <Value>No fue posible determinar el TCP a causa</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="176">
+    <Value>de la inexactitud del robot.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="177">
+    <Value>Desviación del TCP =+/-</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="178">
+    <Value>BullsEye no ha podido encontrar</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="179">
+    <Value>la orientación del haz.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="180">
+    <Value>Compruebe el equipo de barrido.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="181">
+    <Value>BullsEye no ha podido</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="182">
+    <Value>determinar el cambio</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="183">
+    <Value>del TCP.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="184">
+    <Value>escribir en el dato be_refpos</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="185">
+    <Value>de esta herramienta.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="186">
+    <Value>BullsEye no ha podido</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="187">
+    <Value>escribir en el dato be_reftool</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="188">
+    <Value>de esta herramienta.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="189">
+    <Value>BullsEye no ha podido</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="190">
+    <Value>escribir en el dato be_refbeam</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="191">
+    <Value>de esta herramienta.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="192">
+    <Value>Se ha producido un problema al determinar</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="193">
+    <Value>la definición de la base de coordenadas de la base</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="194">
+    <Value>de este robot.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="195">
+    <Value>Esta herramienta ya está</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="196">
+    <Value>configurada.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="197">
+    <Value>BullsEye no ha podido restablecer</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="198">
+    <Value>los datos de referencia para</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="199">
+    <Value>esta herramienta.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="200">
+    <Value>El procedimiento de configuración</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="201">
+    <Value>ha fallado.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="202">
+    <Value>Volviendo al programa principal...</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="203">
+    <Value>La posición de partida inicial</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="204">
+    <Value>no está definida.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="205">
+    <Value>Es necesario anular la configuración.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="206">
+    <Value>La herramienta no se ha</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="207">
+    <Value>configurado con BullsEye.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="208">
+    <Value>La posición inicial ha</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="209">
+    <Value>sido cambiada. Es necesario</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="210">
+    <Value>repetir la rutina de configuración.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="211">
+    <Value>BullsEye ha detectado que el</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="212">
+    <Value>equipo de barrido se ha movido.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="213">
+    <Value>Ejecute la configuración.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="214">
+    <Value>BullsEye ha intentado ejecutar </Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="215">
+    <Value>una 'comprobación completa' de la herramienta, pero</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="216">
+    <Value>no ha podido medir la herramienta.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="217">
+    <Value>Ejecute la configuración.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="218">
+    <Value>Usted ha decidido no actualizar</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="219">
+    <Value>el TCP con los nuevos valores</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="220">
+    <Value>medidos.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="221">
+    <Value>BullsEye no ha podido medir</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="222">
+    <Value>la herramienta correctamente mientras barría</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="223">
+    <Value>para detectar la orientación de la herramienta.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="224">
+    <Value>No todos los datos de referencia</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="225">
+    <Value>están definidos.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="226">
+    <Value>Ejecute la configuración.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="227">
+    <Value>La posición de referencia para</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="228">
+    <Value>Quick-Check no estaba definida.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="229">
+    <Value>Ejecute la configuración.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="230">
+    <Value>BullsEye no ha podido acercarse</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="231">
+    <Value>a un TCP con la exactitud</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="232">
+    <Value>deseada.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="233">
+    <Value>'Paso hacia delante' no se</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="234">
+    <Value>admite durante la configuración.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="235">
+    <Value>Reintente con 'Inicio'.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="236">
+    <Value>Se ha producido un error al</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="237">
+    <Value>leer el plano de usuario.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="238">
+    <Value>Se ha producido un error desconocido.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="239">
+    <Value>Puntero</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="240">
+    <Value>¡Error de coincidencia de datos de herramienta!</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="241">
+    <Value>Los datos almacenados en la base</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="242">
+    <Value>de datos de BullsEye no coinciden</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="243">
+    <Value>con la herramienta.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="244">
+    <Value>Debe repetir el procedimiento de configuración.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="245">
+    <Value>Error de BullsEye</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="246">
+    <Value>Fallo de prueba de área de movimiento.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="247">
+    <Value>BullsEye no puede completar barridos desde</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="248">
+    <Value>esta posición inicial con esta herramienta.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="249">
+    <Value>Pruebe una nueva posición de inicio o herramienta.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="250">
+    <Value>Debido a un leve movimiento del haz
+</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="251">
+    <Value>la información de configuración ha sido
+</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="252">
+    <Value>recalculada y el TCP de Día1
+</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="253">
+    <Value>ha sido devuelto al actual </Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="254">
+    <Value>TCP.
+</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="255">
+    <Value>Cambiar</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="256">
+    <Value>Cambio de Day1</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="257">
+    <Value>Los ángulos de giro e inclinación deben ser</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="258">
+    <Value>superiores a 5 grados.</Value>
+    <Comment>none</Comment>
+  </Text>
+  <Text Name="259">
+    <Value>BullsEye usará automáticamente 5 grados.</Value>
+    <Comment>none</Comment>
+  </Text>
+</Resource>

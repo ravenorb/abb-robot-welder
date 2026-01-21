@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Domain elogDomain="PROC" domainNo="11" lang="nl" elogTextVersion="1.0" xmlns="urn:abb-robotics-elog-text" min="1500" max="1549">
+  <Message number="1501" eDefine="">
+    <Title>BullsEye-tekstfout</Title>
+    <Description>BullsEye heeft geen toegang tot de tekst.<p /><p />Gegeven index:  <arg format="%s" ordinal="1" /><p />Teksttabel:  <arg format="%s" ordinal="2" /></Description>
+    <Consequences>BullsEye zal geen correcte berichten/dialogen kunnen weergeven.</Consequences>
+    <Actions>Meld deze fout aan uw ABB-ondersteuningsvertegenwoordiger.</Actions>
+  </Message>
+  <Message number="1502" eDefine="">
+    <Title>BullsEye verouderd bericht</Title>
+    <Description>BullsEye verouderd bericht</Description>
+  </Message>
+  <Message number="1503" eDefine="">
+    <Title>BullsEye-fout</Title>
+    <Description>Test bewegingsbereik heeft gefaald.</Description>
+  </Message>
+  <Message number="1504" eDefine="">
+    <Title>BullsEye-fout</Title>
+    <Description>De bereikstestfunctie ondersteunt geen gecoördineerd objectwerk.</Description>
+  </Message>
+  <Message number="1505" eDefine="">
+    <Title>BullsEye-fout</Title>
+    <Description>De bereikstestfunctie ondersteunt geen uframe-ransformaties.</Description>
+  </Message>
+  <Message number="1506" eDefine="">
+    <Title>BullsEye-gegevens geladen</Title>
+    <Description>De opgeslagen referentiegegevens zijn met succes geladen.</Description>
+  </Message>
+  <Message number="1507" eDefine="">
+    <Title>BullsEye-fout</Title>
+    <Description>Bestand met referentiegegevens komt niet voor.</Description>
+    <Causes>Voorafgaande gegevens niet opgeslagen.</Causes>
+  </Message>
+  <Message number="1508" eDefine="">
+    <Title>BullsEye-fout</Title>
+    <Description>Het bestand met de referentiegegevens is reeds geladen.</Description>
+  </Message>
+  <Message number="1509" eDefine="">
+    <Title>BullsEye-fout</Title>
+    <Description>Tijdens het uitpakken van de referentiegegevens-module heeft er zich een fout voorgedaan. </Description>
+    <Actions>Het programma resetten door de pointer naar de hoofdroutine te verplaatsen en het programma opnieuw te starten.</Actions>
+  </Message>
+  <Message number="1510" eDefine="">
+    <Title>BullsEye-fout</Title>
+    <Description>Tijdens het lezen van de referentiegegevens-module heeft er zich een fout voorgedaan.</Description>
+  </Message>
+  <Message number="1511" eDefine="">
+    <Title>BullsEye-gegevens opgeslagen</Title>
+    <Description>De referentiegegevens zijn met succes opgeslagen.</Description>
+  </Message>
+  <Message number="1512" eDefine="">
+    <Title>BullsEye-fout</Title>
+    <Description>Onverwachte fout tijdens het opslaan van de referentiegegevens.</Description>
+  </Message>
+  <Message number="1513" eDefine="">
+    <Title>BullsEye-hulpprogramma geïnitialiseerd</Title>
+    <Description>Het hulpprogramma, <arg format="%s" ordinal="1" />, is in de BullsEye-gegevensverzameling geïnitialiseerd.<p />Taak: <arg format="%s" ordinal="2" /></Description>
+  </Message>
+  <Message number="1514" eDefine="">
+    <Title>BullsEye-hulpprogramma toegevoegd</Title>
+    <Description>Het hulpprogramma, <arg format="%s" ordinal="1" />, is aan de BullsEye-gegevensverzameling toegevoegd.<p />Taak: <arg format="%s" ordinal="2" /></Description>
+  </Message>
+  <Message number="1515" eDefine="">
+    <Title>BullsEye-hulpprogramma verwijderd</Title>
+    <Description>Het hulpprogramma, <arg format="%s" ordinal="1" />, is van de BullsEye-gegevensverzameling verwijderd.<p />Taak: <arg format="%s" ordinal="2" /></Description>
+    <Consequences>BullsEye kan dit hulpprogramma niet meer evalueren.</Consequences>
+    <Actions>Voer de setup-instructie van BESetupTooIJ uit om het hulpprogramma toe te voegen en te initialiseren.</Actions>
+  </Message>
+  <Message number="1516" eDefine="">
+    <Title>BullsEye IO-fout</Title>
+    <Description>Ongeldige ingngsnaam: <arg format="%s" ordinal="1" /><p />Hulpprogramma: <arg format="%s" ordinal="2" /><p />Taak: <arg format="%s" ordinal="3" /></Description>
+    <Consequences>Er kon geen verbinding naar de digitale ingang worden opgezet. Initialisatie is mislukt.</Consequences>
+    <Actions>Controleer dat de aangegeven ingang in het systeem bestand.</Actions>
+  </Message>
+  <Message number="1517" eDefine="">
+    <Title>BullsEye-fout</Title>
+    <Description>Het hulpprogramma, <arg format="%s" ordinal="1" />, is in de BullsEye-gegevensverzameling opgenomen.<p />Taak: <arg format="%s" ordinal="2" /></Description>
+    <Consequences>BullsEye kan dit hulpprogramma niet evalueren.</Consequences>
+    <Actions>Voer de setup-instructie van BESetupTooIJ uit om het hulpprogramma toe te voegen en te initialiseren.</Actions>
+  </Message>
+  <Message number="1518" eDefine="">
+    <Title>BullsEye IO-fout</Title>
+    <Description>BullsEye heeft geprobeert om een eerder verbonden IO-signaal aan te sluiten.<p />Ingangsnaam: <arg format="%s" ordinal="1" /><p />Hulpprogramma: <arg format="%s" ordinal="2" /><p />Taak: <arg format="%s" ordinal="3" /></Description>
+    <Actions>Als het probleem aanhoudt, moet u de BESetupTooIJ-instructie uitvoeren om het hulpprogramma opnieuw te initialiseren.</Actions>
+  </Message>
+  <Message number="1519" eDefine="">
+    <Title>BullsEye Bereikstest is mislukt</Title>
+    <Description>Controle verbindingslimieten mislukt voor een draai van <arg format="%s" ordinal="1" /> en een kanteling van <arg format="%s" ordinal="2" /><p />Taak: <arg format="%s" ordinal="3" /></Description>
+    <Consequences>BullsEye kan dit hulpprogramma niet evalueren.</Consequences>
+    <Actions>Probeer een andere startpositie of verplaats het BullsEye-apparaat.  Als u geen aanvaardbare positie kunt vinden, moet u proberen de gewenste kanteling en draai in de be-scan gegevens te verminderen.  Echter, kijk uit dat door deze waarden te verminderen, de nauwkeurigheid kan worden verminderd.</Actions>
+  </Message>
+  <Message number="1520" eDefine="">
+    <Title>BullsEye Bereikstest is mislukt</Title>
+    <Description>Controle singulariteit mislukt voor een draai van <arg format="%s" ordinal="1" /> en een kanteling van <arg format="%s" ordinal="2" /><p />Taak: <arg format="%s" ordinal="3" /></Description>
+    <Consequences>BullsEye kan dit hulpprogramma niet evalueren.</Consequences>
+    <Actions>Probeer een andere startpositie of verplaats het BullsEye-apparaat.</Actions>
+  </Message>
+  <Message number="1521" eDefine="">
+    <Title>BullsEye Bereikstest is mislukt</Title>
+    <Description>Binnen de aanvaardbare controles van verbindingslimieten en singulariteit kan geen oplossing worden gevonden.<p />Er is een draai van <arg format="%s" ordinal="1" /> en een kanteling van <arg format="%s" ordinal="2" /> opgegeven.<p />Taak: <arg format="%s" ordinal="3" /></Description>
+    <Consequences>BullsEye kan dit hulpprogramma niet evalueren.</Consequences>
+    <Actions>Probeer een andere startpositie of verplaats het BullsEye-apparaat.  Als u geen aanvaardbare positie kunt vinden, moet u proberen de gewenste kanteling en draai in de be-scan gegevens te verminderen.  Echter, kijk uit dat door deze waarden te verminderen, de nauwkeurigheid kan worden verminderd.</Actions>
+  </Message>
+  <Message number="1522" eDefine="">
+    <Title>BullsEye Bereikstest is mislukt</Title>
+    <Description>Binnen de aanvaardbare controles van verbindingslimieten en singulariteit, met geschikte reikwijdte voor de frontplaat kan geen oplossing worden gevonden.<p />Er is een draai van <arg format="%s" ordinal="1" /> en een kanteling van <arg format="%s" ordinal="2" /> opgegeven.<p />Taak: <arg format="%s" ordinal="3" /></Description>
+    <Consequences>BullsEye kan dit hulpprogramma niet evalueren.</Consequences>
+    <Actions>Probeer een andere startpositie of verplaats het BullsEye-apparaat.  Als u geen aanvaardbare positie kunt vinden, moet u proberen de gewenste kanteling en draai in de be-scan gegevens te verminderen.  Echter, kijk uit dat door deze waarden te verminderen, de nauwkeurigheid kan worden verminderd.</Actions>
+  </Message>
+  <Message number="1523" eDefine="">
+    <Title>Leesfout bij BullsEye-basisframe</Title>
+    <Description>BullsEye kan de definitie van de basisframe voor de robot niet lezen.<p />Taak: <arg format="%s" ordinal="1" /></Description>
+    <Consequences>BullsEye kan dit hulpprogramma niet evalueren.</Consequences>
+    <Actions>De Motion Configuration Database (MOC) kan overmatige beveiligingen geïmplementeerd hebben.  Zorg dat de definitie van het basisframe toegankelijk is.</Actions>
+  </Message>
+  <Message number="1524" eDefine="">
+    <Title>BullsEye TCP uitgebreid</Title>
+    <Description>De instructie BETcpExtend wordt gebruikt om de TCP van <arg format="%s" ordinal="1" /> te verplaatsen.<p />Taak: <arg format="%s" ordinal="2" /><p />Nieuw extensie: <arg format="%s" ordinal="3" /><p />Wijziging: <arg format="%s" ordinal="4" /></Description>
+  </Message>
+  <Message number="1525" eDefine="">
+    <Title>BullsEye-instellingen voltooid</Title>
+    <Description>Instellingen voltooid voor:<p />Hulpprogramma: <arg format="%s" ordinal="1" /><p />Taak: <arg format="%s" ordinal="2" /><p />Nieuw werkobject: <arg format="%s" ordinal="3" /><p />Nieuw TCP: <arg format="%s" ordinal="4" /><p />Max, Gemiddelde afwijking: <arg format="%s" ordinal="5" /></Description>
+  </Message>
+  <Message number="1526" eDefine="">
+    <Title>Instelling BullsEye is mislukt</Title>
+    <Description>De instelling voor hulpprogramma <arg format="%s" ordinal="1" /> is mislukt.<p />Taak: <arg format="%s" ordinal="2" /></Description>
+    <Consequences>BullsEye kan dit hulpprogramma niet evalueren.</Consequences>
+    <Actions>1.  Controleer het foutlogboek voor extra berichten.<p />2.  Controleer setup-parameters, sensorapparaat en startpositie voordat u nogmaals de setup probeert</Actions>
+  </Message>
+  <Message number="1527" eDefine="">
+    <Title>BullsEye-fout</Title>
+    <Description>De startpositie voor hulpprogramma <arg format="%s" ordinal="1" /> is niet gedefinieerd.<p />Taak: <arg format="%s" ordinal="2" /></Description>
+    <Consequences>BullsEye kan dit hulpprogramma niet evalueren.</Consequences>
+    <Actions>Voer de setup-instructie BESetupTooIJ uit om de positie te definiëren.</Actions>
+  </Message>
+  <Message number="1528" eDefine="">
+    <Title>BullsEye-balk is verplaatst</Title>
+    <Description>De balk is verplaatst of de kalibratie is gewijzigd.<p />Hulpprogramma: <arg format="%s" ordinal="1" /><p />Taak: <arg format="%s" ordinal="2" /></Description>
+    <Consequences>BullsEye kan dit hulpprogramma niet evalueren.</Consequences>
+    <Actions>Voer de setup-instructie BESetupTooIJ uit om de balkpositie te definiëren.</Actions>
+  </Message>
+  <Message number="1529" eDefine="">
+    <Title>Bijgewerkte TCP van BullsEye</Title>
+    <Description>De TCP voor hulpprogramma <arg format="%s" ordinal="1" /> is door BEUpdateTool bijgewerkt.<p />Taak: <arg format="%s" ordinal="2" /><p />Nieuw TCP: <arg format="%s" ordinal="3" /><p />Wijziging: <arg format="%s" ordinal="4" /><p />Verstreken tijd: <arg format="%s" ordinal="5" /></Description>
+  </Message>
+  <Message number="1530" eDefine="">
+    <Title>BullsEye-fout</Title>
+    <Description>De balklocatie kon niet worden bepaald.<p />Hulpprogramma: <arg format="%s" ordinal="1" /><p />Taak: <arg format="%s" ordinal="2" /></Description>
+    <Consequences>BullsEye kan dit hulpprogramma niet evalueren.</Consequences>
+    <Actions>1.  Controleer dat het sensorapparaat goed werkt.<p />2.  Voer de setup-instructie BESetupTooIJ uit om de balkpositie te definiëren.</Actions>
+  </Message>
+  <Message number="1531" eDefine="">
+    <Title>BullsEye-fout</Title>
+    <Description>De startpositie is gewijzigd.<p />Hulpprogramma: <arg format="%s" ordinal="1" /><p />Taak: <arg format="%s" ordinal="2" /></Description>
+    <Consequences>BullsEye kan dit hulpprogramma niet evalueren.</Consequences>
+    <Actions>Voer de setup-instructie BESetupTooIJ uit om opnieuw de nieuwe startpositie te definiëren.</Actions>
+  </Message>
+  <Message number="1532" eDefine="">
+    <Title>BullsEye-fout</Title>
+    <Description>Het hulpprogramma <arg format="%s" ordinal="1" /> is niet ingesteld.<p />Taak: <arg format="%s" ordinal="2" /></Description>
+    <Consequences>BullsEye kan dit hulpprogramma niet evalueren.</Consequences>
+    <Actions>Voer de setup-instructie van BESetupTooIJ uit om het hulpprogramma toe te voegen en te initialiseren.</Actions>
+  </Message>
+  <Message number="1533" eDefine="">
+    <Title>BullsEye-fout</Title>
+    <Description>Een volledige TCP-meting is mislukt.<p />Hulpprogramma: <arg format="%s" ordinal="1" /><p />Taak: <arg format="%s" ordinal="2" /></Description>
+    <Consequences>BullsEye kan dit hulpprogramma niet evalueren.</Consequences>
+    <Actions>Als het probleem aanhoudt, voert u de setup-instructie van BESetupTooIJ uit om het hulpprogramma toe te voegen en te initialiseren.</Actions>
+  </Message>
+  <Message number="1534" eDefine="">
+    <Title>BullsEye dag 1 TCP is bijgewerkt</Title>
+    <Description>Door een wijziging in de balklocatie is de Dag 1 TCP bijgewerkt.<p />Hulpprogramma: <arg format="%s" ordinal="1" /><p />Taak: <arg format="%s" ordinal="2" /></Description>
+    <Consequences>Nieuw TCP: <arg format="%s" ordinal="3" /><p />Wijziging: <arg format="%s" ordinal="4" /></Consequences>
+  </Message>
+  <Message number="1535" eDefine="">
+    <Title>BullsEye dag 1 TCP is bijgewerkt</Title>
+    <Description>De operator heeft toestemming gegeven voor de update van Day1 TCP.<p />Hulpprogramma: <arg format="%s" ordinal="1" /><p />Taak: <arg format="%s" ordinal="2" /></Description>
+    <Consequences>Nieuw TCP: <arg format="%s" ordinal="3" /><p />Wijziging: <arg format="%s" ordinal="4" /></Consequences>
+  </Message>
+  <Message number="1536" eDefine="">
+    <Title>De nieuwe TCP van BullsEye is afgewezen</Title>
+    <Description>De operator heeft de TCP-meting afgewezen.<p />Hulpprogramma: <arg format="%s" ordinal="1" /><p />Taak: <arg format="%s" ordinal="2" /></Description>
+    <Consequences>De TCP blijft ongewijzigd.<p />Origineel TCP: <arg format="%s" ordinal="3" /><p />Gemeten TCP: <arg format="%s" ordinal="4" /></Consequences>
+  </Message>
+  <Message number="1537" eDefine="">
+    <Title>Bijgewerkte TCP van BullsEye</Title>
+    <Description>De TCP voor hulpprogramma <arg format="%s" ordinal="1" /> is door BECheckTcp bijgewerkt.<p />Taak: <arg format="%s" ordinal="2" /><p />Nieuw TCP: <arg format="%s" ordinal="3" /><p />Wijziging: <arg format="%s" ordinal="4" /><p />Verstreken tijd: <arg format="%s" ordinal="5" /></Description>
+  </Message>
+  <Message number="1538" eDefine="">
+    <Title>De foutopsporing van BullsEye staat aan</Title>
+    <Description>De foutopsporingsmodus is ingeschakeld.<p />Taak: <arg format="%s" ordinal="1" /></Description>
+  </Message>
+  <Message number="1539" eDefine="">
+    <Title>De foutopsporing van BullsEye staat uit</Title>
+    <Description>De foutopsporingsmodus is uitgeschakeld.<p />Taak: <arg format="%s" ordinal="1" /></Description>
+  </Message>
+  <Message number="1540" eDefine="">
+    <Title>BullsEye-fout</Title>
+    <Description>Er is een fout opgetreden.  De oorzaak is niet geïdentificeerd.<p />Taak: <arg format="%s" ordinal="1" /></Description>
+    <Actions>Als het probleem aanhoudt, probeer dan het volgende:<p />1.  Voer de setup-instructie BESetupTooIJ uit om het hulpprogramma opnieuw te initialiseren.<p />2.  Please contact your ABB support representative if problem cannot be corrected.</Actions>
+  </Message>
+  <Message number="1541" eDefine="">
+    <Title>BullsEye TCP OK</Title>
+    <Description>De TCP voor hulpprogramma <arg format="%s" ordinal="1" /> is niet door BECheckTcp bijgewerkt omdat het binnen de tolerantie is.<p />Taak: <arg format="%s" ordinal="2" /><p />Gemeten TCP: <arg format="%s" ordinal="3" /><p />Huidige TCP: <arg format="%s" ordinal="4" /><p />Verstreken tijd: <arg format="%s" ordinal="5" /></Description>
+  </Message>
+</Domain>
