@@ -11,16 +11,16 @@
 		TPWrite "!!!         WITH QUALITY PEOPLE      !!!";
         TPWrite"The cycle time is ="\Num:=ClkRead(clock1);
 		rMainBDisplay;
-		TPReadFK regMainmenu01, stEmpty, "Home", "Service", "Tool", "SelFrame", "Run";
+		TPReadFK regMainmenu01, stEmpty, "Home", "Service", "Tools", "Parts", "Run";
 		TEST regMainmenu01
 		CASE 1:
 			rHome;
 		CASE 2:
 			rService;
 		CASE 3:
-			rManual;
+			rToolsMenu;
 		CASE 4:
-			rSelFrame;
+			rPartsMenu;
 		CASE 5:
 			rRun;
 		ENDTEST

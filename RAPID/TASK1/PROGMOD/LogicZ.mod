@@ -269,13 +269,6 @@ MODULE LogicZ
         B_onlySide1:=FALSE;
 	    AB_Side1:=FALSE;
         bNoPartSide1:=FALSE;
-        
-        bSkid50:=FALSE;
-        bSkid100:=FALSE;   
-        bSkid200:=FALSE;
-        bSide1A100:=FALSE;
-        bSide1A200:=FALSE;
-        bLongWeld:=FALSE;
         bPart1:=FALSE;
         bPart2:=FALSE;
         bPart3:=FALSE;
@@ -307,8 +300,28 @@ MODULE LogicZ
 			TPWrite "Part Selected ==> 300 - B Pos only Side1";
 		ELSEIF AB_Side1 = TRUE THEN
 			TPWrite "Part Selected ==> 300 - A&B Selected Side1";
-		ELSEIF bNoPartSide1 = TRUE THEN
+        ELSEIF bNoPartSide1 = TRUE THEN
 			TPWrite "Part Selected ==> NoPartSide1";	
+        ELSEIF bPart1 = TRUE THEN
+            TPWrite "Part Selected ==> Part 1";
+        ELSEIF bPart2 = TRUE THEN
+            TPWrite "Part Selected ==> Part 2";
+        ELSEIF bPart3 = TRUE THEN
+            TPWrite "Part Selected ==> Part 3";
+        ELSEIF bPart4 = TRUE THEN
+            TPWrite "Part Selected ==> Part 4";
+        ELSEIF bPart5 = TRUE THEN
+            TPWrite "Part Selected ==> Part 5";
+        ELSEIF bPart6 = TRUE THEN
+            TPWrite "Part Selected ==> Part 6";
+        ELSEIF bPart7 = TRUE THEN
+            TPWrite "Part Selected ==> Part 7";
+        ELSEIF bPart8 = TRUE THEN
+            TPWrite "Part Selected ==> Part 8";
+        ELSEIF bPart9 = TRUE THEN
+            TPWrite "Part Selected ==> Part 9";
+        ELSEIF bPart10 = TRUE THEN
+            TPWrite "Part Selected ==> Part 10";
         ELSEIF bSkid50 = TRUE THEN
             TPWrite "Part Selected ==> Skid 50 ";
         ELSEIF bSkid100 = TRUE THEN
