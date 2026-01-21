@@ -16,6 +16,14 @@
     VAR num regManualmenu03:=0;
     VAR num regManualmenu04:=0;
     
+	PROC rToolsMenu()
+		rManual;
+	ENDPROC
+	
+	PROC rPartsMenu()
+		rSelFrame;
+	ENDPROC
+	
 	PROC rManual()
 		TPErase;
 		TPWrite "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
