@@ -270,19 +270,35 @@ MODULE LogicZ
         TPWrite "Run Lawn Rover ==>"\Bool:=bRover;
         TPWrite "Run LongWeld   ==>"\Bool:=bLongWeld;
     ENDPROC        
+    PROC rPartsMenuDisplay()
+        TPWrite "Parts Menu Selection";
+        TPWrite "Part 1  ==>"\Bool:=bPart1;
+        TPWrite "Part 2  ==>"\Bool:=bPart2;
+        TPWrite "Part 3  ==>"\Bool:=bPart3;
+        TPWrite "Part 4  ==>"\Bool:=bPart4;
+        TPWrite "Part 5  ==>"\Bool:=bPart5;
+        TPWrite "Part 6  ==>"\Bool:=bPart6;
+        TPWrite "Part 7  ==>"\Bool:=bPart7;
+        TPWrite "Part 8  ==>"\Bool:=bPart8;
+        TPWrite "Part 9  ==>"\Bool:=bPart9;
+        TPWrite "Part 10 ==>"\Bool:=bPart10;
+    ENDPROC
     PROC rResetBoolS1()
      
         A_onlySide1:=FALSE;
         B_onlySide1:=FALSE;
 	    AB_Side1:=FALSE;
         bNoPartSide1:=FALSE;
-        
-        bSkid50:=FALSE;
-        bSkid100:=FALSE;   
-        bSkid200:=FALSE;
-        bSide1A100:=FALSE;
-        bSide1A200:=FALSE;
-        bLongWeld:=FALSE;
+        bPart1:=FALSE;
+        bPart2:=FALSE;
+        bPart3:=FALSE;
+        bPart4:=FALSE;
+        bPart5:=FALSE;
+        bPart6:=FALSE;
+        bPart7:=FALSE;
+        bPart8:=FALSE;
+        bPart9:=FALSE;
+        bPart10:=FALSE;
 	ENDPROC
 	PROC rResetBoolS2()
 
@@ -304,8 +320,28 @@ MODULE LogicZ
 			TPWrite "Part Selected ==> 300 - B Pos only Side1";
 		ELSEIF AB_Side1 = TRUE THEN
 			TPWrite "Part Selected ==> 300 - A&B Selected Side1";
-		ELSEIF bNoPartSide1 = TRUE THEN
+        ELSEIF bNoPartSide1 = TRUE THEN
 			TPWrite "Part Selected ==> NoPartSide1";	
+        ELSEIF bPart1 = TRUE THEN
+            TPWrite "Part Selected ==> Part 1";
+        ELSEIF bPart2 = TRUE THEN
+            TPWrite "Part Selected ==> Part 2";
+        ELSEIF bPart3 = TRUE THEN
+            TPWrite "Part Selected ==> Part 3";
+        ELSEIF bPart4 = TRUE THEN
+            TPWrite "Part Selected ==> Part 4";
+        ELSEIF bPart5 = TRUE THEN
+            TPWrite "Part Selected ==> Part 5";
+        ELSEIF bPart6 = TRUE THEN
+            TPWrite "Part Selected ==> Part 6";
+        ELSEIF bPart7 = TRUE THEN
+            TPWrite "Part Selected ==> Part 7";
+        ELSEIF bPart8 = TRUE THEN
+            TPWrite "Part Selected ==> Part 8";
+        ELSEIF bPart9 = TRUE THEN
+            TPWrite "Part Selected ==> Part 9";
+        ELSEIF bPart10 = TRUE THEN
+            TPWrite "Part Selected ==> Part 10";
         ELSEIF bSkid50 = TRUE THEN
             TPWrite "Part Selected ==> Skid 50 ";
         ELSEIF bSkid100 = TRUE THEN
