@@ -250,6 +250,19 @@ MODULE LogicZ
         TPWrite "Run Lawn Rover ==>"\Bool:=bRover;
         TPWrite "Run LongWeld   ==>"\Bool:=bLongWeld;
     ENDPROC        
+    PROC rPartsMenuDisplay()
+        TPWrite "Parts Menu Selection";
+        TPWrite "Part 1  ==>"\Bool:=bPart1;
+        TPWrite "Part 2  ==>"\Bool:=bPart2;
+        TPWrite "Part 3  ==>"\Bool:=bPart3;
+        TPWrite "Part 4  ==>"\Bool:=bPart4;
+        TPWrite "Part 5  ==>"\Bool:=bPart5;
+        TPWrite "Part 6  ==>"\Bool:=bPart6;
+        TPWrite "Part 7  ==>"\Bool:=bPart7;
+        TPWrite "Part 8  ==>"\Bool:=bPart8;
+        TPWrite "Part 9  ==>"\Bool:=bPart9;
+        TPWrite "Part 10 ==>"\Bool:=bPart10;
+    ENDPROC
     PROC rResetBoolS1()
      
         A_onlySide1:=FALSE;
@@ -266,13 +279,6 @@ MODULE LogicZ
         bPart8:=FALSE;
         bPart9:=FALSE;
         bPart10:=FALSE;
-        
-        bSkid50:=FALSE;
-        bSkid100:=FALSE;   
-        bSkid200:=FALSE;
-        bSide1A100:=FALSE;
-        bSide1A200:=FALSE;
-        bLongWeld:=FALSE;
 	ENDPROC
 	PROC rResetBoolS2()
 
