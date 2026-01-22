@@ -34,9 +34,6 @@ MODULE LogicZ
 	PERS num nCleanTime:=3.5;
 	PERS num nDisplayTime:=0.9;
     
-    VAR clock clockmain;
-    
-
 	PROC rSetup()
 		TPWrite "Modify Service Positions";
 		MoveJ pPark, v800, fine, tWeldGun;

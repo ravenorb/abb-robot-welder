@@ -1,5 +1,6 @@
 
 MODULE ProgSide1
+	PERS clock clock1;
 	PERS bool bZ_B_onlySide2:=FALSE;
 	PERS bool bZ_B_onlySide1:=FALSE;
 	PERS bool bC_HalfstepSide2:=FALSE;
