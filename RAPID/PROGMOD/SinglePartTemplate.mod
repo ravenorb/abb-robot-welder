@@ -13,8 +13,8 @@ MODULE SinglePartTemplate
   !   - mTSC (optional torch cleaner if you prefer MechCleanGun)
   ! ------------------------------------------------------------------
 
-  PERS bool bUseTorchClean := TRUE;
-  PERS bool bUseBullseye := TRUE;
+  LOCAL PERS bool bUseTorchClean := TRUE;
+  LOCAL PERS bool bUseBullseye := TRUE;
 
   ! Placeholder weld/seam data for the template. Replace with real values.
   TASK PERS welddata weldPart := [0,0,[1,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0]];
