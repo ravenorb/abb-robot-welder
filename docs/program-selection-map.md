@@ -4,13 +4,13 @@ This document maps the pendant menu selections to the underlying RAPID procedure
 
 ## Main menu
 
-`MainModule.main` displays five options and calls the procedures below.【F:RAPID/PROGMOD/MainModule.mod†L6-L35】
+`MainModule.main` displays five options and calls the procedures below.【F:RAPID/PROGMOD/MainModule.mod†L6-L25】
 
 | Menu option | Procedure | Description |
 | --- | --- | --- |
 | Home | `rHome` | Move to home position. 【F:RAPID/PROGMOD/LogicZ.mod†L139-L148】 |
 | Service | `rService` | Move to service position. 【F:RAPID/PROGMOD/LogicZ.mod†L149-L157】 |
-| Tools | `rToolsMenu` | Tooling operations menu. 【F:RAPID/PROGMOD/Side_Menus.mod†L21-L52】 |
+| Nozzle Cln | `rTC2013` | Torch cleaning (wire cut + ream + spray). 【F:RAPID/PROGMOD/LogicZ.mod†L199-L236】 |
 | Parts | `rPartsMenu` | Select Part 1–10. 【F:RAPID/PROGMOD/Side_Menus.mod†L62-L145】 |
 | Run | `rRun` | Execute selected part/program. 【F:RAPID/PROGMOD/LogicZ.mod†L95-L176】 |
 
@@ -20,5 +20,4 @@ This document maps the pendant menu selections to the underlying RAPID procedure
 
 ## Other selection menus
 
-Additional program selection menus are available for skids, side menus, and “Other” programs such as Rover/LongWeld. These menus set other boolean flags consumed by `rRun` or side-specific procedures. 【F:RAPID/PROGMOD/Side_Menus.mod†L146-L260】【F:RAPID/PROGMOD/LogicZ.mod†L95-L176】
-
+Additional program selection menus are available for skids, side menus, and “Other” programs such as Rover/LongWeld, but the main run flow now only uses Part 1–10 selections. 【F:RAPID/PROGMOD/Side_Menus.mod†L146-L260】【F:RAPID/PROGMOD/LogicZ.mod†L73-L100】
