@@ -17,8 +17,8 @@ MODULE Part_6
   LOCAL PERS bool bUseBullseye := TRUE;
 
   ! Placeholder weld/seam data for the template. Replace with real values.
-  TASK PERS welddata weldPart := [0,0,[1,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0]];
-  TASK PERS seamdata seamPart := [1,1,[1,0,0,0,0,0,0,0,0],0,0,0,0,0,[0,0,0,0,0,0,0,0,0],0,0,[0,0,0,0,0,0,0,0,0],0,0,[0,0,0,0,0,0,0,0,0],0];
+  LOCAL TASK PERS welddata weldPart := [0,0,[1,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0]];
+  LOCAL TASK PERS seamdata seamPart := [1,1,[1,0,0,0,0,0,0,0,0],0,0,0,0,0,[0,0,0,0,0,0,0,0,0],0,0,[0,0,0,0,0,0,0,0,0],0,0,[0,0,0,0,0,0,0,0,0],0];
 
   ! Placeholder targets for the weld path. Replace with taught points.
   CONST robtarget pPartApproach := [[-341.99,-1371.18,-117.57],[0.232266,0.668561,-0.669899,0.224308],[-2,-1,1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
