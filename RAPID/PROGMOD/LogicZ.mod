@@ -93,46 +93,8 @@ MODULE LogicZ
             RunPart_9;
         ELSEIF bPart10 THEN
             RunPart_10;
-        ELSEIF A_onlySide1 = TRUE THEN
-            rA_Pos_Side1;
-            
-        ELSEIF  B_onlySide1 = TRUE THEN 
-            rB_Pos_Side1;
-            
-        ELSEIF AB_Side1 = TRUE THEN 
-            rA_Pos_Side1;    
-            rB_Pos_Side1;
-            
-        ELSEIF A_onlyside2 = TRUE THEN 
-            rA_Pos_Side2;
-            
-        ELSEIF B_onlySide2 = TRUE THEN
-            rB_Pos_Side2;
-            
-        ELSEIF AB_Side2 = TRUE THEN 
-            rA_Pos_Side2;    
-            rB_Pos_Side2;    
-        ELSEIF bSkid50 = TRUE THEN
-            TPWrite "Running ProSkid50";
-            ProSkid50;
-        ELSEIF bSkid100 = TRUE THEN
-            TPWrite "Running ProSkid100";
-            ProSkid100;
-        ELSEIF bSkid200 = TRUE THEN
-            TPWrite "Running ProSkid200";
-            ProSkid200;
-        ELSEIF bSide1A100 = TRUE THEN
-            TPWrite "A Running S1 100";
-            rRUNSIDE1A100;
-        ELSEIF bSide1A200 = TRUE THEN
-            TPWrite "A Running S1 200";
-            rRUNSide1A200;
-        ELSEIF bLongWeld = TRUE THEN
-            TPWrite "Running LongWelds";
-            longwelds;
-        ELSEIF bRover = TRUE THEN
-            TPWrite "Running LawnRover";
-            LawnRover;     
+        ELSE
+            TPWrite "No part selected. Choose Part 1-10.";
         ENDIF
         ClkStop clock1;
     	ENDPROC
@@ -314,15 +276,7 @@ MODULE LogicZ
     
 	PROC rMainBDisplay()
 		TPWrite "Menu Display";
-		IF A_onlySide1 = TRUE THEN
-			TPWrite "Part Selected ==> 300 - A Pos only Side1";
-           ELSEIF B_onlySide1 = TRUE THEN
-			TPWrite "Part Selected ==> 300 - B Pos only Side1";
-		ELSEIF AB_Side1 = TRUE THEN
-			TPWrite "Part Selected ==> 300 - A&B Selected Side1";
-        ELSEIF bNoPartSide1 = TRUE THEN
-			TPWrite "Part Selected ==> NoPartSide1";	
-        ELSEIF bPart1 = TRUE THEN
+		IF bPart1 = TRUE THEN
             TPWrite "Part Selected ==> Part 1";
         ELSEIF bPart2 = TRUE THEN
             TPWrite "Part Selected ==> Part 2";
@@ -342,34 +296,8 @@ MODULE LogicZ
             TPWrite "Part Selected ==> Part 9";
         ELSEIF bPart10 = TRUE THEN
             TPWrite "Part Selected ==> Part 10";
-        ELSEIF bSkid50 = TRUE THEN
-            TPWrite "Part Selected ==> Skid 50 ";
-        ELSEIF bSkid100 = TRUE THEN
-            TPWrite "Part Selected ==> Skid 100 ";
-        ELSEIF bSkid200 = TRUE THEN
-            TPWrite "Part Selected ==> Skid 200 ";
-        ELSEIF bSide1A100 = TRUE THEN
-            TPWrite "Part Selected ==> SS100 Side 1A ";
-        ELSEIF bSide1A200 = TRUE THEN
-            TPWrite "Part Selected ==> SS200 Side 1A ";
-        ELSEIF bLongWeld = TRUE THEN
-            TPWrite "Part Selected ==> LongWeld Side 1 ";
 		ELSE
-			TPWrite "Part Selected ==>No Parts Selected Side1";
-		ENDIF
-        
-		IF A_onlySide2 = TRUE THEN
-			TPWrite "Part Selected ==> A Pos only Side2";
-           ELSEIF B_onlySide2 = TRUE THEN
-			TPWrite "Part Selected ==> B Pos only Side2";
-		ELSEIF AB_Side2 = TRUE THEN
-			TPWrite "Part Selected ==> A&B Selected Side2";
-		ELSEIF bNoPartSide2 = TRUE THEN
-			TPWrite "Part Selected ==> NoPartSide2";
-        ELSEIF bRover = TRUE THEN
-            TPWrite "Part Selected ==> Rover";
-        ELSE
-			TPWrite "Part Selected ==>No Parts Selected Side2";
+			TPWrite "Part Selected ==> No part selected";
 		ENDIF
 	!	TPWrite "Count Side1 ==> "\Num:=regPartsCountSide1;
 	!	TPWrite "Count Side2 ==> "\Num:=regPartsCountSide2;

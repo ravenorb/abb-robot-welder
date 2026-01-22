@@ -11,9 +11,9 @@ This repository contains the RAPID program set and controller-side files for an 
 
 ## Operator workflow (high level)
 
-1. Use the main menu to move Home or Service positions, open Tools, select Parts, and start Run. The menu options are built in `MainModule.main` and dispatch to `rHome`, `rService`, `rToolsMenu`, `rPartsMenu`, and `rRun`.【F:RAPID/PROGMOD/MainModule.mod†L6-L35】
-2. Parts are selected in the Parts menus (`rPartsMenu` / `rPartsMenuPage2`) and stored as boolean selections. The chosen selection is shown in the main menu display (`rMainBDisplay`).【F:RAPID/PROGMOD/Side_Menus.mod†L62-L145】【F:RAPID/PROGMOD/LogicZ.mod†L260-L338】
-3. `rRun` in `LogicZ` executes the selected part routine (`RunPart_1` … `RunPart_10`) or other specialized routines (skids, sides, rover, etc.).【F:RAPID/PROGMOD/LogicZ.mod†L95-L176】
+1. Use the main menu to move Home or Service positions, run nozzle cleaning, select Parts, and start Run. The menu options are built in `MainModule.main` and dispatch to `rHome`, `rService`, `rTC2013`, `rPartsMenu`, and `rRun`.【F:RAPID/PROGMOD/MainModule.mod†L6-L28】
+2. Parts are selected in the Parts menus (`rPartsMenu` / `rPartsMenuPage2`) and stored as boolean selections. The chosen selection is shown in the main menu display (`rMainBDisplay`).【F:RAPID/PROGMOD/Side_Menus.mod†L62-L145】【F:RAPID/PROGMOD/LogicZ.mod†L277-L302】
+3. `rRun` in `LogicZ` executes the selected part routine (`RunPart_1` … `RunPart_10`).【F:RAPID/PROGMOD/LogicZ.mod†L73-L100】
 
 ## Part program structure
 
@@ -39,3 +39,8 @@ Operator-facing guides live in `docs/`:
 
 - `RAPID/PROGMOD/SinglePartTemplate.mod` is a ready-to-copy single-part template with optional torch cleaning and BullsEye checks. Edit the targets and seam/weld data, then copy the module for a new part program.【F:RAPID/PROGMOD/SinglePartTemplate.mod†L1-L59】
 
+## Program file pointers
+
+- `RAPID/PROGMOD/ALL_FRAMES.pgf` is the primary program file for loading the RAPID modules from the `RAPID` folder.
+- `HOME/TASK_ALL_FRAMES/PROGMOD/ALL_FRAMES.pgf` remains as the controller-side snapshot used during backups or manual restores (and is the only `.pgf` kept in that folder).
+- `HOME/All_Frames_1.0/PROGMOD/All_Frames_1.0.pgf` is a versioned snapshot retained for reference.
