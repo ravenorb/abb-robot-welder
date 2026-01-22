@@ -39,9 +39,9 @@ MODULE Part_3
       ! Alternative: MechCleanGun;  ! From mTSC.mod
     ENDIF
 
-    MoveJ LogicZ::pHomePos, v800, fine, tWeldGun;
-    MoveJ LogicZ::pSafeS1, v800, fine, tWeldGun;
-    MoveJ LogicZ::pPounceS1, v800, fine, tWeldGun;
+    MoveJ pHomePos, v800, fine, tWeldGun;
+    MoveJ pSafeS1, v800, fine, tWeldGun;
+    MoveJ pPounceS1, v800, fine, tWeldGun;
 
     ! ----------------------------------------------------------------
     ! Single-part weld path (edit only the weld start/end points).
@@ -51,8 +51,8 @@ MODULE Part_3
     ArcLEnd pPartEnd, v30, seamPart, weldPart, fine, tWeldGun;
     MoveL pPartDepart, v200, z10, tWeldGun;
 
-    MoveJ LogicZ::pSafeS1, v800, fine, tWeldGun;
-    MoveJ LogicZ::pHomePos, v800, fine, tWeldGun;
+    MoveJ pSafeS1, v800, fine, tWeldGun;
+    MoveJ pHomePos, v800, fine, tWeldGun;
 
     TPWrite "Single-part template complete";
   ENDPROC
