@@ -46,10 +46,17 @@ MODULE Part_9
     ! ----------------------------------------------------------------
     ! Single-part weld path (edit only the weld start/end points).
     ! ----------------------------------------------------------------
-    MoveL pPartApproach, v200, z10, tWeldGun;
-    ArcLStart pPartStart, v30, seamPart, weldPart, fine, tWeldGun;
-    ArcLEnd pPartEnd, v30, seamPart, weldPart, fine, tWeldGun;
-    MoveL pPartDepart, v200, z10, tWeldGun;
+    IF bDryRun THEN
+      MoveL DryRunTarget(pPartApproach), v200, z10, tWeldGun\WObj:=wobjPart9;
+      MoveL DryRunTarget(pPartStart), v200, z10, tWeldGun\WObj:=wobjPart9;
+      MoveL DryRunTarget(pPartEnd), v200, z10, tWeldGun\WObj:=wobjPart9;
+      MoveL DryRunTarget(pPartDepart), v200, z10, tWeldGun\WObj:=wobjPart9;
+    ELSE
+      MoveL pPartApproach, v200, z10, tWeldGun\WObj:=wobjPart9;
+      ArcLStart pPartStart, v30, seamPart, weldPart, fine, tWeldGun\WObj:=wobjPart9;
+      ArcLEnd pPartEnd, v30, seamPart, weldPart, fine, tWeldGun\WObj:=wobjPart9;
+      MoveL pPartDepart, v200, z10, tWeldGun\WObj:=wobjPart9;
+    ENDIF
 
     MoveJ pSafeS1, v800, fine, tWeldGun;
     MoveJ pHomePos, v800, fine, tWeldGun;
