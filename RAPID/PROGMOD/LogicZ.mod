@@ -24,8 +24,6 @@ MODULE LogicZ
   PERS pose YleftSide2:=[[0,0,0],[1,0,0,0]];
   PERS pose YrightSide1:=[[0,0,0],[1,0,0,0]];
   PERS pose YrightSide2:=[[0,0,0],[1,0,0,0]];
-  PERS num regPartsCountSide1:=0;
-  PERS num regPartsCountSide2:=0;
   CONST speeddata CellSpeed:=[800,500,5000,1000];
   
   CONST robtarget pReamerPounce10:=[[1250.76,-123.19,101.94],[0.00606879,0.163719,0.986488,0.000211333],[-1,-2,1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
@@ -33,6 +31,15 @@ MODULE LogicZ
 	PERS num nSprayTime:=1.2;
 	PERS num nCleanTime:=3.5;
 	PERS num nDisplayTime:=0.9;
+    PERS bool bDryRun:=FALSE;
+    CONST num nDryRunOffset:=203.2;
+
+    FUNC robtarget DryRunTarget(robtarget target)
+        IF bDryRun THEN
+            RETURN Offs(target, 0, 0, nDryRunOffset);
+        ENDIF
+        RETURN target;
+    ENDFUNC
     
 	PROC rSetup()
 		TPWrite "Modify Service Positions";
@@ -199,36 +206,6 @@ MODULE LogicZ
 		MoveJ pHomePos, CellSpeed, fine, tWeldGun;
 	ENDPROC
 
-    ! 
-    ! Bool initialization is located in Prog1 data.
-    
-	PROC rDisplayBoolS1()
-		TPWrite "Run Part A      ==>"\Bool:=A_onlySide1;
-		TPWrite "Run Part B      ==>"\Bool:=B_onlySide1;
-		TPWrite "Run Parts A&B   ==>"\Bool:=AB_Side1;
-		TPWrite "NoPartSide1     ==>"\Bool:=bNoPartSide1;
-     	ENDPROC	
-	PROC rDisplayBoolS2()
-        
-        TPWrite "Run Part A      ==>"\Bool:=A_onlySide2;
-		TPWrite "Run Part B      ==>"\Bool:=B_onlySide2;
-		TPWrite "Run Parts A&B   ==>"\Bool:=AB_Side2;
-		TPWrite "NoPartSide1     ==>"\Bool:=bNoPartSide2;
-
-	ENDPROC
-    PROC rSelSkidBDisplay()
-        TPWrite "Run Skid 50 ==>"\Bool:=bSkid50;
-        TPWrite "Run Skid 100 ==>"\Bool:=bSkid100;
-        TPWrite "Run Skid 200 ==>"\Bool:=bSkid200;
-    ENDPROC
-    PROC rSelPrg100BDisplay()
-        TPWrite "Run SS 100 Side 1A ==>"\Bool:=bSide1A100;
-        TPWrite "Run SS 200 Side 1A ==>"\Bool:=bSide1A200;
-    ENDPROC
-    PROC rSelOtherBDisplay()
-        TPWrite "Run Lawn Rover ==>"\Bool:=bRover;
-        TPWrite "Run LongWeld   ==>"\Bool:=bLongWeld;
-    ENDPROC        
     PROC rPartsMenuDisplay()
         TPWrite "Parts Menu Selection";
         TPWrite "Part 1  ==>"\Bool:=bPart1;
@@ -244,10 +221,6 @@ MODULE LogicZ
     ENDPROC
     PROC rResetBoolS1()
      
-        A_onlySide1:=FALSE;
-        B_onlySide1:=FALSE;
-	    AB_Side1:=FALSE;
-        bNoPartSide1:=FALSE;
         bPart1:=FALSE;
         bPart2:=FALSE;
         bPart3:=FALSE;
@@ -258,15 +231,6 @@ MODULE LogicZ
         bPart8:=FALSE;
         bPart9:=FALSE;
         bPart10:=FALSE;
-	ENDPROC
-	PROC rResetBoolS2()
-
-		A_onlySide2:=FALSE;
-        B_onlySide2:=FALSE;
-	    AB_Side2:=FALSE;
-		bNoPartSide2:=FALSE;
-        bRover:=FALSE;
-	
 	ENDPROC
     
     !rMainBDisplay shows the chosen parameters, selected in the side menus, on the main menu in Mod MainModule.
@@ -296,8 +260,7 @@ MODULE LogicZ
 		ELSE
 			TPWrite "Part Selected ==> No part selected";
 		ENDIF
-	!	TPWrite "Count Side1 ==> "\Num:=regPartsCountSide1;
-	!	TPWrite "Count Side2 ==> "\Num:=regPartsCountSide2;
+        TPWrite "Dry Run     ==> "\Bool:=bDryRun;
     
     ! Copyright Automotive Robotics Company  - All Rights Reserved
     ! File: GNC
@@ -313,12 +276,25 @@ MODULE LogicZ
     !
     ! 
 		ENDPROC
-	PROC rResetPartsCount1()
-		regPartsCountSide1 := 0;
-	ENDPROC
-	PROC rResetPartsCount2()
-		regPartsCountSide2 := 0;
-	ENDPROC
+    PROC rToggleDryRun()
+        IF bDryRun THEN
+            bDryRun := FALSE;
+            TPWrite "Dry Run disabled.";
+        ELSE
+            bDryRun := TRUE;
+            TPWrite "Dry Run enabled (+203.2 mm).";
+        ENDIF
+    ENDPROC
+
+    PROC rResetOffsets()
+        regYskipValOrgS1 := 0;
+        regYskipValOrgS2 := 0;
+        regYskipValRightS1 := 0;
+        regYskipValLeftS1 := 0;
+        regYskipValRightS2 := 0;
+        regYskipValLeftS2 := 0;
+        TPWrite "Offsets reset to 0.";
+    ENDPROC
 
  PROC rGetOffsetS1()
     TPErase;
@@ -362,14 +338,5 @@ MODULE LogicZ
     TPWrite " Offset Station 2   ==> "\Num:=regYskipValOrgS2;
    ENDPROC
    
-
-        
-	PROC rTestPosTop()
-	  rResetSta1;
-	 ENDPROC
-	PROC rTestPosBottom()
-	  rResetSta1;
-	 ENDPROC
-
 
 ENDMODULE

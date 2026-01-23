@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <Program>
-	<Module>playweld.mod</Module>
-	<Module>Weldtest.mod</Module>
 	<Module>BE_User1.mod</Module>
 	<Module>mTSC.mod</Module>
-	<Module>SetupWO.mod</Module>
+	<Module>WorkObjects.mod</Module>
 	<Module>MainModule.mod</Module>
 	<Module>Side_Menus.mod</Module>
 	<Module>ProgSide1.mod</Module>
-	<Module>ProgSide2.mod</Module>
 	<Module>LogicZ.mod</Module>
 	<Module>Part_1.mod</Module>
 	<Module>Part_2.mod</Module>
