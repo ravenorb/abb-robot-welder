@@ -34,7 +34,7 @@ MODULE LogicZ
 	PERS num nCleanTime:=3.5;
 	PERS num nDisplayTime:=0.9;
     
-    VAR clock clockmain;
+    VAR clock clock1;
     
 
 	PROC rSetup()

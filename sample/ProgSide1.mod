@@ -17,7 +17,8 @@ MODULE ProgSide1
     PERS weavedata weave1:=[1,1,3.81,5.08,1.778,0,0,0,0,0,0,0,0,0,0];
 	
     PROC rTeach()
-        <SMT>
+        TPWrite "Teach routine placeholder.";
+        RETURN;
     ENDPROC
     PROC rRUNSide1A300()
         VAR num i;
