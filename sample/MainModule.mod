@@ -9,7 +9,7 @@
 		TPWrite "!!!               GNC                !!!";
 		TPWrite "!!!       BUILDING QUALITY PARTS     !!!";
 		TPWrite "!!!         WITH QUALITY PEOPLE      !!!";
-        TPWrite"The cycle time is ="\Num:=ClkRead(clock1);
+        TPWrite "The cycle time is =" \Num:=ClkRead(clock1);
 		TPReadFK regMainmenu01, stEmpty, "Home", "Service", "Tool", "Teach", "Run";
 		TEST regMainmenu01
 		CASE 1:
