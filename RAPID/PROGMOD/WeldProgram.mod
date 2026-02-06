@@ -1795,6 +1795,13 @@ MODULE WeldProgram
         RETURN p;
     ENDFUNC
 
+    PROC MoveToTeachOrientation(num toolSel)
+        VAR robtarget pOriSafe;
+        MoveJ pSafeS1Weld, v200, z50, tool0;
+        pOriSafe := ApplyOri(pSafeS1Weld, toolSel);
+        MoveJ pOriSafe, v200, z50, tool0;
+    ENDPROC
+
     PROC BuildWeldFromStart(
         robtarget startIn,
         robtarget freeEndIn,
@@ -8353,6 +8360,7 @@ MODULE WeldProgram
             ELSE
                 toolSel := T_OYMID;
             ENDIF
+            MoveToTeachOrientation toolSel;
         ELSEIF major = WT_HORIZ THEN
             TPWrite "Horiz subtype: 21=XUp 22=XDn 23=XMid";
             TPReadNum subType, "";
@@ -8363,14 +8371,22 @@ MODULE WeldProgram
             ELSE
                 toolSel := T_OXMID;
             ENDIF
+            MoveToTeachOrientation toolSel;
         ELSEIF major = WT_FREE THEN
             subType := WSF_FREE;
             TPWrite "Free weld orientation tool: 1=Left 2=Right 3=Up 4=Down 5=YMid 6=XMid";
             TPReadNum toolSel, "";
+            MoveToTeachOrientation toolSel;
         ELSE
             TPWrite "Corner subtype: 31=ULC 32=URC 33=DLC 34=DRC";
             TPReadNum subType, "";
             cornerType := subType;
+            IF cornerType = WSC_ULC OR cornerType = WSC_DLC THEN
+                toolSel := T_OLEFT;
+            ELSE
+                toolSel := T_ORIGHT;
+            ENDIF
+            MoveToTeachOrientation toolSel;
         ENDIF
 
         IF major = WT_CORNER THEN
