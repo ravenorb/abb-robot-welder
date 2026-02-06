@@ -3,9 +3,17 @@ MODULE WeldProgram
     ! =========================
     ! ======= SAFE POS ========
     ! =========================
-    PERS robtarget pSafeS1Weld := [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
-    PERS robtarget pSetup  := [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
-    PERS robtarget pBullseye := [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
+    CONST robtarget pSafeS1 := [[82.84,919.33,1175.90],[0.326608,0.635474,-0.637382,0.288521],[0,0,-1,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
+    PERS robtarget pSafeS1Weld := pSafeS1;
+    PERS robtarget pSetup  := pSafeS1;
+    PERS robtarget pBullseye := pSafeS1;
+
+    ! =========================
+    ! == DEFAULT WELD DATA ====
+    ! =========================
+    CONST seamdata cSeamDefault := [1,1,[1,0,14,127,0,0,0,0,0],0,0,0,0,0,[0,0,0,0,0,0,0,0,0],0,0,[0,0,0,0,0,0,0,0,0],0,0,[0,0,0,0,0,0,0,0,0],0];
+    CONST welddata cWeldDefault := [6.90033,6.90033,[1,0,19,110.71,0,0,0,0,0],[0,0,18.5,110.71,0,0,0,0,0]];
+    CONST weavedata cWeaveDefault := [1,1,3.81,5.08,1.778,0,0,0,0,0,0,0,0,0,0];
 
     ! =========================
     ! == ORIENTATION POSES ====
@@ -16,6 +24,12 @@ MODULE WeldProgram
     PERS robtarget pOri_Down := [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
     PERS robtarget pOri_yMid := [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
     PERS robtarget pOri_xMid := [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
+
+    PROC LoadDefaultWeldData(VAR seamdata seamOut, VAR welddata weldOut, VAR weavedata weaveOut)
+        seamOut := cSeamDefault;
+        weldOut := cWeldDefault;
+        weaveOut := cWeaveDefault;
+    ENDPROC
 
     ! =========================
     ! ===== PART FRAMES =======
@@ -1797,9 +1811,9 @@ MODULE WeldProgram
 
     PROC MoveToTeachOrientation(num toolSel)
         VAR robtarget pOriSafe;
-        MoveJ pSafeS1Weld, v200, z50, tool0;
+        MoveJ pSafeS1Weld, v200, z50, tWeldGun;
         pOriSafe := ApplyOri(pSafeS1Weld, toolSel);
-        MoveJ pOriSafe, v200, z50, tool0;
+        MoveJ pOriSafe, v200, z50, tWeldGun;
     ENDPROC
 
     PROC BuildWeldFromStart(
@@ -1829,147 +1843,147 @@ MODULE WeldProgram
     ! ==== DRY RUN MOVE =======
     ! =========================
     PROC DryRun(robtarget pTrans, robtarget pApp, robtarget pS, robtarget pE, robtarget pRet)
-        MoveL pTrans, v500, z50, tool0;
-        MoveL pApp,   v300, z10, tool0;
-        MoveL pS,     v100, z1,  tool0;
-        MoveL pE,     v100, z1,  tool0;
-        MoveL pRet,   v300, z10, tool0;
-        MoveL pTrans, v500, z50, tool0;
+        MoveL pTrans, v500, z50, tWeldGun;
+        MoveL pApp,   v300, z10, tWeldGun;
+        MoveL pS,     v100, z1,  tWeldGun;
+        MoveL pE,     v100, z1,  tWeldGun;
+        MoveL pRet,   v300, z10, tWeldGun;
+        MoveL pTrans, v500, z50, tWeldGun;
     ENDPROC
 
     PROC SetupP01()
-        MoveJ pSetup, v200, z50, tool0;
+        MoveJ pSetup, v200, z50, tWeldGun;
         TPWrite "Jog to P01 ORIGIN (most x-,y-). Press Play.";
         Stop;
-        P01Origin := CRobT(\Tool:=tool0);
+        P01Origin := CRobT(\Tool:=tWeldGun);
         TPWrite "Jog to P01 MAX (most x+,y+). Press Play.";
         Stop;
-        P01Max := CRobT(\Tool:=tool0);
+        P01Max := CRobT(\Tool:=tWeldGun);
         TPWrite "Jog to P01 Z0 plane (touch wire tip). Press Play.";
         Stop;
-        P01Zoff := CRobT(\Tool:=tool0);
+        P01Zoff := CRobT(\Tool:=tWeldGun);
         wobjP01.uframe.trans := P01Origin.trans;
         wobjP01.uframe.rot := P01Origin.rot;
         wobjP01.oframe.trans := P01Zoff.trans;
         wobjP01.oframe.rot := P01Zoff.rot;
         TPWrite "P01 frame points recorded.";
-        MoveJ pSafeS1Weld, v200, z50, tool0;
+        MoveJ pSafeS1Weld, v200, z50, tWeldGun;
     ENDPROC
 
     PROC SetupP02()
-        MoveJ pSetup, v200, z50, tool0;
+        MoveJ pSetup, v200, z50, tWeldGun;
         TPWrite "Jog to P02 ORIGIN (most x-,y-). Press Play.";
         Stop;
-        P02Origin := CRobT(\Tool:=tool0);
+        P02Origin := CRobT(\Tool:=tWeldGun);
         TPWrite "Jog to P02 MAX (most x+,y+). Press Play.";
         Stop;
-        P02Max := CRobT(\Tool:=tool0);
+        P02Max := CRobT(\Tool:=tWeldGun);
         TPWrite "Jog to P02 Z0 plane (touch wire tip). Press Play.";
         Stop;
-        P02Zoff := CRobT(\Tool:=tool0);
+        P02Zoff := CRobT(\Tool:=tWeldGun);
         wobjP02.uframe.trans := P02Origin.trans;
         wobjP02.uframe.rot := P02Origin.rot;
         wobjP02.oframe.trans := P02Zoff.trans;
         wobjP02.oframe.rot := P02Zoff.rot;
         TPWrite "P02 frame points recorded.";
-        MoveJ pSafeS1Weld, v200, z50, tool0;
+        MoveJ pSafeS1Weld, v200, z50, tWeldGun;
     ENDPROC
 
     PROC SetupP03()
-        MoveJ pSetup, v200, z50, tool0;
+        MoveJ pSetup, v200, z50, tWeldGun;
         TPWrite "Jog to P03 ORIGIN (most x-,y-). Press Play.";
         Stop;
-        P03Origin := CRobT(\Tool:=tool0);
+        P03Origin := CRobT(\Tool:=tWeldGun);
         TPWrite "Jog to P03 MAX (most x+,y+). Press Play.";
         Stop;
-        P03Max := CRobT(\Tool:=tool0);
+        P03Max := CRobT(\Tool:=tWeldGun);
         TPWrite "Jog to P03 Z0 plane (touch wire tip). Press Play.";
         Stop;
-        P03Zoff := CRobT(\Tool:=tool0);
+        P03Zoff := CRobT(\Tool:=tWeldGun);
         wobjP03.uframe.trans := P03Origin.trans;
         wobjP03.uframe.rot := P03Origin.rot;
         wobjP03.oframe.trans := P03Zoff.trans;
         wobjP03.oframe.rot := P03Zoff.rot;
         TPWrite "P03 frame points recorded.";
-        MoveJ pSafeS1Weld, v200, z50, tool0;
+        MoveJ pSafeS1Weld, v200, z50, tWeldGun;
     ENDPROC
 
     PROC SetupP04()
-        MoveJ pSetup, v200, z50, tool0;
+        MoveJ pSetup, v200, z50, tWeldGun;
         TPWrite "Jog to P04 ORIGIN (most x-,y-). Press Play.";
         Stop;
-        P04Origin := CRobT(\Tool:=tool0);
+        P04Origin := CRobT(\Tool:=tWeldGun);
         TPWrite "Jog to P04 MAX (most x+,y+). Press Play.";
         Stop;
-        P04Max := CRobT(\Tool:=tool0);
+        P04Max := CRobT(\Tool:=tWeldGun);
         TPWrite "Jog to P04 Z0 plane (touch wire tip). Press Play.";
         Stop;
-        P04Zoff := CRobT(\Tool:=tool0);
+        P04Zoff := CRobT(\Tool:=tWeldGun);
         wobjP04.uframe.trans := P04Origin.trans;
         wobjP04.uframe.rot := P04Origin.rot;
         wobjP04.oframe.trans := P04Zoff.trans;
         wobjP04.oframe.rot := P04Zoff.rot;
         TPWrite "P04 frame points recorded.";
-        MoveJ pSafeS1Weld, v200, z50, tool0;
+        MoveJ pSafeS1Weld, v200, z50, tWeldGun;
     ENDPROC
 
     PROC SetupP05()
-        MoveJ pSetup, v200, z50, tool0;
+        MoveJ pSetup, v200, z50, tWeldGun;
         TPWrite "Jog to P05 ORIGIN (most x-,y-). Press Play.";
         Stop;
-        P05Origin := CRobT(\Tool:=tool0);
+        P05Origin := CRobT(\Tool:=tWeldGun);
         TPWrite "Jog to P05 MAX (most x+,y+). Press Play.";
         Stop;
-        P05Max := CRobT(\Tool:=tool0);
+        P05Max := CRobT(\Tool:=tWeldGun);
         TPWrite "Jog to P05 Z0 plane (touch wire tip). Press Play.";
         Stop;
-        P05Zoff := CRobT(\Tool:=tool0);
+        P05Zoff := CRobT(\Tool:=tWeldGun);
         wobjP05.uframe.trans := P05Origin.trans;
         wobjP05.uframe.rot := P05Origin.rot;
         wobjP05.oframe.trans := P05Zoff.trans;
         wobjP05.oframe.rot := P05Zoff.rot;
         TPWrite "P05 frame points recorded.";
-        MoveJ pSafeS1Weld, v200, z50, tool0;
+        MoveJ pSafeS1Weld, v200, z50, tWeldGun;
     ENDPROC
 
     PROC SetupP06()
-        MoveJ pSetup, v200, z50, tool0;
+        MoveJ pSetup, v200, z50, tWeldGun;
         TPWrite "Jog to P06 ORIGIN (most x-,y-). Press Play.";
         Stop;
-        P06Origin := CRobT(\Tool:=tool0);
+        P06Origin := CRobT(\Tool:=tWeldGun);
         TPWrite "Jog to P06 MAX (most x+,y+). Press Play.";
         Stop;
-        P06Max := CRobT(\Tool:=tool0);
+        P06Max := CRobT(\Tool:=tWeldGun);
         TPWrite "Jog to P06 Z0 plane (touch wire tip). Press Play.";
         Stop;
-        P06Zoff := CRobT(\Tool:=tool0);
+        P06Zoff := CRobT(\Tool:=tWeldGun);
         wobjP06.uframe.trans := P06Origin.trans;
         wobjP06.uframe.rot := P06Origin.rot;
         wobjP06.oframe.trans := P06Zoff.trans;
         wobjP06.oframe.rot := P06Zoff.rot;
         TPWrite "P06 frame points recorded.";
-        MoveJ pSafeS1Weld, v200, z50, tool0;
+        MoveJ pSafeS1Weld, v200, z50, tWeldGun;
     ENDPROC
 
     PROC TeachOrientation(num toolSel)
-        MoveJ pSetup, v200, z50, tool0;
+        MoveJ pSetup, v200, z50, tWeldGun;
         TPWrite "Jog to orientation, touch bullseye, then press Play.";
         Stop;
         IF toolSel = T_OLEFT THEN
-            pOri_Left := CRobT(\Tool:=tool0);
+            pOri_Left := CRobT(\Tool:=tWeldGun);
         ELSEIF toolSel = T_ORIGHT THEN
-            pOri_Right := CRobT(\Tool:=tool0);
+            pOri_Right := CRobT(\Tool:=tWeldGun);
         ELSEIF toolSel = T_OUP THEN
-            pOri_Up := CRobT(\Tool:=tool0);
+            pOri_Up := CRobT(\Tool:=tWeldGun);
         ELSEIF toolSel = T_ODOWN THEN
-            pOri_Down := CRobT(\Tool:=tool0);
+            pOri_Down := CRobT(\Tool:=tWeldGun);
         ELSEIF toolSel = T_OYMID THEN
-            pOri_yMid := CRobT(\Tool:=tool0);
+            pOri_yMid := CRobT(\Tool:=tWeldGun);
         ELSE
-            pOri_xMid := CRobT(\Tool:=tool0);
+            pOri_xMid := CRobT(\Tool:=tWeldGun);
         ENDIF
         TPWrite "Orientation stored.";
-        MoveJ pSafeS1Weld, v200, z50, tool0;
+        MoveJ pSafeS1Weld, v200, z50, tWeldGun;
     ENDPROC
 
     PROC StoreSlot_P01(num slot, num subType, num toolSel, num lenMM,
@@ -8395,7 +8409,7 @@ MODULE WeldProgram
             lenMM := lenIn*INCH;
             TPWrite "Jog to CORNER point (not start). Press Play.";
             Stop;
-            pStart := CRobT(\Tool:=tool0);
+            pStart := CRobT(\Tool:=tWeldGun);
 
             ! ---- Y leg ----
             IF cornerType = WSC_ULC OR cornerType = WSC_DLC THEN
@@ -8448,14 +8462,14 @@ MODULE WeldProgram
         IF major = WT_FREE THEN
             TPWrite "Jog to FREE WELD START. Press Play.";
             Stop;
-            pStart := CRobT(\Tool:=tool0);
+            pStart := CRobT(\Tool:=tWeldGun);
             TPWrite "Jog to FREE WELD END. Press Play.";
             Stop;
-            pEnd := CRobT(\Tool:=tool0);
+            pEnd := CRobT(\Tool:=tWeldGun);
         ELSE
             TPWrite "Jog to START point. Press Play.";
             Stop;
-            pStart := CRobT(\Tool:=tool0);
+            pStart := CRobT(\Tool:=tWeldGun);
             pEnd := pStart;
         ENDIF
 
@@ -8522,14 +8536,14 @@ MODULE WeldProgram
             TPWrite "Slot is empty.";
             RETURN;
         ENDIF
-        MoveL approach, v100, z10, tool0;
+        MoveL approach, v100, z10, tWeldGun;
         TPWrite "Jog to new start point, then press Play.";
         Stop;
-        pStart := CRobT(\Tool:=tool0);
+        pStart := CRobT(\Tool:=tWeldGun);
         IF subType = WSF_FREE THEN
             TPWrite "Jog to new end point, then press Play.";
             Stop;
-            pEnd := CRobT(\Tool:=tool0);
+            pEnd := CRobT(\Tool:=tWeldGun);
         ELSE
             pEnd := pStart;
         ENDIF
