@@ -1,46 +1,36 @@
 # ABB Robot Welder Program Pack
 
-This repository contains the RAPID program set and controller-side files for an ABB robotic welding cell. The core operator flow is driven by the `MainModule` menu and supporting program modules under `RAPID/PROGMOD`.【F:RAPID/PROGMOD/MainModule.mod†L1-L38】
+This repository contains a full, pendant-friendly RAPID implementation for an ABB welding cell using explicit data declarations (no arrays, no RECORDs). The program is centered on `WeldProgram.mod`, which provides a complete operator flow for teaching orientations, defining part frames, adding welds, and reviewing/editing/deleting weld slots.
 
-## What's in this repo
+## Repository layout
 
-- `RAPID/PROGMOD`: Task-level RAPID modules, including the main menu, part programs, tooling routines, and templates.【F:RAPID/PROGMOD/MainModule.mod†L1-L38】
-- `RAPID/SYSMOD`: System-level RAPID modules (`USER.SYS`, `GAP_USER.SYS`).【F:RAPID/SYSMOD/USER.SYS†L1-L1】
-- `HOME`: Controller-side assets (BullsEye files, logs, templates).【F:HOME/BullsEye/INSTALL.CMD†L1-L1】
-- `system.xml`: Controller system properties and RobotWare media metadata.【F:system.xml†L1-L10】
+- `RAPID/PROGMOD/WeldProgram.mod`: Primary RAPID program with full data model, geometry routines, and operator menus.
+- `docs/`: Operator and stakeholder documentation (manual, architecture, checklists).
+- `sample/`: Legacy reference modules retained for historical context.
+- `HOME/`: Controller-side assets (BullsEye configuration, templates, images).
+- `system.xml`: Controller system properties and RobotWare metadata.
 
-## Operator workflow (high level)
+## Highlights
 
-1. Use the main menu to move Home or Service positions, run nozzle cleaning, select Parts, and start Run. The menu options are built in `MainModule.main` and dispatch to `rHome`, `rService`, `rTC2013`, `rPartsMenu`, and `rRun`.【F:RAPID/PROGMOD/MainModule.mod†L6-L28】
-2. Parts are selected in the Parts menus (`rPartsMenu` / `rPartsMenuPage2`) and stored as boolean selections. The chosen selection is shown in the main menu display (`rMainBDisplay`).【F:RAPID/PROGMOD/Side_Menus.mod†L62-L145】【F:RAPID/PROGMOD/LogicZ.mod†L277-L302】
-3. `rRun` in `LogicZ` executes the selected part routine (`RunPart_1` … `RunPart_10`).【F:RAPID/PROGMOD/LogicZ.mod†L73-L100】
+- **Explicit data model**: 6 parts × 30 weld slots each, stored as individual PERS variables (no indexing tricks).
+- **Geometry from a single taught point**: Approach, arc end, retract, and transverse points are derived using the rules in `WeldProgram.mod`.
+- **Orientation-driven tooling**: Orientation is stored as `pOri_*` robtargets; generated points copy rotation from the selected orientation.
+- **Operator workflow**: Teach orientation → setup part frame → add/review/edit/delete welds using pendant prompts.
 
-## Part program structure
+## Documentation index
 
-Individual part programs follow a common structure:
+- `docs/operator-manual.md`: Full operator walkthrough and safety notes.
+- `docs/program-architecture.md`: Data model, geometry rules, and module structure.
+- `docs/overview-for-management.md`: One-page executive summary.
+- `docs/add-weld-points.md`: How to add weld points (including corner logic).
+- `docs/startup-run-part-program.md`: Startup and run procedure.
+- `docs/step-through-test-program.md`: Dry-run verification flow.
+- `docs/tools-features.md`: Orientation teaching and BullsEye usage.
+- `docs/program-selection-map.md`: Menu/flow map.
+- `docs/operator-checklist.md`: Shift-level checklist.
 
-- Optional BullsEye check (`BECheckToolb`).【F:RAPID/PROGMOD/Part_1.mod†L26-L33】【F:RAPID/PROGMOD/BE_User1.mod†L33-L52】
-- Optional torch cleaning (`rTC2013`) or alternative cleaner (`MechCleanGun`).【F:RAPID/PROGMOD/Part_1.mod†L35-L40】【F:RAPID/PROGMOD/LogicZ.mod†L199-L236】【F:RAPID/PROGMOD/mTSC.mod†L70-L110】
-- Move through Home → Safe → Pounce positions before the weld path.【F:RAPID/PROGMOD/Part_1.mod†L42-L47】【F:RAPID/PROGMOD/LogicZ.mod†L2-L9】
-- Weld path defined by approach/start/end/depart targets and seam/weld data.【F:RAPID/PROGMOD/Part_1.mod†L18-L60】
+## How to load the program
 
-## Documentation
-
-Operator-facing guides live in `docs/`:
-
-- `docs/startup-run-part-program.md`: Start-up and run workflow for the current part program.
-- `docs/add-weld-points.md`: How to add weld points and update seam/weld data.
-- `docs/step-through-test-program.md`: Slow, step-by-step verification of weld points.
-- `docs/tools-features.md`: Tooling features (torch cleaning, BullsEye).
-- `docs/program-selection-map.md`: Menu map and selection logic.
-- `docs/operator-checklist.md`: Operator checklist for shifts and program changes.
-
-## Helpful templates
-
-- `RAPID/PROGMOD/SinglePartTemplate.mod` is a ready-to-copy single-part template with optional torch cleaning and BullsEye checks. Edit the targets and seam/weld data, then copy the module for a new part program.【F:RAPID/PROGMOD/SinglePartTemplate.mod†L1-L59】
-
-## Program file pointers
-
-- `RAPID/PROGMOD/ALL_FRAMES.pgf` is the primary program file for loading the RAPID modules from the `RAPID` folder.
-- `HOME/TASK_ALL_FRAMES/PROGMOD/ALL_FRAMES.pgf` remains as the controller-side snapshot used during backups or manual restores (and is the only `.pgf` kept in that folder).
-- `HOME/All_Frames_1.0/PROGMOD/All_Frames_1.0.pgf` is a versioned snapshot retained for reference.
+1. Load the RAPID module `RAPID/PROGMOD/WeldProgram.mod` into the controller task.
+2. Ensure the robot has `tool0` configured and the BullsEye target is accessible.
+3. From the pendant, run `WeldProgram.main` to access setup and welding menus.
