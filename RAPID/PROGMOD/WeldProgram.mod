@@ -25,12 +25,6 @@ MODULE WeldProgram
     PERS robtarget pOri_yMid := [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
     PERS robtarget pOri_xMid := [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
 
-    PROC LoadDefaultWeldData(VAR seamdata seamOut, VAR welddata weldOut, VAR weavedata weaveOut)
-        seamOut := cSeamDefault;
-        weldOut := cWeldDefault;
-        weaveOut := cWeaveDefault;
-    ENDPROC
-
     ! =========================
     ! ===== PART FRAMES =======
     ! =========================
@@ -1735,6 +1729,12 @@ MODULE WeldProgram
     CONST num T_ODOWN := 4;
     CONST num T_OYMID := 5;
     CONST num T_OXMID := 6;
+
+    PROC LoadDefaultWeldData(VAR seamdata seamOut, VAR welddata weldOut, VAR weavedata weaveOut)
+        seamOut := cSeamDefault;
+        weldOut := cWeldDefault;
+        weaveOut := cWeaveDefault;
+    ENDPROC
 
     ! =========================
     ! ===== ORI PICKER ========
