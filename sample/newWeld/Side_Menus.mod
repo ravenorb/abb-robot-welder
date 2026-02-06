@@ -212,11 +212,12 @@
 		TPWrite "!!!        Select Parts to Run       !!!";
 		TPWrite "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
 		rSelOtherBDisplay;
-		TPReadFK regSelmenu05, "Select Part", stEmpty, stEmpty, "Rover", "LongWeld", "Return";
+		TPReadFK regSelmenu05, "Select Part", stEmpty, "New Weld Prog", "Rover", "LongWeld", "Return";
 		TEST regSelmenu05
 		CASE 1:
 			rSelOther;
 		CASE 2:
+			mainweld;
 			rSelOther;
 		CASE 3:
 			!rResetBoolS2;
