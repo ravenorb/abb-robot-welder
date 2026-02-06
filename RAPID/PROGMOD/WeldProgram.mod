@@ -3,7 +3,7 @@ MODULE WeldProgram
     ! =========================
     ! ======= SAFE POS ========
     ! =========================
-    PERS robtarget pSafeS1 := [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
+    PERS robtarget pSafeS1Weld := [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
     PERS robtarget pSetup  := [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
     PERS robtarget pBullseye := [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
 
@@ -1845,7 +1845,7 @@ MODULE WeldProgram
         wobjP01.oframe.trans := P01Zoff.trans;
         wobjP01.oframe.rot := P01Zoff.rot;
         TPWrite "P01 frame points recorded.";
-        MoveJ pSafeS1, v200, z50, tool0;
+        MoveJ pSafeS1Weld, v200, z50, tool0;
     ENDPROC
 
     PROC SetupP02()
@@ -1864,7 +1864,7 @@ MODULE WeldProgram
         wobjP02.oframe.trans := P02Zoff.trans;
         wobjP02.oframe.rot := P02Zoff.rot;
         TPWrite "P02 frame points recorded.";
-        MoveJ pSafeS1, v200, z50, tool0;
+        MoveJ pSafeS1Weld, v200, z50, tool0;
     ENDPROC
 
     PROC SetupP03()
@@ -1883,7 +1883,7 @@ MODULE WeldProgram
         wobjP03.oframe.trans := P03Zoff.trans;
         wobjP03.oframe.rot := P03Zoff.rot;
         TPWrite "P03 frame points recorded.";
-        MoveJ pSafeS1, v200, z50, tool0;
+        MoveJ pSafeS1Weld, v200, z50, tool0;
     ENDPROC
 
     PROC SetupP04()
@@ -1902,7 +1902,7 @@ MODULE WeldProgram
         wobjP04.oframe.trans := P04Zoff.trans;
         wobjP04.oframe.rot := P04Zoff.rot;
         TPWrite "P04 frame points recorded.";
-        MoveJ pSafeS1, v200, z50, tool0;
+        MoveJ pSafeS1Weld, v200, z50, tool0;
     ENDPROC
 
     PROC SetupP05()
@@ -1921,7 +1921,7 @@ MODULE WeldProgram
         wobjP05.oframe.trans := P05Zoff.trans;
         wobjP05.oframe.rot := P05Zoff.rot;
         TPWrite "P05 frame points recorded.";
-        MoveJ pSafeS1, v200, z50, tool0;
+        MoveJ pSafeS1Weld, v200, z50, tool0;
     ENDPROC
 
     PROC SetupP06()
@@ -1940,7 +1940,7 @@ MODULE WeldProgram
         wobjP06.oframe.trans := P06Zoff.trans;
         wobjP06.oframe.rot := P06Zoff.rot;
         TPWrite "P06 frame points recorded.";
-        MoveJ pSafeS1, v200, z50, tool0;
+        MoveJ pSafeS1Weld, v200, z50, tool0;
     ENDPROC
 
     PROC TeachOrientation(num toolSel)
@@ -1961,7 +1961,7 @@ MODULE WeldProgram
             pOri_xMid := CRobT(\Tool:=tool0);
         ENDIF
         TPWrite "Orientation stored.";
-        MoveJ pSafeS1, v200, z50, tool0;
+        MoveJ pSafeS1Weld, v200, z50, tool0;
     ENDPROC
 
     PROC StoreSlot_P01(num slot, num subType, num toolSel, num lenMM,
@@ -8340,11 +8340,11 @@ MODULE WeldProgram
         VAR num cornerType;
 
         TPWrite "Add Weld - choose type: 1=Vert 2=Horiz 3=Corner 4=Free";
-        TPReadNum major;
+        TPReadNum major, "";
 
         IF major = WT_VERT THEN
             TPWrite "Vert subtype: 11=YLeft 12=YRight 13=YMid";
-            TPReadNum subType;
+            TPReadNum subType, "";
             IF subType = WSV_YLEFT THEN
                 toolSel := T_OLEFT;
             ELSEIF subType = WSV_YRIGHT THEN
@@ -8354,7 +8354,7 @@ MODULE WeldProgram
             ENDIF
         ELSEIF major = WT_HORIZ THEN
             TPWrite "Horiz subtype: 21=XUp 22=XDn 23=XMid";
-            TPReadNum subType;
+            TPReadNum subType, "";
             IF subType = WSH_XUP THEN
                 toolSel := T_OUP;
             ELSEIF subType = WSH_XDN THEN
@@ -8365,16 +8365,16 @@ MODULE WeldProgram
         ELSEIF major = WT_FREE THEN
             subType := WSF_FREE;
             TPWrite "Free weld orientation tool: 1=Left 2=Right 3=Up 4=Down 5=YMid 6=XMid";
-            TPReadNum toolSel;
+            TPReadNum toolSel, "";
         ELSE
             TPWrite "Corner subtype: 31=ULC 32=URC 33=DLC 34=DRC";
-            TPReadNum subType;
+            TPReadNum subType, "";
             cornerType := subType;
         ENDIF
 
         IF major = WT_CORNER THEN
             TPWrite "Enter corner length (inches):";
-            TPReadNum lenIn;
+            TPReadNum lenIn, "";
             lenMM := lenIn*INCH;
             TPWrite "Jog to CORNER point (not start). Press Play.";
             Stop;
@@ -8422,7 +8422,7 @@ MODULE WeldProgram
 
         IF major <> WT_FREE THEN
             TPWrite "Enter weld length (inches):";
-            TPReadNum lenIn;
+            TPReadNum lenIn, "";
             lenMM := lenIn*INCH;
         ELSE
             lenMM := 0;
@@ -8448,11 +8448,11 @@ MODULE WeldProgram
 
         IF major = WT_VERT OR major = WT_HORIZ THEN
             TPWrite "Repeat? 1=Yes 0=No";
-            TPReadNum lenIn;
+            TPReadNum lenIn, "";
             repeat := (lenIn = 1);
             WHILE repeat DO
                 TPWrite "Enter distance to next start (inches, +/-):";
-                TPReadNum distIn;
+                TPReadNum distIn, "";
                 distMM := distIn*INCH;
                 IF major = WT_VERT THEN
                     pStart := Offs(pStart, 0, distMM, 0);
@@ -8463,7 +8463,7 @@ MODULE WeldProgram
                 StoreNextFree partNum, subType, toolSel, lenMM, aS, aE, aA, aR, aT;
                 DryRun aT, aA, aS, aE, aR;
                 TPWrite "Repeat again? 1=Yes 0=No";
-                TPReadNum lenIn;
+                TPReadNum lenIn, "";
                 repeat := (lenIn = 1);
             ENDWHILE
         ENDIF
@@ -8518,7 +8518,7 @@ MODULE WeldProgram
         ENDIF
         IF subType <> WSF_FREE THEN
             TPWrite "Enter length (inches) to keep or update:";
-            TPReadNum lenIn;
+            TPReadNum lenIn, "";
             lenMM := lenIn*INCH;
         ENDIF
         BuildWeldFromStart pStart, pEnd, subType, toolSel, lenMM, arcStart, arcEnd, approach, retract, trans;
@@ -8529,23 +8529,23 @@ MODULE WeldProgram
     PROC DeleteWeld(num partNum, num slot)
         VAR num confirm;
         TPWrite "Delete weld slot? 1=Yes 0=No";
-        TPReadNum confirm;
+        TPReadNum confirm, "";
         IF confirm = 1 THEN
             ClearSlot partNum, slot;
             TPWrite "Weld deleted.";
         ENDIF
     ENDPROC
 
-    PROC main()
+    PROC mainweld()
         VAR num partNum;
         VAR num choice;
         TPWrite "Select Part (1-6):";
-        TPReadNum partNum;
+        TPReadNum partNum, "";
         TPWrite "1=Teach Ori 2=Setup Part 3=Add Weld 4=Review 5=Edit 6=Delete";
-        TPReadNum choice;
+        TPReadNum choice, "";
         IF choice = 1 THEN
             TPWrite "Tool: 1=Left 2=Right 3=Up 4=Down 5=YMid 6=XMid";
-            TPReadNum choice;
+            TPReadNum choice, "";
             TeachOrientation choice;
         ELSEIF choice = 2 THEN
             IF partNum = 1 THEN
@@ -8567,15 +8567,15 @@ MODULE WeldProgram
             AddWeld partNum;
         ELSEIF choice = 4 THEN
             TPWrite "Enter weld slot to review (1-30):";
-            TPReadNum choice;
+            TPReadNum choice, "";
             ReviewWeld partNum, choice;
         ELSEIF choice = 5 THEN
             TPWrite "Enter weld slot to edit (1-30):";
-            TPReadNum choice;
+            TPReadNum choice, "";
             EditWeld partNum, choice;
         ELSEIF choice = 6 THEN
             TPWrite "Enter weld slot to delete (1-30):";
-            TPReadNum choice;
+            TPReadNum choice, "";
             DeleteWeld partNum, choice;
         ELSE
             TPWrite "Invalid selection.";
