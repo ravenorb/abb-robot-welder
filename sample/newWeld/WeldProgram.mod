@@ -1736,17 +1736,68 @@ MODULE WeldProgram
         RETURN FALSE;
     ENDFUNC
 
-    PROC RequireInitialized(robtarget p, string label)
+    PROC RequireInitialized(VAR robtarget p, string label)
         IF IsRobtargetUninit(p) THEN
-            TPWrite "Robtarget not initialized: ";
-            TPWrite "Teach/setup this target before running.";
+            TPWrite label + " not initialized.";
+            TPWrite "Jog to target, then press Play.";
             Stop;
+            p := CRobT(\Tool:=tWeldGun);
+            TPWrite label + " recorded.";
         ENDIF
     ENDPROC
 
     PROC RequireSetupTargets()
-        RequireInitialized pSetup, "pSetup";
-        RequireInitialized pSafeS1Weld, "pSafeS1Weld";
+        RequireInitialized pSetup, "pSetup (setup pose)";
+        RequireInitialized pSafeS1Weld, "pSafeS1Weld (safe weld pose)";
+    ENDPROC
+
+    PROC EnsurePartTargets(VAR robtarget origin, VAR robtarget max, VAR robtarget zoff,
+                           VAR wobjdata wobj, string label)
+        VAR bool missing;
+        missing := IsRobtargetUninit(origin) OR IsRobtargetUninit(max) OR IsRobtargetUninit(zoff);
+        IF missing THEN
+            RequireSetupTargets;
+            MoveJ pSetup, v200, z50, tWeldGun;
+            IF IsRobtargetUninit(origin) THEN
+                TPWrite "Jog to " + label + " ORIGIN (most x-,y-). Press Play.";
+                Stop;
+                origin := CRobT(\Tool:=tWeldGun);
+            ENDIF
+            IF IsRobtargetUninit(max) THEN
+                TPWrite "Jog to " + label + " MAX (most x+,y+). Press Play.";
+                Stop;
+                max := CRobT(\Tool:=tWeldGun);
+            ENDIF
+            IF IsRobtargetUninit(zoff) THEN
+                TPWrite "Jog to " + label + " Z0 plane (touch wire tip). Press Play.";
+                Stop;
+                zoff := CRobT(\Tool:=tWeldGun);
+            ENDIF
+            wobj.uframe.trans := origin.trans;
+            wobj.uframe.rot := origin.rot;
+            wobj.oframe.trans := zoff.trans;
+            wobj.oframe.rot := zoff.rot;
+            TPWrite label + " frame points recorded.";
+            MoveJ pSafeS1Weld, v200, z50, tWeldGun;
+        ENDIF
+    ENDPROC
+
+    PROC EnsurePartFrame(num partNum)
+        IF partNum = 1 THEN
+            EnsurePartTargets P01Origin, P01Max, P01Zoff, wobjP01, "P01";
+        ELSEIF partNum = 2 THEN
+            EnsurePartTargets P02Origin, P02Max, P02Zoff, wobjP02, "P02";
+        ELSEIF partNum = 3 THEN
+            EnsurePartTargets P03Origin, P03Max, P03Zoff, wobjP03, "P03";
+        ELSEIF partNum = 4 THEN
+            EnsurePartTargets P04Origin, P04Max, P04Zoff, wobjP04, "P04";
+        ELSEIF partNum = 5 THEN
+            EnsurePartTargets P05Origin, P05Max, P05Zoff, wobjP05, "P05";
+        ELSEIF partNum = 6 THEN
+            EnsurePartTargets P06Origin, P06Max, P06Zoff, wobjP06, "P06";
+        ELSE
+            TPWrite "Invalid part selection.";
+        ENDIF
     ENDPROC
 
     ! =========================
@@ -1767,6 +1818,15 @@ MODULE WeldProgram
             RETURN pOri_xMid;
         ENDIF
     ENDFUNC
+
+    PROC EnsureOrientation(num toolSel)
+        VAR robtarget o;
+        o := GetOriPose(toolSel);
+        IF IsRobtargetUninit(o) THEN
+            TPWrite "Orientation not initialized.";
+            TeachOrientation toolSel;
+        ENDIF
+    ENDPROC
 
     ! =========================
     ! ===== GEOMETRY ==========
@@ -1815,8 +1875,8 @@ MODULE WeldProgram
 
     PROC ApplyOri(VAR robtarget p, num toolSel)
         VAR robtarget o;
+        EnsureOrientation toolSel;
         o := GetOriPose(toolSel);
-        RequireInitialized o, "Orientation";
         p.rot := o.rot;
         p.robconf := o.robconf;
         p.extax := o.extax;
@@ -8574,6 +8634,7 @@ MODULE WeldProgram
     PROC mainweld()
         VAR num partNum;
         VAR num choice;
+        EnsurePartFrame 1;
         TPWrite "Select Part (1-6):";
         TPReadNum partNum, "";
         TPWrite "1=Teach Ori 2=Setup Part 3=Add Weld 4=Review 5=Edit 6=Delete";
@@ -8599,16 +8660,20 @@ MODULE WeldProgram
                 TPWrite "Invalid part selection.";
             ENDIF
         ELSEIF choice = 3 THEN
+            EnsurePartFrame partNum;
             AddWeld partNum;
         ELSEIF choice = 4 THEN
+            EnsurePartFrame partNum;
             TPWrite "Enter weld slot to review (1-30):";
             TPReadNum choice, "";
             ReviewWeld partNum, choice;
         ELSEIF choice = 5 THEN
+            EnsurePartFrame partNum;
             TPWrite "Enter weld slot to edit (1-30):";
             TPReadNum choice, "";
             EditWeld partNum, choice;
         ELSEIF choice = 6 THEN
+            EnsurePartFrame partNum;
             TPWrite "Enter weld slot to delete (1-30):";
             TPReadNum choice, "";
             DeleteWeld partNum, choice;
