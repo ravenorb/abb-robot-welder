@@ -1786,13 +1786,14 @@ MODULE WeldProgram
         RETURN Offs(retract, 0, 0, +cTransZ);
     ENDFUNC
 
-    PROC ApplyOri(VAR robtarget p, num toolSel)
+    FUNC robtarget ApplyOri(robtarget p, num toolSel)
         VAR robtarget o;
         o := GetOriPose(toolSel);
         p.rot := o.rot;
         p.robconf := o.robconf;
         p.extax := o.extax;
-    ENDPROC
+        RETURN p;
+    ENDFUNC
 
     PROC BuildWeldFromStart(
         robtarget startIn,
@@ -1806,15 +1807,15 @@ MODULE WeldProgram
         VAR robtarget retract,
         VAR robtarget trans)
         arcStart := startIn;
-        ApplyOri arcStart, toolSel;
+        arcStart := ApplyOri(arcStart, toolSel);
         arcEnd := CalcArcEnd(arcStart, subType, lenMM, freeEndIn);
-        ApplyOri arcEnd, toolSel;
+        arcEnd := ApplyOri(arcEnd, toolSel);
         approach := CalcApproach(arcStart, subType);
-        ApplyOri approach, toolSel;
+        approach := ApplyOri(approach, toolSel);
         retract := CalcRetract(arcEnd, subType);
-        ApplyOri retract, toolSel;
+        retract := ApplyOri(retract, toolSel);
         trans := CalcTransverse(retract);
-        ApplyOri trans, toolSel;
+        trans := ApplyOri(trans, toolSel);
     ENDPROC
 
     ! =========================
