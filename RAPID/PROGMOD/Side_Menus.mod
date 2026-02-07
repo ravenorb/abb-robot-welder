@@ -15,6 +15,195 @@
     VAR num regManualmenu02:=0;
     VAR num regManualmenu03:=0;
     VAR num regManualmenu04:=0;
+    VAR num regPositionMenu:=0;
+    VAR num regUtilitiesMenu:=0;
+    VAR num regSetupMenu:=0;
+    VAR num regRunMenu:=0;
+    VAR num regOrientationMenu:=0;
+    VAR num regFrameMenu:=0;
+    VAR num regSafePosMenu:=0;
+    VAR num regSpeedMenu:=0;
+    VAR num regSpeedTypeMenu:=0;
+
+	PROC rPositionMenu()
+		TPErase;
+		TPWrite "Position Menu";
+		TPReadFK regPositionMenu, stEmpty, "Home", "Service", "BullsEye ck", "Fixture ck", "Return";
+		TEST regPositionMenu
+		CASE 1:
+			rHome;
+		CASE 2:
+			rService;
+		CASE 3:
+			MoveJ pBullseye, v200, fine, tWeldGun;
+		CASE 4:
+			MoveJ pFixtureCheck, v200, fine, tWeldGun;
+		CASE 5:
+			RETURN;
+		ENDTEST
+	ENDPROC
+
+	PROC rUtilitiesMenu()
+		TPErase;
+		TPWrite "Utilities Menu";
+		TPReadFK regUtilitiesMenu, stEmpty, "Align Torch", "Clean Torch", "Bullseye Setup", "Torch Setup", "Return";
+		TEST regUtilitiesMenu
+		CASE 1:
+			BECheckToolb;
+		CASE 2:
+			rTC2013;
+		CASE 3:
+			BESetUpToolb;
+		CASE 4:
+			rTorchSetup;
+		CASE 5:
+			RETURN;
+		ENDTEST
+	ENDPROC
+
+	PROC rSetupMenu()
+		TPErase;
+		TPWrite "Setup Menu";
+		TPReadFK regSetupMenu, stEmpty, "Orientation", "Frames", "WeldDATA", "SafePOS", "Speeds", "Return";
+		TEST regSetupMenu
+		CASE 1:
+			rOrientationMenu;
+		CASE 2:
+			rFrameMenu;
+		CASE 3:
+			ShowWeldDefaults;
+		CASE 4:
+			rSafePosMenu;
+		CASE 5:
+			rSpeedsMenu;
+		CASE 6:
+			RETURN;
+		ENDTEST
+	ENDPROC
+
+	PROC rOrientationMenu()
+		TPErase;
+		TPWrite "Orientation Setup";
+		TPReadFK regOrientationMenu, stEmpty, "Left", "Right", "Up", "Down", "YMid", "XMid";
+		TEST regOrientationMenu
+		CASE 1:
+			TeachOrientation T_OLEFT;
+		CASE 2:
+			TeachOrientation T_ORIGHT;
+		CASE 3:
+			TeachOrientation T_OUP;
+		CASE 4:
+			TeachOrientation T_ODOWN;
+		CASE 5:
+			TeachOrientation T_OYMID;
+		CASE 6:
+			TeachOrientation T_OXMID;
+		ENDTEST
+	ENDPROC
+
+	PROC rFrameMenu()
+		VAR num partNum;
+		TPErase;
+		TPWrite "Frames Setup - Select Part (1-6)";
+		TPReadNum partNum, "";
+		IF partNum = 1 THEN
+			TPWrite "Frame P01";
+			TPWrite "Origin:", P01Origin;
+			TPWrite "Max:   ", P01Max;
+			TPWrite "Z Off: ", P01Zoff;
+			TPWrite "WObj:  ", wobjP01;
+			SetupP01;
+		ELSEIF partNum = 2 THEN
+			TPWrite "Frame P02";
+			TPWrite "Origin:", P02Origin;
+			TPWrite "Max:   ", P02Max;
+			TPWrite "Z Off: ", P02Zoff;
+			TPWrite "WObj:  ", wobjP02;
+			SetupP02;
+		ELSEIF partNum = 3 THEN
+			TPWrite "Frame P03";
+			TPWrite "Origin:", P03Origin;
+			TPWrite "Max:   ", P03Max;
+			TPWrite "Z Off: ", P03Zoff;
+			TPWrite "WObj:  ", wobjP03;
+			SetupP03;
+		ELSEIF partNum = 4 THEN
+			TPWrite "Frame P04";
+			TPWrite "Origin:", P04Origin;
+			TPWrite "Max:   ", P04Max;
+			TPWrite "Z Off: ", P04Zoff;
+			TPWrite "WObj:  ", wobjP04;
+			SetupP04;
+		ELSEIF partNum = 5 THEN
+			TPWrite "Frame P05";
+			TPWrite "Origin:", P05Origin;
+			TPWrite "Max:   ", P05Max;
+			TPWrite "Z Off: ", P05Zoff;
+			TPWrite "WObj:  ", wobjP05;
+			SetupP05;
+		ELSEIF partNum = 6 THEN
+			TPWrite "Frame P06";
+			TPWrite "Origin:", P06Origin;
+			TPWrite "Max:   ", P06Max;
+			TPWrite "Z Off: ", P06Zoff;
+			TPWrite "WObj:  ", wobjP06;
+			SetupP06;
+		ENDIF
+	ENDPROC
+
+	PROC rSafePosMenu()
+		TPErase;
+		TPWrite "Safe Positions";
+		TPReadFK regSafePosMenu, stEmpty, "SafeS1", "SafeS1Weld", "Setup", "Bullseye", "Fixture", "Return";
+		TEST regSafePosMenu
+		CASE 1:
+			TeachSafePos 1;
+		CASE 2:
+			TeachSafePos 2;
+		CASE 3:
+			TeachSafePos 3;
+		CASE 4:
+			TeachSafePos 4;
+		CASE 5:
+			TeachSafePos 5;
+		CASE 6:
+			RETURN;
+		ENDTEST
+	ENDPROC
+
+	PROC rSpeedsMenu()
+		TPErase;
+		TPWrite "Speeds Menu";
+		TPReadFK regSpeedMenu, stEmpty, "Preview", "Production", "Return";
+		TEST regSpeedMenu
+		CASE 1:
+			EditSpeedMenu 1;
+		CASE 2:
+			EditSpeedMenu 2;
+		CASE 3:
+			RETURN;
+		ENDTEST
+	ENDPROC
+
+	PROC rRunMenu()
+		TPErase;
+		ShowRunSummary;
+		TPReadFK regRunMenu, stEmpty, "Run Parts", "Preview", "Edit", "Teach", "Reset", "Return";
+		TEST regRunMenu
+		CASE 1:
+			rRun;
+		CASE 2:
+			PreviewEnabledParts;
+		CASE 3:
+			EditPartSettings;
+		CASE 4:
+			TeachMenu;
+		CASE 5:
+			ResetMenu;
+		CASE 6:
+			RETURN;
+		ENDTEST
+	ENDPROC
     
 	PROC rManual()
 		TPErase;

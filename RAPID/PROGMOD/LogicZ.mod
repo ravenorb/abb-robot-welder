@@ -8,11 +8,13 @@ MODULE LogicZ
 	CONST robtarget pHomePos:=[[877.74,-1.12,1156.39],[0.00629838,0.001748,0.999978,-0.000488105],[-1,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
 	CONST robtarget pServiceS1:=[[-139.48,-775.51,888.19],[0.0651308,-0.76387,-0.637482,-0.0766646],[-2,-1,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
 	CONST robtarget pSVCs1:=[[455.65,-140.80,351.09],[0.0313309,-0.185516,-0.982,-0.016678],[-1,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-	CONST robtarget pAtReamer:=[[1039.53,-98.06,-74.23],[0.00477736,0.0423196,-0.99906,0.00808312],[-1,1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-	CONST robtarget pReamerPounce:=[[1038.34,-98.07,11.79],[0.00476329,0.0423182,-0.99906,0.00808266],[-1,1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];  
-	CONST robtarget pWireCutterPounce:=[[1175.35,-119.56,-107.51],[0.0115519,-0.0317514,0.999402,-0.00740941],[-1,1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-	CONST robtarget pWireCutterApproach:=[[1148.86,-124.46,-111.06],[0.0308489,-0.23618,0.971138,0.0125575],[-1,1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];	
-	CONST robtarget pWireCut:=[[1175.35,-119.56,-127.71],[0.011553,-0.0317519,0.999402,-0.00740939],[-1,1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	PERS robtarget pAtReamer:=[[1039.53,-98.06,-74.23],[0.00477736,0.0423196,-0.99906,0.00808312],[-1,1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	PERS robtarget pReamerPounce:=[[1038.34,-98.07,11.79],[0.00476329,0.0423182,-0.99906,0.00808266],[-1,1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];  
+	PERS robtarget pReamerTrans:=[[1038.34,-98.07,111.79],[0.00476329,0.0423182,-0.99906,0.00808266],[-1,1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	PERS robtarget pWireCutterPounce:=[[1175.35,-119.56,-107.51],[0.0115519,-0.0317514,0.999402,-0.00740941],[-1,1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	PERS robtarget pWireCutterApproach:=[[1148.86,-124.46,-111.06],[0.0308489,-0.23618,0.971138,0.0125575],[-1,1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];	
+	PERS robtarget pWireCutterTrans:=[[1148.86,-124.46,-11.06],[0.0308489,-0.23618,0.971138,0.0125575],[-1,1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	PERS robtarget pWireCut:=[[1175.35,-119.56,-127.71],[0.011553,-0.0317519,0.999402,-0.00740939],[-1,1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
 	CONST robtarget pHomePos10:=[[1194.18,-118.52,457.68],[0.0181154,0.235986,-0.971583,0.00284814],[-1,0,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
   PERS num regYskipValOrgS1:=25.4;
   PERS num regYskipValOrgS2:=25.4;
@@ -33,6 +35,9 @@ MODULE LogicZ
 	PERS num nSprayTime:=1.2;
 	PERS num nCleanTime:=3.5;
 	PERS num nDisplayTime:=0.9;
+    CONST num cTorchApproachZ := 75;
+    CONST num cTorchRetractZ := 35;
+    CONST num cTorchTransZ := 150;
     
     VAR clock clockmain;
     
@@ -40,27 +45,27 @@ MODULE LogicZ
 	PROC rSetup()
 		TPWrite "Modify Service Positions";
 		MoveJ pPark, v800, fine, tWeldGun;
-		Stop;
+		Stop \NoRegain;
 		MoveJ pSafeS1, v800, fine, tWeldGun;
-		Stop;
+		Stop \NoRegain;
 		MoveJ pPounceS1, v800, fine, tWeldGun;
-		Stop;
+		Stop \NoRegain;
 		MoveJ pSafeS1, v800, fine, tWeldGun;
-		Stop;
+		Stop \NoRegain;
 		MoveJ pSVCs1, v800, fine, tWeldGun;
-		Stop;
+		Stop \NoRegain;
 		MoveJ pSafeS1, v800, fine, tWeldGun;
-		Stop;
+		Stop \NoRegain;
 		MoveJ pSafeS2, v800, fine, tWeldGun;
-		Stop;
+		Stop \NoRegain;
 		MoveJ pPounceS2, v800, fine, tWeldGun;
-		Stop;
+		Stop \NoRegain;
 		MoveJ pSafeS2, v800, fine, tWeldGun;
-		Stop;
+		Stop \NoRegain;
 		MoveJ pHomePos, v800, fine, tWeldGun;
-		Stop;
+		Stop \NoRegain;
 		ArcMoveAbsJ [[0,0,0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]], v800, z10, tWeldGun;
-		Stop;
+		Stop \NoRegain;
 		MoveJ pHomePos, v800, fine, tWeldGun;
 	ENDPROC
     
@@ -215,6 +220,32 @@ MODULE LogicZ
 		MoveJ pApproachSpray, CellSpeed, fine, tWeldGun;
 		MoveJ pHomePos10, CellSpeed, fine, tWeldGun;
 		MoveJ pHomePos, CellSpeed, fine, tWeldGun;
+	ENDPROC
+
+	PROC rTorchSetup()
+		VAR robtarget teachPos;
+		TPWrite "Torch setup: jog to WIRE CUT position. Press Play.";
+		Stop \NoRegain;
+		teachPos := CRobT(\Tool:=tWeldGun);
+		pWireCut := teachPos;
+		pWireCutterPounce := Offs(teachPos, 0, 0, cTorchRetractZ);
+		pWireCutterApproach := Offs(teachPos, 0, 0, cTorchApproachZ);
+		pWireCutterTrans := Offs(teachPos, 0, 0, cTorchTransZ);
+
+		TPWrite "Jog to REAMER position. Press Play.";
+		Stop \NoRegain;
+		teachPos := CRobT(\Tool:=tWeldGun);
+		pAtReamer := teachPos;
+		pReamerPounce := Offs(teachPos, 0, 0, cTorchApproachZ);
+		pReamerTrans := Offs(teachPos, 0, 0, cTorchTransZ);
+
+		TPWrite "Jog to SPRAY position. Press Play.";
+		Stop \NoRegain;
+		teachPos := CRobT(\Tool:=tWeldGun);
+		pSpray := teachPos;
+		pApproachSpray := Offs(teachPos, 0, 0, cTorchApproachZ);
+		pSprayTrans := Offs(teachPos, 0, 0, cTorchTransZ);
+		TPWrite "Torch setup updated.";
 	ENDPROC
 
     ! 
