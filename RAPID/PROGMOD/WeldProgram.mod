@@ -35,16 +35,16 @@ MODULE WeldProgram
     ! =========================
     ! ====== SPEEDS ===========
     ! =========================
-    PERS speeddata vPreviewArcStart := v5;
-    PERS speeddata vPreviewArcEnd := v5;
-    PERS speeddata vPreviewApproach := v5;
-    PERS speeddata vPreviewRetract := v5;
-    PERS speeddata vPreviewTrans := v5;
-    PERS speeddata vProdArcStart := v100;
-    PERS speeddata vProdArcEnd := v100;
-    PERS speeddata vProdApproach := v100;
-    PERS speeddata vProdRetract := v100;
-    PERS speeddata vProdTrans := v100;
+    PERS speeddata vPreviewArcStart := [5,500,5000,1000];
+    PERS speeddata vPreviewArcEnd := [5,500,5000,1000];
+    PERS speeddata vPreviewApproach := [5,500,5000,1000];
+    PERS speeddata vPreviewRetract := [5,500,5000,1000];
+    PERS speeddata vPreviewTrans := [5,500,5000,1000];
+    PERS speeddata vProdArcStart := [100,500,5000,1000];
+    PERS speeddata vProdArcEnd := [100,500,5000,1000];
+    PERS speeddata vProdApproach := [100,500,5000,1000];
+    PERS speeddata vProdRetract := [100,500,5000,1000];
+    PERS speeddata vProdTrans := [100,500,5000,1000];
 
     ! =========================
     ! == ORIENTATION POSES ====

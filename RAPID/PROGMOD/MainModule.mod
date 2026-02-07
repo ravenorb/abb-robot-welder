@@ -1,15 +1,12 @@
 MODULE MainModule
 	
 	VAR num regMainmenu01:=0;
-    VAR sysinfo sysInfo;
-    VAR string fileName;
+    VAR string fileName := "MainModule";
 
 
 	PROC main()
  		rStartup;
 		TPErase;
-        GetSysInfo sysInfo;
-        fileName := sysInfo.progname;
 		TPWrite "!!!          GNC INDUSTRIES               !!!";
 		TPWrite "!!!     SPRAYER FRAME WELDING    !!!";
 		TPWrite "!!!         ", fileName, "      !!!";
