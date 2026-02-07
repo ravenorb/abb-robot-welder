@@ -8644,41 +8644,53 @@ MODULE WeldProgram
     ENDPROC
 
     PROC ShowRunSummary()
-        TPWrite "PART 1: ", partNameP01, " Enabled:", partEnabledP01;
+        TPWrite "PART 1:";
+        TPWrite partNameP01;
+        TPWrite "Enabled:"\Bool:=partEnabledP01;
         TPWrite "Welds: "\Num:=nWeldsP01;
-        TPWrite "Origin: ", P01Origin;
-        TPWrite "Max:    ", P01Max;
-        TPWrite "Z Off:  ", P01Zoff;
+        TPWrite "Origin:"\Pos:=P01Origin.trans;
+        TPWrite "Max:   "\Pos:=P01Max.trans;
+        TPWrite "Z Off: "\Pos:=P01Zoff.trans;
         TPWrite " ";
-        TPWrite "PART 2: ", partNameP02, " Enabled:", partEnabledP02;
+        TPWrite "PART 2:";
+        TPWrite partNameP02;
+        TPWrite "Enabled:"\Bool:=partEnabledP02;
         TPWrite "Welds: "\Num:=nWeldsP02;
-        TPWrite "Origin: ", P02Origin;
-        TPWrite "Max:    ", P02Max;
-        TPWrite "Z Off:  ", P02Zoff;
+        TPWrite "Origin:"\Pos:=P02Origin.trans;
+        TPWrite "Max:   "\Pos:=P02Max.trans;
+        TPWrite "Z Off: "\Pos:=P02Zoff.trans;
         TPWrite " ";
-        TPWrite "PART 3: ", partNameP03, " Enabled:", partEnabledP03;
+        TPWrite "PART 3:";
+        TPWrite partNameP03;
+        TPWrite "Enabled:"\Bool:=partEnabledP03;
         TPWrite "Welds: "\Num:=nWeldsP03;
-        TPWrite "Origin: ", P03Origin;
-        TPWrite "Max:    ", P03Max;
-        TPWrite "Z Off:  ", P03Zoff;
+        TPWrite "Origin:"\Pos:=P03Origin.trans;
+        TPWrite "Max:   "\Pos:=P03Max.trans;
+        TPWrite "Z Off: "\Pos:=P03Zoff.trans;
         TPWrite " ";
-        TPWrite "PART 4: ", partNameP04, " Enabled:", partEnabledP04;
+        TPWrite "PART 4:";
+        TPWrite partNameP04;
+        TPWrite "Enabled:"\Bool:=partEnabledP04;
         TPWrite "Welds: "\Num:=nWeldsP04;
-        TPWrite "Origin: ", P04Origin;
-        TPWrite "Max:    ", P04Max;
-        TPWrite "Z Off:  ", P04Zoff;
+        TPWrite "Origin:"\Pos:=P04Origin.trans;
+        TPWrite "Max:   "\Pos:=P04Max.trans;
+        TPWrite "Z Off: "\Pos:=P04Zoff.trans;
         TPWrite " ";
-        TPWrite "PART 5: ", partNameP05, " Enabled:", partEnabledP05;
+        TPWrite "PART 5:";
+        TPWrite partNameP05;
+        TPWrite "Enabled:"\Bool:=partEnabledP05;
         TPWrite "Welds: "\Num:=nWeldsP05;
-        TPWrite "Origin: ", P05Origin;
-        TPWrite "Max:    ", P05Max;
-        TPWrite "Z Off:  ", P05Zoff;
+        TPWrite "Origin:"\Pos:=P05Origin.trans;
+        TPWrite "Max:   "\Pos:=P05Max.trans;
+        TPWrite "Z Off: "\Pos:=P05Zoff.trans;
         TPWrite " ";
-        TPWrite "PART 6: ", partNameP06, " Enabled:", partEnabledP06;
+        TPWrite "PART 6:";
+        TPWrite partNameP06;
+        TPWrite "Enabled:"\Bool:=partEnabledP06;
         TPWrite "Welds: "\Num:=nWeldsP06;
-        TPWrite "Origin: ", P06Origin;
-        TPWrite "Max:    ", P06Max;
-        TPWrite "Z Off:  ", P06Zoff;
+        TPWrite "Origin:"\Pos:=P06Origin.trans;
+        TPWrite "Max:   "\Pos:=P06Max.trans;
+        TPWrite "Z Off: "\Pos:=P06Zoff.trans;
     ENDPROC
 
     PROC EditPartSettings()

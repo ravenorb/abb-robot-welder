@@ -108,45 +108,45 @@
 		TPReadNum partNum, "";
 		IF partNum = 1 THEN
 			TPWrite "Frame P01";
-			TPWrite "Origin:", P01Origin;
-			TPWrite "Max:   ", P01Max;
-			TPWrite "Z Off: ", P01Zoff;
-			TPWrite "WObj:  ", wobjP01;
+			TPWrite "Origin:"\Pos:=P01Origin.trans;
+			TPWrite "Max:   "\Pos:=P01Max.trans;
+			TPWrite "Z Off: "\Pos:=P01Zoff.trans;
+			TPWrite "WObj:  wobjP01";
 			SetupP01;
 		ELSEIF partNum = 2 THEN
 			TPWrite "Frame P02";
-			TPWrite "Origin:", P02Origin;
-			TPWrite "Max:   ", P02Max;
-			TPWrite "Z Off: ", P02Zoff;
-			TPWrite "WObj:  ", wobjP02;
+			TPWrite "Origin:"\Pos:=P02Origin.trans;
+			TPWrite "Max:   "\Pos:=P02Max.trans;
+			TPWrite "Z Off: "\Pos:=P02Zoff.trans;
+			TPWrite "WObj:  wobjP02";
 			SetupP02;
 		ELSEIF partNum = 3 THEN
 			TPWrite "Frame P03";
-			TPWrite "Origin:", P03Origin;
-			TPWrite "Max:   ", P03Max;
-			TPWrite "Z Off: ", P03Zoff;
-			TPWrite "WObj:  ", wobjP03;
+			TPWrite "Origin:"\Pos:=P03Origin.trans;
+			TPWrite "Max:   "\Pos:=P03Max.trans;
+			TPWrite "Z Off: "\Pos:=P03Zoff.trans;
+			TPWrite "WObj:  wobjP03";
 			SetupP03;
 		ELSEIF partNum = 4 THEN
 			TPWrite "Frame P04";
-			TPWrite "Origin:", P04Origin;
-			TPWrite "Max:   ", P04Max;
-			TPWrite "Z Off: ", P04Zoff;
-			TPWrite "WObj:  ", wobjP04;
+			TPWrite "Origin:"\Pos:=P04Origin.trans;
+			TPWrite "Max:   "\Pos:=P04Max.trans;
+			TPWrite "Z Off: "\Pos:=P04Zoff.trans;
+			TPWrite "WObj:  wobjP04";
 			SetupP04;
 		ELSEIF partNum = 5 THEN
 			TPWrite "Frame P05";
-			TPWrite "Origin:", P05Origin;
-			TPWrite "Max:   ", P05Max;
-			TPWrite "Z Off: ", P05Zoff;
-			TPWrite "WObj:  ", wobjP05;
+			TPWrite "Origin:"\Pos:=P05Origin.trans;
+			TPWrite "Max:   "\Pos:=P05Max.trans;
+			TPWrite "Z Off: "\Pos:=P05Zoff.trans;
+			TPWrite "WObj:  wobjP05";
 			SetupP05;
 		ELSEIF partNum = 6 THEN
 			TPWrite "Frame P06";
-			TPWrite "Origin:", P06Origin;
-			TPWrite "Max:   ", P06Max;
-			TPWrite "Z Off: ", P06Zoff;
-			TPWrite "WObj:  ", wobjP06;
+			TPWrite "Origin:"\Pos:=P06Origin.trans;
+			TPWrite "Max:   "\Pos:=P06Max.trans;
+			TPWrite "Z Off: "\Pos:=P06Zoff.trans;
+			TPWrite "WObj:  wobjP06";
 			SetupP06;
 		ENDIF
 	ENDPROC

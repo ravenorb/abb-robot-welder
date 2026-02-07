@@ -108,7 +108,9 @@ MODULE mTSC
     MoveL pApproachSpray40, v500, fine, tWeldGun;
     MoveL pWireCutterApproach, v500, fine, tWeldGun;
     MoveL pWireCutterPounce, v500, fine, tWeldGun;
-    PulseDO\PLength:=0.5, doWld1FeedOn;
+    Set soAwManFeed15mm;
+    WaitTime 0.5;
+    Reset soAwManFeed15mm;
     WaitTime 1.0;
     MoveL pWireCut, v200, fine, tWeldGun;
     WaitTime 1.0;
