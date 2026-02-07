@@ -8681,13 +8681,26 @@ MODULE WeldProgram
         TPWrite "Z Off:  ", P06Zoff;
     ENDPROC
 
+    PROC TPReadStr(REF string outStr, string prompt)
+        VAR num nameCode;
+        IF prompt <> "" THEN
+            TPWrite prompt;
+        ENDIF
+        TPReadNum nameCode, "";
+        IF nameCode = 0 THEN
+            outStr := "";
+        ELSE
+            outStr := NumToStr(nameCode, 0);
+        ENDIF
+    ENDPROC
+
     PROC EditPartSettings()
         VAR num partNum;
         VAR num enable;
         VAR string newName;
         TPWrite "Select Part (1-6):";
         TPReadNum partNum, "";
-        TPWrite "Enter new part name (blank to keep):";
+        TPWrite "Enter new part name (0 to keep):";
         TPReadStr newName, "";
         TPWrite "Enable? 1=Yes 0=No";
         TPReadNum enable, "";
