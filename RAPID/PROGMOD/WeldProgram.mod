@@ -8693,7 +8693,7 @@ MODULE WeldProgram
         TPWrite "Z Off: "\Pos:=P06Zoff.trans;
     ENDPROC
 
-    PROC TPReadStr(REF string outStr, string promptText)
+    PROC ReadStrFromNum(VAR string outStr, string promptText)
         VAR num nameCode;
         IF promptText <> "" THEN
             TPWrite promptText;
@@ -8713,7 +8713,7 @@ MODULE WeldProgram
         TPWrite "Select Part (1-6):";
         TPReadNum partNum, "";
         TPWrite "Enter new part name (0 to keep):";
-        TPReadStr newName, "";
+        ReadStrFromNum newName, "";
         TPWrite "Enable? 1=Yes 0=No";
         TPReadNum enable, "";
         IF partNum = 1 THEN
@@ -8888,9 +8888,9 @@ MODULE WeldProgram
         TPWrite "Edit these via pendant data entry if needed.";
     ENDPROC
 
-    PROC SetSpeedValue(VAR speeddata speed, num value)
-        speed := [value, value, value, value];
-    ENDPROC
+    FUNC speeddata SpeedFromValue(num value)
+        RETURN [value, value, value, value];
+    ENDFUNC
 
     PROC EditSpeedMenu(num mode)
         VAR num choice;
@@ -8905,27 +8905,27 @@ MODULE WeldProgram
                     value := 5;
                 ENDIF
                 IF choice = 1 THEN
-                    SetSpeedValue vPreviewArcStart, value;
+                    vPreviewArcStart := SpeedFromValue(value);
                 ELSEIF choice = 2 THEN
-                    SetSpeedValue vPreviewArcEnd, value;
+                    vPreviewArcEnd := SpeedFromValue(value);
                 ELSEIF choice = 3 THEN
-                    SetSpeedValue vPreviewApproach, value;
+                    vPreviewApproach := SpeedFromValue(value);
                 ELSEIF choice = 4 THEN
-                    SetSpeedValue vPreviewRetract, value;
+                    vPreviewRetract := SpeedFromValue(value);
                 ELSEIF choice = 5 THEN
-                    SetSpeedValue vPreviewTrans, value;
+                    vPreviewTrans := SpeedFromValue(value);
                 ENDIF
             ELSE
                 IF choice = 1 THEN
-                    SetSpeedValue vProdArcStart, value;
+                    vProdArcStart := SpeedFromValue(value);
                 ELSEIF choice = 2 THEN
-                    SetSpeedValue vProdArcEnd, value;
+                    vProdArcEnd := SpeedFromValue(value);
                 ELSEIF choice = 3 THEN
-                    SetSpeedValue vProdApproach, value;
+                    vProdApproach := SpeedFromValue(value);
                 ELSEIF choice = 4 THEN
-                    SetSpeedValue vProdRetract, value;
+                    vProdRetract := SpeedFromValue(value);
                 ELSEIF choice = 5 THEN
-                    SetSpeedValue vProdTrans, value;
+                    vProdTrans := SpeedFromValue(value);
                 ENDIF
             ENDIF
         ENDIF
