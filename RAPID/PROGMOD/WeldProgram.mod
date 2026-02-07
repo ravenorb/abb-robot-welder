@@ -8706,6 +8706,19 @@ MODULE WeldProgram
         ENDIF
     ENDPROC
 
+    PROC TPReadStr(REF string outStr, string promptText)
+        VAR num nameCode;
+        IF promptText <> "" THEN
+            TPWrite promptText;
+        ENDIF
+        TPReadNum nameCode, "";
+        IF nameCode = 0 THEN
+            outStr := "";
+        ELSE
+            outStr := NumToStr(nameCode, 0);
+        ENDIF
+    ENDPROC
+
     PROC EditPartSettings()
         VAR num partNum;
         VAR num enable;
