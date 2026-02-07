@@ -1,0 +1,145 @@
+# Robtargets (excluding weld-move points)
+
+This list includes all declared `robtarget` variables in the RAPID program **except** the weld-move targets used for transit/approach/withdraw/arc-start/arc-end. The exclusion covers:
+
+- Names ending in `_Trans`, `_Approach`, `_Retract`, `_ArcStart`, `_ArcEnd`.
+- Generic weld-move variables named `approach`, `arcStart`, `arcEnd`, `retract`, `trans`, `aA`, `aE`, `aR`, `aS`, `aT`.
+
+## RAPID/PROGMOD/BE_User1.mod
+- pSafePos
+
+## RAPID/PROGMOD/LogicZ.mod
+- pApproachSpray30
+- pAtReamer
+- pHomePos
+- pHomePos10
+- pPark
+- pPounceS1
+- pPounceS2
+- pReamerPounce
+- pReamerPounce10
+- pReamerTrans
+- pSVCs1
+- pSafeS2
+- pServiceS1
+- pWireCut
+- pWireCutterApproach
+- pWireCutterPounce
+- pWireCutterTrans
+- teachPos
+
+## RAPID/PROGMOD/ProgSide1.mod
+- pHomePos100
+- pHomePos110
+- pHomePos120
+- pHomePos20
+- pHomePos30
+- pHomePos40
+- pHomePos50
+- pHomePos60
+- pHomePos70
+- pHomePos80
+- pHomePos90
+- pPounceOS1
+- pPounceS21
+- pPounceS31
+- pPounceS41
+- pPounceS51
+- pPounceS61
+- pSafeS101
+- pSafeS11
+- pSafeS111
+- pSafeS12
+- pSafeS121
+- pSafeS131
+- pSafeS141
+- pSafeS151
+- pSafeS161
+- pSafeS171
+- pSafeS181
+- pSafeS191
+- pSafeS201
+- pSafeS21
+- pSafeS211
+- pSafeS22
+- pSafeS221
+- pSafeS231
+- pSafeS241
+- pSafeS251
+- pSafeS261
+- pSafeS271
+- pSafeS281
+- pSafeS31
+- pSafeS32
+- pSafeS41
+- pSafeS42
+- pSafeS51
+- pSafeS52
+- pSafeS61
+- pSafeS62
+- pSafeS71
+- pSafeS72
+- pSafeS81
+- pSafeS82
+
+## RAPID/PROGMOD/ProgSide2.mod
+- pPounceOS2
+- pPounceS22
+- pPounceS32
+- pPounceS42
+- pPounceS52
+- pPounceS62
+- pPounceS72
+- pPounceS82
+
+## RAPID/PROGMOD/SetupWO.mod
+- pPounceS11
+- pPounceS12
+- pSafeS91
+
+## RAPID/PROGMOD/WeldProgram.mod
+- P01Max
+- P01Origin
+- P01Zoff
+- P02Max
+- P02Origin
+- P02Zoff
+- P03Max
+- P03Origin
+- P03Zoff
+- P04Max
+- P04Origin
+- P04Zoff
+- P05Max
+- P05Origin
+- P05Zoff
+- P06Max
+- P06Origin
+- P06Zoff
+- o
+- pBullseye
+- pEnd
+- pFixtureCheck
+- pOriSafe
+- pOri_Down
+- pOri_Left
+- pOri_Right
+- pOri_Up
+- pOri_xMid
+- pOri_yMid
+- pSafeS1
+- pSafeS1Weld
+- pSetup
+- pStart
+
+## RAPID/PROGMOD/mTSC.mod
+- pAboveSpray
+- pApproachClean
+- pApproachClean10
+- pApproachSpray
+- pApproachSpray10
+- pApproachSpray20
+- pApproachSpray40
+- pMechClean
+- pSpray
+- pSprayTrans
