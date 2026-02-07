@@ -8693,19 +8693,6 @@ MODULE WeldProgram
         TPWrite "Z Off: "\Pos:=P06Zoff.trans;
     ENDPROC
 
-    PROC TPReadStr(REF string outStr, string prompt)
-        VAR num nameCode;
-        IF prompt <> "" THEN
-            TPWrite prompt;
-        ENDIF
-        TPReadNum nameCode, "";
-        IF nameCode = 0 THEN
-            outStr := "";
-        ELSE
-            outStr := NumToStr(nameCode, 0);
-        ENDIF
-    ENDPROC
-
     PROC TPReadStr(REF string outStr, string promptText)
         VAR num nameCode;
         IF promptText <> "" THEN
@@ -8895,9 +8882,9 @@ MODULE WeldProgram
     ENDPROC
 
     PROC ShowWeldDefaults()
-        TPWrite "Seam Default: ", cSeamDefault;
-        TPWrite "Weld Default: ", cWeldDefault;
-        TPWrite "Weave Default:", cWeaveDefault;
+        TPWrite "Seam Default: see pendant data entry.";
+        TPWrite "Weld Default: see pendant data entry.";
+        TPWrite "Weave Default: see pendant data entry.";
         TPWrite "Edit these via pendant data entry if needed.";
     ENDPROC
 
