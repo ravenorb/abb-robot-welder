@@ -1,20 +1,29 @@
 # abb-robot-welder
 
-Base template for ABB robotic welder.
+RAPID program package for the ABB welding cell. This repository contains the
+modules required to run the new single-part welding workflow, including the
+main menu, utilities (home/safe positions, torch cleaning, BullsEye tool check),
+and ten part modules that each execute a single weld path.
 
-## Single-part template
+## What this program does
 
-A ready-to-copy single-part RAPID module is available at:
+* Boots into `MainModule` and presents the operator with the Home/Service/Tools/Parts/Run menu.
+* Lets the operator select and run a specific part program (`Part_1.mod` … `Part_10.mod`).
+* Each part module follows the same pattern: optional BullsEye check, optional torch clean,
+  home/safe positioning, then a single weld path defined by `pPartApproach`,
+  `pPartStart`, `pPartEnd`, and `pPartDepart`.
 
-```
-RAPID/TASK1/PROGMOD/SinglePartTemplate.mod
-```
+## What to load on the controller
 
-It is designed to run **one** part and includes optional hooks for:
+Load the following folders into the controller (no extra backup data is required):
 
-- Torch/nozzle cleaning (`rTC2013` in `LogicZ.mod` or `MechCleanGun` in `mTSC.mod`)
-- BullsEye tool check (`BECheckToolb` in `BE_User1.mod`)
+* `RAPID/` (program and system modules)
+* `SYSPAR/` (system parameter configuration used by the program)
+* `system.xml`
 
-Edit the `pPartApproach`, `pPartStart`, `pPartEnd`, and `pPartDepart` targets and the
-`seamPart` / `weldPart` data to define a new part, then copy the module to create
-new single-part programs.
+## Documentation
+
+Operator instructions and guidance for adding weld locations are in `docs/`:
+
+* `docs/operator-guide.md`
+* `docs/adding-weld-locations.md`
