@@ -1,28 +1,32 @@
- MODULE MainModule
+MODULE MainModule
 	
 	VAR num regMainmenu01:=0;
+    VAR sysinfo sysInfo;
+    VAR string fileName;
 
 
 	PROC main()
  		rStartup;
 		TPErase;
-		TPWrite "!!!               GNC                !!!";
-		TPWrite "!!!       BUILDING QUALITY PARTS     !!!";
-		TPWrite "!!!         WITH QUALITY PEOPLE      !!!";
-        TPWrite"The cycle time is ="\Num:=ClkRead(clock1);
+        GetSysInfo sysInfo;
+        fileName := sysInfo.progname;
+		TPWrite "!!!          GNC INDUSTRIES               !!!";
+		TPWrite "!!!     SPRAYER FRAME WELDING    !!!";
+		TPWrite "!!!         ", fileName, "      !!!";
+        TPWrite "The cycle time is ="\Num:=ClkRead(clock1);
 		rMainBDisplay;
-		TPReadFK regMainmenu01, stEmpty, "Home", "Service", "Tool", "SelFrame", "Run";
+		TPReadFK regMainmenu01, stEmpty, "Home", "Position", "Utilities", "Setup", "Run";
 		TEST regMainmenu01
 		CASE 1:
 			rHome;
 		CASE 2:
-			rService;
+			rPositionMenu;
 		CASE 3:
-			rManual;
+			rUtilitiesMenu;
 		CASE 4:
-			rSelFrame;
+			rSetupMenu;
 		CASE 5:
-			rRun;
+			rRunMenu;
 		ENDTEST
 	ENDPROC
     	PROC rA_Pos_Side1()

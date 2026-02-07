@@ -3,17 +3,48 @@ MODULE WeldProgram
     ! =========================
     ! ======= SAFE POS ========
     ! =========================
-    CONST robtarget pSafeS1 := [[82.84,919.33,1175.90],[0.326608,0.635474,-0.637382,0.288521],[0,0,-1,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
+    PERS robtarget pSafeS1 := [[82.84,919.33,1175.90],[0.326608,0.635474,-0.637382,0.288521],[0,0,-1,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
     PERS robtarget pSafeS1Weld := [[82.84,919.33,1175.90],[0.326608,0.635474,-0.637382,0.288521],[0,0,-1,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
     PERS robtarget pSetup  := [[82.84,919.33,1175.90],[0.326608,0.635474,-0.637382,0.288521],[0,0,-1,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
     PERS robtarget pBullseye := [[82.84,919.33,1175.90],[0.326608,0.635474,-0.637382,0.288521],[0,0,-1,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
+    PERS robtarget pFixtureCheck := [[82.84,919.33,1175.90],[0.326608,0.635474,-0.637382,0.288521],[0,0,-1,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
 
     ! =========================
     ! == DEFAULT WELD DATA ====
     ! =========================
-    CONST seamdata cSeamDefault := [1,1,[1,0,14,127,0,0,0,0,0],0,0,0,0,0,[0,0,0,0,0,0,0,0,0],0,0,[0,0,0,0,0,0,0,0,0],0,0,[0,0,0,0,0,0,0,0,0],0];
-    CONST welddata cWeldDefault := [6.90033,6.90033,[1,0,19,110.71,0,0,0,0,0],[0,0,18.5,110.71,0,0,0,0,0]];
-    CONST weavedata cWeaveDefault := [1,1,3.81,5.08,1.778,0,0,0,0,0,0,0,0,0,0];
+    PERS seamdata cSeamDefault := [1,1,[1,0,14,127,0,0,0,0,0],0,0,0,0,0,[0,0,0,0,0,0,0,0,0],0,0,[0,0,0,0,0,0,0,0,0],0,0,[0,0,0,0,0,0,0,0,0],0];
+    PERS welddata cWeldDefault := [6.90033,6.90033,[1,0,19,110.71,0,0,0,0,0],[0,0,18.5,110.71,0,0,0,0,0]];
+    PERS weavedata cWeaveDefault := [1,1,3.81,5.08,1.778,0,0,0,0,0,0,0,0,0,0];
+
+    ! =========================
+    ! === PART METADATA =======
+    ! =========================
+    PERS string partNameP01 := "Part 1";
+    PERS string partNameP02 := "Part 2";
+    PERS string partNameP03 := "Part 3";
+    PERS string partNameP04 := "Part 4";
+    PERS string partNameP05 := "Part 5";
+    PERS string partNameP06 := "Part 6";
+    PERS bool partEnabledP01 := TRUE;
+    PERS bool partEnabledP02 := TRUE;
+    PERS bool partEnabledP03 := TRUE;
+    PERS bool partEnabledP04 := TRUE;
+    PERS bool partEnabledP05 := TRUE;
+    PERS bool partEnabledP06 := TRUE;
+
+    ! =========================
+    ! ====== SPEEDS ===========
+    ! =========================
+    PERS speeddata vPreviewArcStart := v5;
+    PERS speeddata vPreviewArcEnd := v5;
+    PERS speeddata vPreviewApproach := v5;
+    PERS speeddata vPreviewRetract := v5;
+    PERS speeddata vPreviewTrans := v5;
+    PERS speeddata vProdArcStart := v100;
+    PERS speeddata vProdArcEnd := v100;
+    PERS speeddata vProdApproach := v100;
+    PERS speeddata vProdRetract := v100;
+    PERS speeddata vProdTrans := v100;
 
     ! =========================
     ! == ORIENTATION POSES ====
@@ -1843,24 +1874,24 @@ MODULE WeldProgram
     ! ==== DRY RUN MOVE =======
     ! =========================
     PROC DryRun(robtarget pTrans, robtarget pApp, robtarget pS, robtarget pE, robtarget pRet)
-        MoveL pTrans, v500, z50, tWeldGun;
-        MoveL pApp,   v300, z10, tWeldGun;
-        MoveL pS,     v100, z1,  tWeldGun;
-        MoveL pE,     v100, z1,  tWeldGun;
-        MoveL pRet,   v300, z10, tWeldGun;
-        MoveL pTrans, v500, z50, tWeldGun;
+        MoveL pTrans, vPreviewTrans, z50, tWeldGun;
+        MoveL pApp,   vPreviewApproach, z10, tWeldGun;
+        MoveL pS,     vPreviewArcStart, z1,  tWeldGun;
+        MoveL pE,     vPreviewArcEnd, z1,  tWeldGun;
+        MoveL pRet,   vPreviewRetract, z10, tWeldGun;
+        MoveL pTrans, vPreviewTrans, z50, tWeldGun;
     ENDPROC
 
     PROC SetupP01()
         MoveJ pSetup, v200, z50, tWeldGun;
         TPWrite "Jog to P01 ORIGIN (most x-,y-). Press Play.";
-        Stop;
+        Stop \NoRegain;
         P01Origin := CRobT(\Tool:=tWeldGun);
         TPWrite "Jog to P01 MAX (most x+,y+). Press Play.";
-        Stop;
+        Stop \NoRegain;
         P01Max := CRobT(\Tool:=tWeldGun);
         TPWrite "Jog to P01 Z0 plane (touch wire tip). Press Play.";
-        Stop;
+        Stop \NoRegain;
         P01Zoff := CRobT(\Tool:=tWeldGun);
         wobjP01.uframe.trans := P01Origin.trans;
         wobjP01.uframe.rot := P01Origin.rot;
@@ -1873,13 +1904,13 @@ MODULE WeldProgram
     PROC SetupP02()
         MoveJ pSetup, v200, z50, tWeldGun;
         TPWrite "Jog to P02 ORIGIN (most x-,y-). Press Play.";
-        Stop;
+        Stop \NoRegain;
         P02Origin := CRobT(\Tool:=tWeldGun);
         TPWrite "Jog to P02 MAX (most x+,y+). Press Play.";
-        Stop;
+        Stop \NoRegain;
         P02Max := CRobT(\Tool:=tWeldGun);
         TPWrite "Jog to P02 Z0 plane (touch wire tip). Press Play.";
-        Stop;
+        Stop \NoRegain;
         P02Zoff := CRobT(\Tool:=tWeldGun);
         wobjP02.uframe.trans := P02Origin.trans;
         wobjP02.uframe.rot := P02Origin.rot;
@@ -1892,13 +1923,13 @@ MODULE WeldProgram
     PROC SetupP03()
         MoveJ pSetup, v200, z50, tWeldGun;
         TPWrite "Jog to P03 ORIGIN (most x-,y-). Press Play.";
-        Stop;
+        Stop \NoRegain;
         P03Origin := CRobT(\Tool:=tWeldGun);
         TPWrite "Jog to P03 MAX (most x+,y+). Press Play.";
-        Stop;
+        Stop \NoRegain;
         P03Max := CRobT(\Tool:=tWeldGun);
         TPWrite "Jog to P03 Z0 plane (touch wire tip). Press Play.";
-        Stop;
+        Stop \NoRegain;
         P03Zoff := CRobT(\Tool:=tWeldGun);
         wobjP03.uframe.trans := P03Origin.trans;
         wobjP03.uframe.rot := P03Origin.rot;
@@ -1911,13 +1942,13 @@ MODULE WeldProgram
     PROC SetupP04()
         MoveJ pSetup, v200, z50, tWeldGun;
         TPWrite "Jog to P04 ORIGIN (most x-,y-). Press Play.";
-        Stop;
+        Stop \NoRegain;
         P04Origin := CRobT(\Tool:=tWeldGun);
         TPWrite "Jog to P04 MAX (most x+,y+). Press Play.";
-        Stop;
+        Stop \NoRegain;
         P04Max := CRobT(\Tool:=tWeldGun);
         TPWrite "Jog to P04 Z0 plane (touch wire tip). Press Play.";
-        Stop;
+        Stop \NoRegain;
         P04Zoff := CRobT(\Tool:=tWeldGun);
         wobjP04.uframe.trans := P04Origin.trans;
         wobjP04.uframe.rot := P04Origin.rot;
@@ -1930,13 +1961,13 @@ MODULE WeldProgram
     PROC SetupP05()
         MoveJ pSetup, v200, z50, tWeldGun;
         TPWrite "Jog to P05 ORIGIN (most x-,y-). Press Play.";
-        Stop;
+        Stop \NoRegain;
         P05Origin := CRobT(\Tool:=tWeldGun);
         TPWrite "Jog to P05 MAX (most x+,y+). Press Play.";
-        Stop;
+        Stop \NoRegain;
         P05Max := CRobT(\Tool:=tWeldGun);
         TPWrite "Jog to P05 Z0 plane (touch wire tip). Press Play.";
-        Stop;
+        Stop \NoRegain;
         P05Zoff := CRobT(\Tool:=tWeldGun);
         wobjP05.uframe.trans := P05Origin.trans;
         wobjP05.uframe.rot := P05Origin.rot;
@@ -1949,13 +1980,13 @@ MODULE WeldProgram
     PROC SetupP06()
         MoveJ pSetup, v200, z50, tWeldGun;
         TPWrite "Jog to P06 ORIGIN (most x-,y-). Press Play.";
-        Stop;
+        Stop \NoRegain;
         P06Origin := CRobT(\Tool:=tWeldGun);
         TPWrite "Jog to P06 MAX (most x+,y+). Press Play.";
-        Stop;
+        Stop \NoRegain;
         P06Max := CRobT(\Tool:=tWeldGun);
         TPWrite "Jog to P06 Z0 plane (touch wire tip). Press Play.";
-        Stop;
+        Stop \NoRegain;
         P06Zoff := CRobT(\Tool:=tWeldGun);
         wobjP06.uframe.trans := P06Origin.trans;
         wobjP06.uframe.rot := P06Origin.rot;
@@ -1966,9 +1997,9 @@ MODULE WeldProgram
     ENDPROC
 
     PROC TeachOrientation(num toolSel)
-        MoveJ pSetup, v200, z50, tWeldGun;
-        TPWrite "Jog to orientation, touch bullseye, then press Play.";
-        Stop;
+        MoveJ pSafeS1, v200, z50, tWeldGun;
+        TPWrite "Jog from pSafeS1 down to bullseye/orientation, then press Play.";
+        Stop \NoRegain;
         IF toolSel = T_OLEFT THEN
             pOri_Left := CRobT(\Tool:=tWeldGun);
         ELSEIF toolSel = T_ORIGHT THEN
@@ -1983,7 +2014,7 @@ MODULE WeldProgram
             pOri_xMid := CRobT(\Tool:=tWeldGun);
         ENDIF
         TPWrite "Orientation stored.";
-        MoveJ pSafeS1Weld, v200, z50, tWeldGun;
+        MoveJ pSafeS1, v200, z50, tWeldGun;
     ENDPROC
 
     PROC StoreSlot_P01(num slot, num subType, num toolSel, num lenMM,
@@ -8408,7 +8439,7 @@ MODULE WeldProgram
             TPReadNum lenIn, "";
             lenMM := lenIn*INCH;
             TPWrite "Jog to CORNER point (not start). Press Play.";
-            Stop;
+            Stop \NoRegain;
             pStart := CRobT(\Tool:=tWeldGun);
 
             ! ---- Y leg ----
@@ -8448,6 +8479,7 @@ MODULE WeldProgram
             BuildWeldFromStart aS, pEnd, subType, toolSel, lenMM, aS, aE, aA, aR, aT;
             StoreNextFree partNum, subType, toolSel, lenMM, aS, aE, aA, aR, aT;
             DryRun aT, aA, aS, aE, aR;
+            MoveJ pSafeS1, v200, z50, tWeldGun;
             RETURN;
         ENDIF
 
@@ -8461,14 +8493,14 @@ MODULE WeldProgram
 
         IF major = WT_FREE THEN
             TPWrite "Jog to FREE WELD START. Press Play.";
-            Stop;
+            Stop \NoRegain;
             pStart := CRobT(\Tool:=tWeldGun);
             TPWrite "Jog to FREE WELD END. Press Play.";
-            Stop;
+            Stop \NoRegain;
             pEnd := CRobT(\Tool:=tWeldGun);
         ELSE
             TPWrite "Jog to START point. Press Play.";
-            Stop;
+            Stop \NoRegain;
             pStart := CRobT(\Tool:=tWeldGun);
             pEnd := pStart;
         ENDIF
@@ -8498,6 +8530,7 @@ MODULE WeldProgram
                 repeat := (lenIn = 1);
             ENDWHILE
         ENDIF
+        MoveJ pSafeS1, v200, z50, tWeldGun;
     ENDPROC
 
     PROC ReviewWeld(num partNum, num slot)
@@ -8538,11 +8571,11 @@ MODULE WeldProgram
         ENDIF
         MoveL approach, v100, z10, tWeldGun;
         TPWrite "Jog to new start point, then press Play.";
-        Stop;
+        Stop \NoRegain;
         pStart := CRobT(\Tool:=tWeldGun);
         IF subType = WSF_FREE THEN
             TPWrite "Jog to new end point, then press Play.";
-            Stop;
+            Stop \NoRegain;
             pEnd := CRobT(\Tool:=tWeldGun);
         ELSE
             pEnd := pStart;
@@ -8555,6 +8588,8 @@ MODULE WeldProgram
         BuildWeldFromStart pStart, pEnd, subType, toolSel, lenMM, arcStart, arcEnd, approach, retract, trans;
         StoreSlot partNum, slot, subType, toolSel, lenMM, arcStart, arcEnd, approach, retract, trans;
         TPWrite "Weld updated.";
+        MoveL trans, vPreviewTrans, z50, tWeldGun;
+        MoveJ pSafeS1, v200, z50, tWeldGun;
     ENDPROC
 
     PROC DeleteWeld(num partNum, num slot)
@@ -8564,6 +8599,326 @@ MODULE WeldProgram
         IF confirm = 1 THEN
             ClearSlot partNum, slot;
             TPWrite "Weld deleted.";
+        ENDIF
+    ENDPROC
+
+    PROC PreviewPart(num partNum)
+        VAR num slot;
+        VAR bool used;
+        VAR num subType;
+        VAR num toolSel;
+        VAR num lenMM;
+        VAR robtarget arcStart;
+        VAR robtarget arcEnd;
+        VAR robtarget approach;
+        VAR robtarget retract;
+        VAR robtarget trans;
+        FOR slot FROM 1 TO 30 DO
+            LoadSlot partNum, slot, used, subType, toolSel, lenMM, arcStart, arcEnd, approach, retract, trans;
+            IF used THEN
+                DryRun trans, approach, arcStart, arcEnd, retract;
+            ENDIF
+        ENDFOR
+        MoveJ pSafeS1, v200, z50, tWeldGun;
+    ENDPROC
+
+    PROC PreviewEnabledParts()
+        IF partEnabledP01 THEN
+            PreviewPart 1;
+        ENDIF
+        IF partEnabledP02 THEN
+            PreviewPart 2;
+        ENDIF
+        IF partEnabledP03 THEN
+            PreviewPart 3;
+        ENDIF
+        IF partEnabledP04 THEN
+            PreviewPart 4;
+        ENDIF
+        IF partEnabledP05 THEN
+            PreviewPart 5;
+        ENDIF
+        IF partEnabledP06 THEN
+            PreviewPart 6;
+        ENDIF
+    ENDPROC
+
+    PROC ShowRunSummary()
+        TPWrite "PART 1: ", partNameP01, " Enabled:", partEnabledP01;
+        TPWrite "Welds: "\Num:=nWeldsP01;
+        TPWrite "Origin: ", P01Origin;
+        TPWrite "Max:    ", P01Max;
+        TPWrite "Z Off:  ", P01Zoff;
+        TPWrite " ";
+        TPWrite "PART 2: ", partNameP02, " Enabled:", partEnabledP02;
+        TPWrite "Welds: "\Num:=nWeldsP02;
+        TPWrite "Origin: ", P02Origin;
+        TPWrite "Max:    ", P02Max;
+        TPWrite "Z Off:  ", P02Zoff;
+        TPWrite " ";
+        TPWrite "PART 3: ", partNameP03, " Enabled:", partEnabledP03;
+        TPWrite "Welds: "\Num:=nWeldsP03;
+        TPWrite "Origin: ", P03Origin;
+        TPWrite "Max:    ", P03Max;
+        TPWrite "Z Off:  ", P03Zoff;
+        TPWrite " ";
+        TPWrite "PART 4: ", partNameP04, " Enabled:", partEnabledP04;
+        TPWrite "Welds: "\Num:=nWeldsP04;
+        TPWrite "Origin: ", P04Origin;
+        TPWrite "Max:    ", P04Max;
+        TPWrite "Z Off:  ", P04Zoff;
+        TPWrite " ";
+        TPWrite "PART 5: ", partNameP05, " Enabled:", partEnabledP05;
+        TPWrite "Welds: "\Num:=nWeldsP05;
+        TPWrite "Origin: ", P05Origin;
+        TPWrite "Max:    ", P05Max;
+        TPWrite "Z Off:  ", P05Zoff;
+        TPWrite " ";
+        TPWrite "PART 6: ", partNameP06, " Enabled:", partEnabledP06;
+        TPWrite "Welds: "\Num:=nWeldsP06;
+        TPWrite "Origin: ", P06Origin;
+        TPWrite "Max:    ", P06Max;
+        TPWrite "Z Off:  ", P06Zoff;
+    ENDPROC
+
+    PROC EditPartSettings()
+        VAR num partNum;
+        VAR num enable;
+        VAR string newName;
+        TPWrite "Select Part (1-6):";
+        TPReadNum partNum, "";
+        TPWrite "Enter new part name (blank to keep):";
+        TPReadStr newName, "";
+        TPWrite "Enable? 1=Yes 0=No";
+        TPReadNum enable, "";
+        IF partNum = 1 THEN
+            IF newName <> "" THEN
+                partNameP01 := newName;
+            ENDIF
+            partEnabledP01 := (enable = 1);
+        ELSEIF partNum = 2 THEN
+            IF newName <> "" THEN
+                partNameP02 := newName;
+            ENDIF
+            partEnabledP02 := (enable = 1);
+        ELSEIF partNum = 3 THEN
+            IF newName <> "" THEN
+                partNameP03 := newName;
+            ENDIF
+            partEnabledP03 := (enable = 1);
+        ELSEIF partNum = 4 THEN
+            IF newName <> "" THEN
+                partNameP04 := newName;
+            ENDIF
+            partEnabledP04 := (enable = 1);
+        ELSEIF partNum = 5 THEN
+            IF newName <> "" THEN
+                partNameP05 := newName;
+            ENDIF
+            partEnabledP05 := (enable = 1);
+        ELSEIF partNum = 6 THEN
+            IF newName <> "" THEN
+                partNameP06 := newName;
+            ENDIF
+            partEnabledP06 := (enable = 1);
+        ELSE
+            TPWrite "Invalid part selection.";
+        ENDIF
+    ENDPROC
+
+    PROC ResetPartFrame(num partNum)
+        IF partNum = 1 THEN
+            P01Origin := [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
+            P01Max := [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
+            P01Zoff := [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
+            wobjP01 := [FALSE,TRUE,"",[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];
+        ELSEIF partNum = 2 THEN
+            P02Origin := [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
+            P02Max := [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
+            P02Zoff := [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
+            wobjP02 := [FALSE,TRUE,"",[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];
+        ELSEIF partNum = 3 THEN
+            P03Origin := [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
+            P03Max := [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
+            P03Zoff := [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
+            wobjP03 := [FALSE,TRUE,"",[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];
+        ELSEIF partNum = 4 THEN
+            P04Origin := [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
+            P04Max := [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
+            P04Zoff := [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
+            wobjP04 := [FALSE,TRUE,"",[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];
+        ELSEIF partNum = 5 THEN
+            P05Origin := [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
+            P05Max := [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
+            P05Zoff := [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
+            wobjP05 := [FALSE,TRUE,"",[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];
+        ELSEIF partNum = 6 THEN
+            P06Origin := [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
+            P06Max := [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
+            P06Zoff := [[0,0,0],[1,0,0,0],[0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]];
+            wobjP06 := [FALSE,TRUE,"",[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];
+        ENDIF
+    ENDPROC
+
+    PROC ResetPartAll(num partNum)
+        VAR num slot;
+        FOR slot FROM 1 TO 30 DO
+            ClearSlot partNum, slot;
+        ENDFOR
+        IF partNum = 1 THEN
+            nWeldsP01 := 0;
+        ELSEIF partNum = 2 THEN
+            nWeldsP02 := 0;
+        ELSEIF partNum = 3 THEN
+            nWeldsP03 := 0;
+        ELSEIF partNum = 4 THEN
+            nWeldsP04 := 0;
+        ELSEIF partNum = 5 THEN
+            nWeldsP05 := 0;
+        ELSEIF partNum = 6 THEN
+            nWeldsP06 := 0;
+        ENDIF
+        ResetPartFrame partNum;
+    ENDPROC
+
+    PROC ResetMenu()
+        VAR num partNum;
+        VAR num slot;
+        VAR num choice;
+        VAR num confirm1;
+        VAR num confirm2;
+        TPWrite "Reset: 1=Slot 2=Frame 3=Full Part";
+        TPReadNum choice, "";
+        IF choice = 1 THEN
+            TPWrite "Part (1-6):";
+            TPReadNum partNum, "";
+            TPWrite "Slot (1-30):";
+            TPReadNum slot, "";
+            TPWrite "Confirm reset slot? 1=Yes 0=No";
+            TPReadNum confirm1, "";
+            TPWrite "Confirm again? 1=Yes 0=No";
+            TPReadNum confirm2, "";
+            IF confirm1 = 1 AND confirm2 = 1 THEN
+                ClearSlot partNum, slot;
+                TPWrite "Slot reset.";
+            ENDIF
+        ELSEIF choice = 2 THEN
+            TPWrite "Part (1-6):";
+            TPReadNum partNum, "";
+            TPWrite "Confirm reset frame? 1=Yes 0=No";
+            TPReadNum confirm1, "";
+            TPWrite "Confirm again? 1=Yes 0=No";
+            TPReadNum confirm2, "";
+            IF confirm1 = 1 AND confirm2 = 1 THEN
+                ResetPartFrame partNum;
+                TPWrite "Frame reset.";
+            ENDIF
+        ELSEIF choice = 3 THEN
+            TPWrite "Part (1-6):";
+            TPReadNum partNum, "";
+            TPWrite "Confirm reset full part? 1=Yes 0=No";
+            TPReadNum confirm1, "";
+            TPWrite "Confirm again? 1=Yes 0=No";
+            TPReadNum confirm2, "";
+            IF confirm1 = 1 AND confirm2 = 1 THEN
+                ResetPartAll partNum;
+                TPWrite "Part reset.";
+            ENDIF
+        ENDIF
+    ENDPROC
+
+    PROC TeachMenu()
+        VAR num choice;
+        VAR num partNum;
+        VAR num slot;
+        TPWrite "Teach Menu: 1=Add 2=Preview 3=Edit 4=Delete 5=Return";
+        TPReadNum choice, "";
+        IF choice = 1 THEN
+            TPWrite "Part (1-6):";
+            TPReadNum partNum, "";
+            AddWeld partNum;
+        ELSEIF choice = 2 THEN
+            TPWrite "Part (1-6):";
+            TPReadNum partNum, "";
+            PreviewPart partNum;
+        ELSEIF choice = 3 THEN
+            TPWrite "Part (1-6):";
+            TPReadNum partNum, "";
+            TPWrite "Slot (1-30):";
+            TPReadNum slot, "";
+            EditWeld partNum, slot;
+        ELSEIF choice = 4 THEN
+            TPWrite "Part (1-6):";
+            TPReadNum partNum, "";
+            TPWrite "Slot (1-30):";
+            TPReadNum slot, "";
+            DeleteWeld partNum, slot;
+        ENDIF
+    ENDPROC
+
+    PROC ShowWeldDefaults()
+        TPWrite "Seam Default: ", cSeamDefault;
+        TPWrite "Weld Default: ", cWeldDefault;
+        TPWrite "Weave Default:", cWeaveDefault;
+        TPWrite "Edit these via pendant data entry if needed.";
+    ENDPROC
+
+    PROC SetSpeedValue(VAR speeddata speed, num value)
+        speed := [value, value, value, value];
+    ENDPROC
+
+    PROC EditSpeedMenu(num mode)
+        VAR num choice;
+        VAR num value;
+        TPWrite "Speed edit: 1=ArcStart 2=ArcEnd 3=Approach 4=Retract 5=Trans 6=Return";
+        TPReadNum choice, "";
+        IF choice >= 1 AND choice <= 5 THEN
+            TPWrite "Enter speed (mm/s):";
+            TPReadNum value, "";
+            IF mode = 1 THEN
+                IF value > 5 THEN
+                    value := 5;
+                ENDIF
+                IF choice = 1 THEN
+                    SetSpeedValue vPreviewArcStart, value;
+                ELSEIF choice = 2 THEN
+                    SetSpeedValue vPreviewArcEnd, value;
+                ELSEIF choice = 3 THEN
+                    SetSpeedValue vPreviewApproach, value;
+                ELSEIF choice = 4 THEN
+                    SetSpeedValue vPreviewRetract, value;
+                ELSEIF choice = 5 THEN
+                    SetSpeedValue vPreviewTrans, value;
+                ENDIF
+            ELSE
+                IF choice = 1 THEN
+                    SetSpeedValue vProdArcStart, value;
+                ELSEIF choice = 2 THEN
+                    SetSpeedValue vProdArcEnd, value;
+                ELSEIF choice = 3 THEN
+                    SetSpeedValue vProdApproach, value;
+                ELSEIF choice = 4 THEN
+                    SetSpeedValue vProdRetract, value;
+                ELSEIF choice = 5 THEN
+                    SetSpeedValue vProdTrans, value;
+                ENDIF
+            ENDIF
+        ENDIF
+    ENDPROC
+
+    PROC TeachSafePos(num which)
+        TPWrite "Jog to safe position, then press Play.";
+        Stop \NoRegain;
+        IF which = 1 THEN
+            pSafeS1 := CRobT(\Tool:=tWeldGun);
+        ELSEIF which = 2 THEN
+            pSafeS1Weld := CRobT(\Tool:=tWeldGun);
+        ELSEIF which = 3 THEN
+            pSetup := CRobT(\Tool:=tWeldGun);
+        ELSEIF which = 4 THEN
+            pBullseye := CRobT(\Tool:=tWeldGun);
+        ELSEIF which = 5 THEN
+            pFixtureCheck := CRobT(\Tool:=tWeldGun);
         ENDIF
     ENDPROC
 

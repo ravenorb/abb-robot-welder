@@ -15,7 +15,7 @@ MODULE BE_User1
   PROC BESetUpToolb()
     !MoveToHomePos;
     MoveJ [[837.58,37.34,1429.48],[0.330224,-0.0598726,0.941203,-0.0387938],[0,0,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]], v1000, z50, tWeldGun;
-    Stop;
+    Stop \NoRegain;
     BESetupToolJ jtBE_ApprPos,jtBE_StartPos,14,tdMigDefault,scanBullsMig,devYokeUp1,v200,fine,tWeldGun;
     MoveJ [[837.58,37.34,1429.48],[0.330224,-0.0598726,0.941203,-0.0387938],[0,0,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]], v1000, z50, tWeldGun;
     !MoveToHomePos;
