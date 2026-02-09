@@ -46,7 +46,7 @@
 	PROC rUtilitiesMenu()
 		TPErase;
 		TPWrite "Utilities Menu";
-		TPReadFK regUtilitiesMenu, stEmpty, "Align Torch", "Clean Torch", "Bullseye Setup", "Torch Setup", "Return";
+		TPReadFK regUtilitiesMenu, stEmpty, "Align Torch", "Clean Torch", "BullsEye ck", "Fixture ck", "Return";
 		TEST regUtilitiesMenu
 		CASE 1:
 			BECheckToolb;
@@ -64,7 +64,7 @@
 	PROC rSetupMenu()
 		TPErase;
 		TPWrite "Setup Menu";
-		TPReadFK regSetupMenu, stEmpty, "Orientation", "Frames", "WeldDATA", "SafePOS", "Speeds", "Return";
+		TPReadFK regSetupMenu, stEmpty, "Torch Angle", "Work Origin", "Weld Config", "Preset Positions", "Speeds", "Return";
 		TEST regSetupMenu
 		CASE 1:
 			rOrientationMenu;
@@ -83,8 +83,8 @@
 
 	PROC rOrientationMenu()
 		TPErase;
-		TPWrite "Orientation Setup";
-		TPReadFK regOrientationMenu, stEmpty, "Left", "Right", "Up", "Down", "YMid", "XMid";
+		TPWrite "Torch Angle";
+		TPReadFK regOrientationMenu, stEmpty, "Y+ Side", "Y- Side", "X- Side", "X+ Side", "Y Center", "X Center";
 		TEST regOrientationMenu
 		CASE 1:
 			TeachOrientation T_OLEFT;
@@ -104,45 +104,45 @@
 	PROC rFrameMenu()
 		VAR num partNum;
 		TPErase;
-		TPWrite "Frames Setup - Select Part (1-6)";
+		TPWrite "Work Origin - Select Origin # (1-6)";
 		TPReadNum partNum, "";
 		IF partNum = 1 THEN
-			TPWrite "Frame P01";
+			TPWrite "Origin 1";
 			TPWrite "Origin:"\Pos:=P01Origin.trans;
 			TPWrite "Max:   "\Pos:=P01Max.trans;
 			TPWrite "Z Off: "\Pos:=P01Zoff.trans;
 			TPWrite "WObj:  wobjP01";
 			SetupP01;
 		ELSEIF partNum = 2 THEN
-			TPWrite "Frame P02";
+			TPWrite "Origin 2";
 			TPWrite "Origin:"\Pos:=P02Origin.trans;
 			TPWrite "Max:   "\Pos:=P02Max.trans;
 			TPWrite "Z Off: "\Pos:=P02Zoff.trans;
 			TPWrite "WObj:  wobjP02";
 			SetupP02;
 		ELSEIF partNum = 3 THEN
-			TPWrite "Frame P03";
+			TPWrite "Origin 3";
 			TPWrite "Origin:"\Pos:=P03Origin.trans;
 			TPWrite "Max:   "\Pos:=P03Max.trans;
 			TPWrite "Z Off: "\Pos:=P03Zoff.trans;
 			TPWrite "WObj:  wobjP03";
 			SetupP03;
 		ELSEIF partNum = 4 THEN
-			TPWrite "Frame P04";
+			TPWrite "Origin 4";
 			TPWrite "Origin:"\Pos:=P04Origin.trans;
 			TPWrite "Max:   "\Pos:=P04Max.trans;
 			TPWrite "Z Off: "\Pos:=P04Zoff.trans;
 			TPWrite "WObj:  wobjP04";
 			SetupP04;
 		ELSEIF partNum = 5 THEN
-			TPWrite "Frame P05";
+			TPWrite "Origin 5";
 			TPWrite "Origin:"\Pos:=P05Origin.trans;
 			TPWrite "Max:   "\Pos:=P05Max.trans;
 			TPWrite "Z Off: "\Pos:=P05Zoff.trans;
 			TPWrite "WObj:  wobjP05";
 			SetupP05;
 		ELSEIF partNum = 6 THEN
-			TPWrite "Frame P06";
+			TPWrite "Origin 6";
 			TPWrite "Origin:"\Pos:=P06Origin.trans;
 			TPWrite "Max:   "\Pos:=P06Max.trans;
 			TPWrite "Z Off: "\Pos:=P06Zoff.trans;
@@ -153,8 +153,8 @@
 
 	PROC rSafePosMenu()
 		TPErase;
-		TPWrite "Safe Positions";
-		TPReadFK regSafePosMenu, stEmpty, "SafeS1", "SafeS1Weld", "Setup", "Bullseye", "Fixture", "Return";
+		TPWrite "Preset Positions";
+		TPReadFK regSafePosMenu, stEmpty, "Tool Ref 1", "Park 1", "Service", "BullsEye", "Origin Ref 1", "Return";
 		TEST regSafePosMenu
 		CASE 1:
 			TeachSafePos 1;
@@ -187,8 +187,9 @@
 
 	PROC rRunMenu()
 		TPErase;
+		TPWrite "Production Menu";
 		ShowRunSummary;
-		TPReadFK regRunMenu, stEmpty, "Run Parts", "Preview", "Edit", "Teach", "Reset", "Return";
+		TPReadFK regRunMenu, stEmpty, "Run", "Preview", "Edit", "Teaching", "Reset", "Return";
 		TEST regRunMenu
 		CASE 1:
 			rRun;
@@ -241,7 +242,7 @@
 		TPWrite "!!!       BUILDING QUALITY PARTS     !!!";
 		TPWrite "!!!         WITH QUALITY PEOPLE      !!!";
 		
-		TPReadFK regSelmenu01, "Select Frame Type", "Skid", "100-200-300 SS", "300", "Other", "Return";
+		TPReadFK regSelmenu01, "Select Origin Type", "Skid", "100-200-300 SS", "300", "Other", "Return";
 		TEST regSelmenu01
 		CASE 1:
 			rSelSkids;
@@ -289,7 +290,7 @@
 		TPWrite "!!!        Select Parts to Run       !!!";
 		TPWrite "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
 		rSelPrg100BDisplay;
-		TPReadFK regSelmenu03, "Select frame to run", stEmpty, "SS 100 1A", "SS 200 1A", "SS 300 1A", "Return";
+		TPReadFK regSelmenu03, "Select origin to run", stEmpty, "SS 100 1A", "SS 200 1A", "SS 300 1A", "Return";
 		TEST regSelmenu03
 		CASE 1:
 			

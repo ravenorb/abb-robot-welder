@@ -1897,7 +1897,7 @@ MODULE WeldProgram
         wobjP01.uframe.rot := P01Origin.rot;
         wobjP01.oframe.trans := P01Zoff.trans;
         wobjP01.oframe.rot := P01Zoff.rot;
-        TPWrite "P01 frame points recorded.";
+        TPWrite "P01 origin points recorded.";
         MoveJ pSafeS1Weld, v200, z50, tWeldGun;
     ENDPROC
 
@@ -1916,7 +1916,7 @@ MODULE WeldProgram
         wobjP02.uframe.rot := P02Origin.rot;
         wobjP02.oframe.trans := P02Zoff.trans;
         wobjP02.oframe.rot := P02Zoff.rot;
-        TPWrite "P02 frame points recorded.";
+        TPWrite "P02 origin points recorded.";
         MoveJ pSafeS1Weld, v200, z50, tWeldGun;
     ENDPROC
 
@@ -1935,7 +1935,7 @@ MODULE WeldProgram
         wobjP03.uframe.rot := P03Origin.rot;
         wobjP03.oframe.trans := P03Zoff.trans;
         wobjP03.oframe.rot := P03Zoff.rot;
-        TPWrite "P03 frame points recorded.";
+        TPWrite "P03 origin points recorded.";
         MoveJ pSafeS1Weld, v200, z50, tWeldGun;
     ENDPROC
 
@@ -1954,7 +1954,7 @@ MODULE WeldProgram
         wobjP04.uframe.rot := P04Origin.rot;
         wobjP04.oframe.trans := P04Zoff.trans;
         wobjP04.oframe.rot := P04Zoff.rot;
-        TPWrite "P04 frame points recorded.";
+        TPWrite "P04 origin points recorded.";
         MoveJ pSafeS1Weld, v200, z50, tWeldGun;
     ENDPROC
 
@@ -1973,7 +1973,7 @@ MODULE WeldProgram
         wobjP05.uframe.rot := P05Origin.rot;
         wobjP05.oframe.trans := P05Zoff.trans;
         wobjP05.oframe.rot := P05Zoff.rot;
-        TPWrite "P05 frame points recorded.";
+        TPWrite "P05 origin points recorded.";
         MoveJ pSafeS1Weld, v200, z50, tWeldGun;
     ENDPROC
 
@@ -1992,7 +1992,7 @@ MODULE WeldProgram
         wobjP06.uframe.rot := P06Origin.rot;
         wobjP06.oframe.trans := P06Zoff.trans;
         wobjP06.oframe.rot := P06Zoff.rot;
-        TPWrite "P06 frame points recorded.";
+        TPWrite "P06 origin points recorded.";
         MoveJ pSafeS1Weld, v200, z50, tWeldGun;
     ENDPROC
 
@@ -8710,7 +8710,7 @@ MODULE WeldProgram
         VAR num partNum;
         VAR num enable;
         VAR string newName;
-        TPWrite "Select Part (1-6):";
+        TPWrite "Select Origin (1-6):";
         TPReadNum partNum, "";
         TPWrite "Enter new part name (0 to keep):";
         ReadStrFromNum newName, "";
@@ -8812,10 +8812,10 @@ MODULE WeldProgram
         VAR num choice;
         VAR num confirm1;
         VAR num confirm2;
-        TPWrite "Reset: 1=Slot 2=Frame 3=Full Part";
+        TPWrite "Reset: 1=Slot 2=Origin 3=Full Part";
         TPReadNum choice, "";
         IF choice = 1 THEN
-            TPWrite "Part (1-6):";
+            TPWrite "Origin (1-6):";
             TPReadNum partNum, "";
             TPWrite "Slot (1-30):";
             TPReadNum slot, "";
@@ -8828,18 +8828,18 @@ MODULE WeldProgram
                 TPWrite "Slot reset.";
             ENDIF
         ELSEIF choice = 2 THEN
-            TPWrite "Part (1-6):";
+            TPWrite "Origin (1-6):";
             TPReadNum partNum, "";
-            TPWrite "Confirm reset frame? 1=Yes 0=No";
+            TPWrite "Confirm reset origin? 1=Yes 0=No";
             TPReadNum confirm1, "";
             TPWrite "Confirm again? 1=Yes 0=No";
             TPReadNum confirm2, "";
             IF confirm1 = 1 AND confirm2 = 1 THEN
                 ResetPartFrame partNum;
-                TPWrite "Frame reset.";
+                TPWrite "Origin reset.";
             ENDIF
         ELSEIF choice = 3 THEN
-            TPWrite "Part (1-6):";
+            TPWrite "Origin (1-6):";
             TPReadNum partNum, "";
             TPWrite "Confirm reset full part? 1=Yes 0=No";
             TPReadNum confirm1, "";
@@ -8856,24 +8856,24 @@ MODULE WeldProgram
         VAR num choice;
         VAR num partNum;
         VAR num slot;
-        TPWrite "Teach Menu: 1=Add 2=Preview 3=Edit 4=Delete 5=Return";
+        TPWrite "Teaching Menu: 1=Add 2=Preview 3=Edit 4=Delete 5=Return";
         TPReadNum choice, "";
         IF choice = 1 THEN
-            TPWrite "Part (1-6):";
+            TPWrite "Origin (1-6):";
             TPReadNum partNum, "";
             AddWeld partNum;
         ELSEIF choice = 2 THEN
-            TPWrite "Part (1-6):";
+            TPWrite "Origin (1-6):";
             TPReadNum partNum, "";
             PreviewPart partNum;
         ELSEIF choice = 3 THEN
-            TPWrite "Part (1-6):";
+            TPWrite "Origin (1-6):";
             TPReadNum partNum, "";
             TPWrite "Slot (1-30):";
             TPReadNum slot, "";
             EditWeld partNum, slot;
         ELSEIF choice = 4 THEN
-            TPWrite "Part (1-6):";
+            TPWrite "Origin (1-6):";
             TPReadNum partNum, "";
             TPWrite "Slot (1-30):";
             TPReadNum slot, "";
@@ -8950,9 +8950,9 @@ MODULE WeldProgram
     PROC mainweld()
         VAR num partNum;
         VAR num choice;
-        TPWrite "Select Part (1-6):";
+        TPWrite "Select Origin (1-6):";
         TPReadNum partNum, "";
-        TPWrite "1=Teach Ori 2=Setup Part 3=Add Weld 4=Review 5=Edit 6=Delete";
+        TPWrite "1=Teach Ori 2=Setup Origin 3=Add Weld 4=Review 5=Edit 6=Delete";
         TPReadNum choice, "";
         IF choice = 1 THEN
             TPWrite "Tool: 1=Left 2=Right 3=Up 4=Down 5=YMid 6=XMid";
