@@ -3,22 +3,25 @@
 ## Purpose
 
 This program drives an ABB welding cell through a menu-driven workflow. Operators
-select a part program from the Parts menu and then execute it from the Run menu
-entry. The Run logic calls the selected part submodule (`RunPart_1` … `RunPart_10`).
+use the **Production** menu to run automatic or preview cycles and the **Setup**
+and **Teaching** menus to configure origins, presets, and weld data.
 
-## Run a part
+## Run a production cycle
 
 1. **Start the task** and ensure the robot is in a safe state.
-2. From the main menu, choose **Parts**.
-3. Select the desired part (Part 1–Part 10). This sets the active part flag.
-4. Return to the main menu and choose **Run**.
-5. Monitor the status messages and the weld cycle. The robot will:
+2. From the main menu, choose **Production** → **Run**.
+3. Select one of the run options:
+   * **Auto From Begining**
+   * **Auto From Part# / Weld#**
+   * **Opt Stop From Begining**
+   * **Opt Stop From Part# / Weld#**
+4. Monitor the status messages and the weld cycle. The robot will:
    * Optionally run a BullsEye tool check.
    * Optionally clean the torch.
    * Move to home/safe positions, perform the weld path, then return home.
 
 ## Notes
 
-* Parts 1–10 are pre-configured as single-path weld routines.
-* If you need to change weld locations or add a new part, follow the instructions
+* Use **Production** → **Preview** for fly/dry runs before enabling arc time.
+* If you need to change weld locations or add a new origin, follow the instructions
   in `docs/adding-weld-locations.md`.
