@@ -4,15 +4,15 @@
 - [ ] Verify safety devices and interlocks.
 - [ ] Confirm tool and wire condition.
 - [ ] Inspect BullsEye target and clean if needed.
-- [ ] Load `WeldProgram.mod` and start `WeldProgram.main`.
+- [ ] Load `MainModule.mod` and start `MainModule.main`.
 
 ## After fixture change
-- [ ] Run **Setup Part** for the affected part number.
-- [ ] Verify a sample weld with **Review Weld**.
+- [ ] Run **Setup** → **Work Origin** for the affected origin.
+- [ ] Verify a sample weld with **Teaching** → **Edit Origin** → **View Weld**.
 
 ## After torch adjustment
-- [ ] Re-teach orientations at the BullsEye.
-- [ ] Review the first weld in each part to confirm alignment.
+- [ ] Re-run BullsEye calibration and confirm **Weld Config** → **Torch Angle** settings.
+- [ ] Review the first weld in each origin to confirm alignment.
 
 ## End of shift
 - [ ] Review any changes made to weld slots.

@@ -5,7 +5,7 @@
 
 ## Data model (explicit storage)
 For each part (P01–P06):
-- `PxxOrigin`, `PxxMax`, `PxxZoff`: robtargets for part frame setup.
+- `PxxOrigin`, `PxxMax`, `PxxZoff`: robtargets for work origin setup.
 - `wobjPxx`: work object derived from origin and Z0.
 - `nWeldsPxx`: simple counter for stored welds.
 
@@ -33,6 +33,6 @@ All operator-entered lengths are in inches and converted to millimeters (`INCH :
 Orientation is stored as `pOri_*` robtargets. When a weld is built, the orientation pose is applied by copying rotation/robconf/extax into the derived points. This avoids toolframe math while keeping the wire tip aligned on the BullsEye.
 
 ## Workflow modules
-- **Setup**: `TeachOrientation`, `SetupP01`…`SetupP06`.
-- **Add weld**: `AddWeld` builds geometry and stores the next free slot.
-- **Review/Edit/Delete**: `ReviewWeld`, `EditWeld`, `DeleteWeld` with explicit slot storage.
+- **Setup**: Work Origin, Preset Positions, Weld Config, Speeds.
+- **Teaching**: Edit Origin (add/view/delete welds) and Wipe Origin.
+- **Production**: Run, Preview, Utilities.
