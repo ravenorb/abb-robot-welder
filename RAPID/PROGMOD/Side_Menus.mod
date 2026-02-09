@@ -33,7 +33,7 @@
 	PROC rProductionMenu()
 		TPErase;
 		TPWrite "Production Menu";
-		TPReadFK regProductionMenu, stEmpty, "Run", "Preview", "Utilities Menu", "Return";
+		TPReadFK regProductionMenu, stEmpty, "Run", "Preview", "Utilities Menu", "Return", stEmpty;
 		TEST regProductionMenu
 		CASE 1:
 			rProductionRunMenu;
@@ -87,7 +87,7 @@
 	PROC rTeachingMenu()
 		TPErase;
 		TPWrite "Teaching Menu";
-		TPReadFK regTeachingMenu, stEmpty, "Edit Origin", "Wipe Origin", "Return";
+		TPReadFK regTeachingMenu, stEmpty, "Edit Origin", "Wipe Origin", "Return", stEmpty, stEmpty;
 		TEST regTeachingMenu
 		CASE 1:
 			TeachMenu;
@@ -173,7 +173,21 @@
 	PROC rOrientationMenu()
 		TPErase;
 		TPWrite "Torch Angle";
-		TPReadFK regOrientationMenu, stEmpty, "Y + Side", "Y - Side", "Y Centered", "X + Side", "X - Side", "X Centered";
+		TPReadFK regOrientationMenu, stEmpty, "Y-Axis Welds", "X-Axis Welds", "Return", stEmpty, stEmpty;
+		TEST regOrientationMenu
+		CASE 1:
+			rOrientationYAxisMenu;
+		CASE 2:
+			rOrientationXAxisMenu;
+		CASE 3:
+			RETURN;
+		ENDTEST
+	ENDPROC
+
+	PROC rOrientationYAxisMenu()
+		TPErase;
+		TPWrite "Torch Angle - Y Axis";
+		TPReadFK regOrientationMenu, stEmpty, "Y + Side", "Y - Side", "Y Centered", "Return", stEmpty;
 		TEST regOrientationMenu
 		CASE 1:
 			TeachOrientation T_OLEFT;
@@ -182,11 +196,23 @@
 		CASE 3:
 			TeachOrientation T_OYMID;
 		CASE 4:
+			RETURN;
+		ENDTEST
+	ENDPROC
+
+	PROC rOrientationXAxisMenu()
+		TPErase;
+		TPWrite "Torch Angle - X Axis";
+		TPReadFK regOrientationMenu, stEmpty, "X + Side", "X - Side", "X Centered", "Return", stEmpty;
+		TEST regOrientationMenu
+		CASE 1:
 			TeachOrientation T_ODOWN;
-		CASE 5:
+		CASE 2:
 			TeachOrientation T_OUP;
-		CASE 6:
+		CASE 3:
 			TeachOrientation T_OXMID;
+		CASE 4:
+			RETURN;
 		ENDTEST
 	ENDPROC
 
@@ -211,20 +237,46 @@
 	PROC rOrientationMenuLegacy()
 		TPErase;
 		TPWrite "Orientation Setup";
-		TPReadFK regOrientationMenu, stEmpty, "Left", "Right", "Up", "Down", "YMid", "XMid";
+		TPReadFK regOrientationMenu, stEmpty, "Y Axis", "X Axis", "Return", stEmpty, stEmpty;
+		TEST regOrientationMenu
+		CASE 1:
+			rOrientationLegacyYAxisMenu;
+		CASE 2:
+			rOrientationLegacyXAxisMenu;
+		CASE 3:
+			RETURN;
+		ENDTEST
+	ENDPROC
+
+	PROC rOrientationLegacyYAxisMenu()
+		TPErase;
+		TPWrite "Orientation Setup - Y Axis";
+		TPReadFK regOrientationMenu, stEmpty, "Left", "Right", "YMid", "Return", stEmpty;
 		TEST regOrientationMenu
 		CASE 1:
 			TeachOrientation T_OLEFT;
 		CASE 2:
 			TeachOrientation T_ORIGHT;
 		CASE 3:
-			TeachOrientation T_OUP;
-		CASE 4:
-			TeachOrientation T_ODOWN;
-		CASE 5:
 			TeachOrientation T_OYMID;
-		CASE 6:
+		CASE 4:
+			RETURN;
+		ENDTEST
+	ENDPROC
+
+	PROC rOrientationLegacyXAxisMenu()
+		TPErase;
+		TPWrite "Orientation Setup - X Axis";
+		TPReadFK regOrientationMenu, stEmpty, "Up", "Down", "XMid", "Return", stEmpty;
+		TEST regOrientationMenu
+		CASE 1:
+			TeachOrientation T_OUP;
+		CASE 2:
+			TeachOrientation T_ODOWN;
+		CASE 3:
 			TeachOrientation T_OXMID;
+		CASE 4:
+			RETURN;
 		ENDTEST
 	ENDPROC
 
@@ -281,7 +333,7 @@
 	PROC rSafePosMenu()
 		TPErase;
 		TPWrite "Preset Positions";
-		TPReadFK regSafePosMenu, stEmpty, "Park 1", "Tool Reference 1", "Torch Station", "BullsEye Station", "Frame Reference 1", "Return";
+		TPReadFK regSafePosMenu, stEmpty, "Park 1", "Tool Reference 1", "Torch Station", "Return", "More";
 		TEST regSafePosMenu
 		CASE 1:
 			TeachSafePos 1;
@@ -290,10 +342,22 @@
 		CASE 3:
 			TeachSafePos 3;
 		CASE 4:
-			TeachSafePos 4;
+			RETURN;
 		CASE 5:
+			rSafePosMenuMore;
+		ENDTEST
+	ENDPROC
+
+	PROC rSafePosMenuMore()
+		TPErase;
+		TPWrite "Preset Positions - More";
+		TPReadFK regSafePosMenu, stEmpty, "BullsEye Station", "Frame Reference 1", "Return", stEmpty, stEmpty;
+		TEST regSafePosMenu
+		CASE 1:
+			TeachSafePos 4;
+		CASE 2:
 			TeachSafePos 5;
-		CASE 6:
+		CASE 3:
 			RETURN;
 		ENDTEST
 	ENDPROC
@@ -301,7 +365,7 @@
 	PROC rSpeedsMenu()
 		TPErase;
 		TPWrite "Speeds Menu";
-		TPReadFK regSpeedMenu, stEmpty, "Preview", "Production", "Return";
+		TPReadFK regSpeedMenu, stEmpty, "Preview", "Production", "Return", stEmpty, stEmpty;
 		TEST regSpeedMenu
 		CASE 1:
 			EditSpeedMenu 1;
@@ -315,7 +379,7 @@
 	PROC rRunMenu()
 		TPErase;
 		ShowRunSummary;
-		TPReadFK regRunMenu, stEmpty, "Run Parts", "Preview", "Edit", "Teach", "Reset", "Return";
+		TPReadFK regRunMenu, stEmpty, "Run Parts", "Preview", "Edit", "Teach", "More";
 		TEST regRunMenu
 		CASE 1:
 			rRun;
@@ -326,8 +390,18 @@
 		CASE 4:
 			TeachMenu;
 		CASE 5:
+			rRunMenuMore;
+		ENDTEST
+	ENDPROC
+
+	PROC rRunMenuMore()
+		TPErase;
+		ShowRunSummary;
+		TPReadFK regRunMenu, stEmpty, "Reset", "Return", stEmpty, stEmpty, stEmpty;
+		TEST regRunMenu
+		CASE 1:
 			ResetMenu;
-		CASE 6:
+		CASE 2:
 			RETURN;
 		ENDTEST
 	ENDPROC
@@ -341,7 +415,7 @@
 		TPWrite "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
 		TPWrite " ";
 		TPWrite " ";
-		TPReadFK regManualmenu01, "Select Function", "rSetup", "", "TchCln", "Bullseye", "Return";
+		TPReadFK regManualmenu01, stEmpty, "rSetup", stEmpty, "TchCln", "Bullseye", "Return";
 		TEST regManualmenu01
 		CASE 1:
 			rSetup;
@@ -368,7 +442,7 @@
 		TPWrite "!!!       BUILDING QUALITY PARTS     !!!";
 		TPWrite "!!!         WITH QUALITY PEOPLE      !!!";
 		
-		TPReadFK regSelmenu01, "Select Product Type", "Skid", "100-200-300 SS", "300", "Other", "Return";
+		TPReadFK regSelmenu01, stEmpty, "Skid", "100-200-300 SS", "300", "Other", "Return";
 		TEST regSelmenu01
 		CASE 1:
 			rSelSkids;
@@ -389,7 +463,7 @@
 		TPWrite "!!!        Select Parts to Run       !!!";
 		TPWrite "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
 		rSelSkidBDisplay;
-		TPReadFK regSelmenu02, "Select Skid Size", stEmpty, "Skid 50", "Skid 100", "Skid 200", "Return";
+		TPReadFK regSelmenu02, stEmpty, stEmpty, "Skid 50", "Skid 100", "Skid 200", "Return";
 		TEST regSelmenu02
 		CASE 1:
 			    rSelSkids;
@@ -416,7 +490,7 @@
 		TPWrite "!!!        Select Parts to Run       !!!";
 		TPWrite "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
 		rSelPrg100BDisplay;
-		TPReadFK regSelmenu03, "Select program to run", stEmpty, "SS 100 1A", "SS 200 1A", "SS 300 1A", "Return";
+		TPReadFK regSelmenu03, stEmpty, stEmpty, "SS 100 1A", "SS 200 1A", "SS 300 1A", "Return";
 		TEST regSelmenu03
 		CASE 1:
 			
@@ -443,7 +517,7 @@
 		TPWrite "!!!       Building Quality Parts     !!!";
 		TPWrite "!!!        Select Parts to Run       !!!";
 		TPWrite "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
-		TPReadFK regSelmenu04, "Select Side", "Side One", stEmpty, "Side Two", stEmpty, "Return";
+		TPReadFK regSelmenu04, stEmpty, "Side One", stEmpty, "Side Two", stEmpty, "Return";
 		TEST regSelmenu04
 		CASE 1:
 			rSide1Menu;
@@ -468,7 +542,7 @@
 		TPWrite "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
 		TPWrite "";
 		rDisplayBoolS1;
-		TPReadFK regMainmenu03, "Select Parts to run", "A Pos", "B Pos", "A&B Pos", "NoPartsS1", "Return";
+		TPReadFK regMainmenu03, stEmpty, "A Pos", "B Pos", "A&B Pos", "NoPartsS1", "Return";
 		TEST regMainmenu03
 		CASE 1:
 			rResetBoolS1;
@@ -497,7 +571,7 @@
     		TPWrite "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
     		TPWrite "";
     		rDisplayBoolS2;
-    		TPReadFK regMainmenu04, "Select Parts to run", "A Pos", "B Pos", "A&B Pos", "NoPartsS2", "Return";
+    		TPReadFK regMainmenu04, stEmpty, "A Pos", "B Pos", "A&B Pos", "NoPartsS2", "Return";
               TEST regMainmenu04
     		CASE 1:
     			rResetBoolS2;
@@ -528,7 +602,7 @@
 		TPWrite "!!!        Select Parts to Run       !!!";
 		TPWrite "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
 		rSelOtherBDisplay;
-		TPReadFK regSelmenu05, "Select Part", stEmpty, "New Weld Prog", "Rover", "LongWeld", "Return";
+		TPReadFK regSelmenu05, stEmpty, stEmpty, "New Weld Prog", "Rover", "LongWeld", "Return";
 		TEST regSelmenu05
 		CASE 1:
 			rSelOther;
