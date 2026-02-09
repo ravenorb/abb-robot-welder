@@ -12,18 +12,18 @@ MODULE MainModule
 		TPWrite "!!!         ", fileName, "      !!!";
         TPWrite "The cycle time is ="\Num:=ClkRead(clock1);
 		rMainBDisplay;
-		TPReadFK regMainmenu01, stEmpty, "Home", "Position", "Utilities", "Setup", "Run";
+		TPReadFK regMainmenu01, stEmpty, "Production", "Setup", "Teaching", "Position", "Load/Save";
 		TEST regMainmenu01
 		CASE 1:
-			rHome;
+			rProductionMenu;
 		CASE 2:
-			rPositionMenu;
-		CASE 3:
-			rUtilitiesMenu;
-		CASE 4:
 			rSetupMenu;
+		CASE 3:
+			rTeachingMenu;
+		CASE 4:
+			rPositionMenu;
 		CASE 5:
-			rRunMenu;
+			rLoadSaveMenu;
 		ENDTEST
 	ENDPROC
     	PROC rA_Pos_Side1()

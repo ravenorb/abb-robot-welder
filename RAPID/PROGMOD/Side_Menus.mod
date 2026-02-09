@@ -19,11 +19,102 @@
     VAR num regUtilitiesMenu:=0;
     VAR num regSetupMenu:=0;
     VAR num regRunMenu:=0;
+    VAR num regProductionMenu:=0;
+    VAR num regProductionRunMenu:=0;
+    VAR num regProductionPreviewMenu:=0;
+    VAR num regTeachingMenu:=0;
+    VAR num regLoadSaveMenu:=0;
     VAR num regOrientationMenu:=0;
     VAR num regFrameMenu:=0;
     VAR num regSafePosMenu:=0;
     VAR num regSpeedMenu:=0;
     VAR num regSpeedTypeMenu:=0;
+
+	PROC rProductionMenu()
+		TPErase;
+		TPWrite "Production Menu";
+		TPReadFK regProductionMenu, stEmpty, "Run", "Preview", "Utilities Menu", "Return";
+		TEST regProductionMenu
+		CASE 1:
+			rProductionRunMenu;
+		CASE 2:
+			rProductionPreviewMenu;
+		CASE 3:
+			rUtilitiesMenu;
+		CASE 4:
+			RETURN;
+		ENDTEST
+	ENDPROC
+
+	PROC rProductionRunMenu()
+		TPErase;
+		TPWrite "Run";
+		TPReadFK regProductionRunMenu, stEmpty, "Auto From Beginning", "Auto From Part# / Weld#", "Opt Stop From Beginning", "Opt Stop From Part# / Weld#", "Return";
+		TEST regProductionRunMenu
+		CASE 1:
+			rRun;
+		CASE 2:
+			rSelFrame;
+			rRun;
+		CASE 3:
+			rRun;
+		CASE 4:
+			rSelFrame;
+			rRun;
+		CASE 5:
+			RETURN;
+		ENDTEST
+	ENDPROC
+
+	PROC rProductionPreviewMenu()
+		TPErase;
+		TPWrite "Preview";
+		TPReadFK regProductionPreviewMenu, stEmpty, "Fly/Dry From Beginning", "Fly/Dry From Part# / Weld#", "Opt Stop From Beginning", "Opt Stop From Part# / Weld#", "Return";
+		TEST regProductionPreviewMenu
+		CASE 1:
+			PreviewEnabledParts;
+		CASE 2:
+			PreviewOrigin;
+		CASE 3:
+			PreviewEnabledParts;
+		CASE 4:
+			PreviewOrigin;
+		CASE 5:
+			RETURN;
+		ENDTEST
+	ENDPROC
+
+	PROC rTeachingMenu()
+		TPErase;
+		TPWrite "Teaching Menu";
+		TPReadFK regTeachingMenu, stEmpty, "Edit Origin", "Wipe Origin", "Return";
+		TEST regTeachingMenu
+		CASE 1:
+			TeachMenu;
+		CASE 2:
+			WipeOrigin;
+		CASE 3:
+			RETURN;
+		ENDTEST
+	ENDPROC
+
+	PROC rLoadSaveMenu()
+		TPErase;
+		TPWrite "Load/Save Module Menu";
+		TPReadFK regLoadSaveMenu, stEmpty, "Load Module", "Save Module", "Void Module", "Rename Module", "Return";
+		TEST regLoadSaveMenu
+		CASE 1:
+			TPWrite "Load Module not configured.";
+		CASE 2:
+			TPWrite "Save Module not configured.";
+		CASE 3:
+			TPWrite "Void Module not configured.";
+		CASE 4:
+			TPWrite "Rename Module not configured.";
+		CASE 5:
+			RETURN;
+		ENDTEST
+	ENDPROC
 
 	PROC rPositionMenu()
 		TPErase;
@@ -46,7 +137,7 @@
 	PROC rUtilitiesMenu()
 		TPErase;
 		TPWrite "Utilities Menu";
-		TPReadFK regUtilitiesMenu, stEmpty, "Align Torch", "Clean Torch", "Bullseye Setup", "Torch Setup", "Return";
+		TPReadFK regUtilitiesMenu, stEmpty, "Align Torch", "Clean Torch", "BullsEye ck", "Fixture ck", "Return";
 		TEST regUtilitiesMenu
 		CASE 1:
 			BECheckToolb;
@@ -64,24 +155,60 @@
 	PROC rSetupMenu()
 		TPErase;
 		TPWrite "Setup Menu";
-		TPReadFK regSetupMenu, stEmpty, "Orientation", "Frames", "WeldDATA", "SafePOS", "Speeds", "Return";
+		TPReadFK regSetupMenu, stEmpty, "Work Origin", "Preset Positions", "Weld Config", "Speeds", "Return";
 		TEST regSetupMenu
 		CASE 1:
-			rOrientationMenu;
-		CASE 2:
 			rFrameMenu;
-		CASE 3:
-			ShowWeldDefaults;
-		CASE 4:
+		CASE 2:
 			rSafePosMenu;
-		CASE 5:
+		CASE 3:
+			rWeldConfigMenu;
+		CASE 4:
 			rSpeedsMenu;
-		CASE 6:
+		CASE 5:
 			RETURN;
 		ENDTEST
 	ENDPROC
 
 	PROC rOrientationMenu()
+		TPErase;
+		TPWrite "Torch Angle";
+		TPReadFK regOrientationMenu, stEmpty, "Y + Side", "Y - Side", "Y Centered", "X + Side", "X - Side", "X Centered";
+		TEST regOrientationMenu
+		CASE 1:
+			TeachOrientation T_OLEFT;
+		CASE 2:
+			TeachOrientation T_ORIGHT;
+		CASE 3:
+			TeachOrientation T_OYMID;
+		CASE 4:
+			TeachOrientation T_ODOWN;
+		CASE 5:
+			TeachOrientation T_OUP;
+		CASE 6:
+			TeachOrientation T_OXMID;
+		ENDTEST
+	ENDPROC
+
+	PROC rWeldConfigMenu()
+		TPErase;
+		TPWrite "Weld Config";
+		TPReadFK regOrientationMenu, stEmpty, "Torch Angle", "Weld Presets", "Weave Presets", "Seam Presets", "Return";
+		TEST regOrientationMenu
+		CASE 1:
+			rOrientationMenu;
+		CASE 2:
+			ShowWeldDefaults;
+		CASE 3:
+			ShowWeldDefaults;
+		CASE 4:
+			ShowWeldDefaults;
+		CASE 5:
+			RETURN;
+		ENDTEST
+	ENDPROC
+
+	PROC rOrientationMenuLegacy()
 		TPErase;
 		TPWrite "Orientation Setup";
 		TPReadFK regOrientationMenu, stEmpty, "Left", "Right", "Up", "Down", "YMid", "XMid";
@@ -104,48 +231,48 @@
 	PROC rFrameMenu()
 		VAR num partNum;
 		TPErase;
-		TPWrite "Frames Setup - Select Part (1-6)";
+		TPWrite "Work Origin - Select Origin (1-6)";
 		TPReadNum partNum, "";
 		IF partNum = 1 THEN
-			TPWrite "Frame P01";
-			TPWrite "Origin:"\Pos:=P01Origin.trans;
-			TPWrite "Max:   "\Pos:=P01Max.trans;
-			TPWrite "Z Off: "\Pos:=P01Zoff.trans;
+			TPWrite "Origin 1";
+			TPWrite "Base:  "\Pos:=P01Origin.trans;
+			TPWrite "Limit: "\Pos:=P01Max.trans;
+			TPWrite "Z-Plane: "\Pos:=P01Zoff.trans;
 			TPWrite "WObj:  wobjP01";
 			SetupP01;
 		ELSEIF partNum = 2 THEN
-			TPWrite "Frame P02";
-			TPWrite "Origin:"\Pos:=P02Origin.trans;
-			TPWrite "Max:   "\Pos:=P02Max.trans;
-			TPWrite "Z Off: "\Pos:=P02Zoff.trans;
+			TPWrite "Origin 2";
+			TPWrite "Base:  "\Pos:=P02Origin.trans;
+			TPWrite "Limit: "\Pos:=P02Max.trans;
+			TPWrite "Z-Plane: "\Pos:=P02Zoff.trans;
 			TPWrite "WObj:  wobjP02";
 			SetupP02;
 		ELSEIF partNum = 3 THEN
-			TPWrite "Frame P03";
-			TPWrite "Origin:"\Pos:=P03Origin.trans;
-			TPWrite "Max:   "\Pos:=P03Max.trans;
-			TPWrite "Z Off: "\Pos:=P03Zoff.trans;
+			TPWrite "Origin 3";
+			TPWrite "Base:  "\Pos:=P03Origin.trans;
+			TPWrite "Limit: "\Pos:=P03Max.trans;
+			TPWrite "Z-Plane: "\Pos:=P03Zoff.trans;
 			TPWrite "WObj:  wobjP03";
 			SetupP03;
 		ELSEIF partNum = 4 THEN
-			TPWrite "Frame P04";
-			TPWrite "Origin:"\Pos:=P04Origin.trans;
-			TPWrite "Max:   "\Pos:=P04Max.trans;
-			TPWrite "Z Off: "\Pos:=P04Zoff.trans;
+			TPWrite "Origin 4";
+			TPWrite "Base:  "\Pos:=P04Origin.trans;
+			TPWrite "Limit: "\Pos:=P04Max.trans;
+			TPWrite "Z-Plane: "\Pos:=P04Zoff.trans;
 			TPWrite "WObj:  wobjP04";
 			SetupP04;
 		ELSEIF partNum = 5 THEN
-			TPWrite "Frame P05";
-			TPWrite "Origin:"\Pos:=P05Origin.trans;
-			TPWrite "Max:   "\Pos:=P05Max.trans;
-			TPWrite "Z Off: "\Pos:=P05Zoff.trans;
+			TPWrite "Origin 5";
+			TPWrite "Base:  "\Pos:=P05Origin.trans;
+			TPWrite "Limit: "\Pos:=P05Max.trans;
+			TPWrite "Z-Plane: "\Pos:=P05Zoff.trans;
 			TPWrite "WObj:  wobjP05";
 			SetupP05;
 		ELSEIF partNum = 6 THEN
-			TPWrite "Frame P06";
-			TPWrite "Origin:"\Pos:=P06Origin.trans;
-			TPWrite "Max:   "\Pos:=P06Max.trans;
-			TPWrite "Z Off: "\Pos:=P06Zoff.trans;
+			TPWrite "Origin 6";
+			TPWrite "Base:  "\Pos:=P06Origin.trans;
+			TPWrite "Limit: "\Pos:=P06Max.trans;
+			TPWrite "Z-Plane: "\Pos:=P06Zoff.trans;
 			TPWrite "WObj:  wobjP06";
 			SetupP06;
 		ENDIF
@@ -153,8 +280,8 @@
 
 	PROC rSafePosMenu()
 		TPErase;
-		TPWrite "Safe Positions";
-		TPReadFK regSafePosMenu, stEmpty, "SafeS1", "SafeS1Weld", "Setup", "Bullseye", "Fixture", "Return";
+		TPWrite "Preset Positions";
+		TPReadFK regSafePosMenu, stEmpty, "Park 1", "Tool Reference 1", "Torch Station", "BullsEye Station", "Frame Reference 1", "Return";
 		TEST regSafePosMenu
 		CASE 1:
 			TeachSafePos 1;
@@ -241,7 +368,7 @@
 		TPWrite "!!!       BUILDING QUALITY PARTS     !!!";
 		TPWrite "!!!         WITH QUALITY PEOPLE      !!!";
 		
-		TPReadFK regSelmenu01, "Select Frame Type", "Skid", "100-200-300 SS", "300", "Other", "Return";
+		TPReadFK regSelmenu01, "Select Product Type", "Skid", "100-200-300 SS", "300", "Other", "Return";
 		TEST regSelmenu01
 		CASE 1:
 			rSelSkids;
@@ -289,7 +416,7 @@
 		TPWrite "!!!        Select Parts to Run       !!!";
 		TPWrite "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
 		rSelPrg100BDisplay;
-		TPReadFK regSelmenu03, "Select frame to run", stEmpty, "SS 100 1A", "SS 200 1A", "SS 300 1A", "Return";
+		TPReadFK regSelmenu03, "Select program to run", stEmpty, "SS 100 1A", "SS 200 1A", "SS 300 1A", "Return";
 		TEST regSelmenu03
 		CASE 1:
 			

@@ -1884,115 +1884,115 @@ MODULE WeldProgram
 
     PROC SetupP01()
         MoveJ pSetup, v200, z50, tWeldGun;
-        TPWrite "Jog to P01 ORIGIN (most x-,y-). Press Play.";
+        TPWrite "Jog to Origin 1 Base (most x-,y-). Press Play.";
         Stop \NoRegain;
         P01Origin := CRobT(\Tool:=tWeldGun);
-        TPWrite "Jog to P01 MAX (most x+,y+). Press Play.";
+        TPWrite "Jog to Origin 1 Limit (most x+,y+). Press Play.";
         Stop \NoRegain;
         P01Max := CRobT(\Tool:=tWeldGun);
-        TPWrite "Jog to P01 Z0 plane (touch wire tip). Press Play.";
+        TPWrite "Jog to Origin 1 Z-Plane (touch wire tip). Press Play.";
         Stop \NoRegain;
         P01Zoff := CRobT(\Tool:=tWeldGun);
         wobjP01.uframe.trans := P01Origin.trans;
         wobjP01.uframe.rot := P01Origin.rot;
         wobjP01.oframe.trans := P01Zoff.trans;
         wobjP01.oframe.rot := P01Zoff.rot;
-        TPWrite "P01 frame points recorded.";
+        TPWrite "Origin 1 points recorded.";
         MoveJ pSafeS1Weld, v200, z50, tWeldGun;
     ENDPROC
 
     PROC SetupP02()
         MoveJ pSetup, v200, z50, tWeldGun;
-        TPWrite "Jog to P02 ORIGIN (most x-,y-). Press Play.";
+        TPWrite "Jog to Origin 2 Base (most x-,y-). Press Play.";
         Stop \NoRegain;
         P02Origin := CRobT(\Tool:=tWeldGun);
-        TPWrite "Jog to P02 MAX (most x+,y+). Press Play.";
+        TPWrite "Jog to Origin 2 Limit (most x+,y+). Press Play.";
         Stop \NoRegain;
         P02Max := CRobT(\Tool:=tWeldGun);
-        TPWrite "Jog to P02 Z0 plane (touch wire tip). Press Play.";
+        TPWrite "Jog to Origin 2 Z-Plane (touch wire tip). Press Play.";
         Stop \NoRegain;
         P02Zoff := CRobT(\Tool:=tWeldGun);
         wobjP02.uframe.trans := P02Origin.trans;
         wobjP02.uframe.rot := P02Origin.rot;
         wobjP02.oframe.trans := P02Zoff.trans;
         wobjP02.oframe.rot := P02Zoff.rot;
-        TPWrite "P02 frame points recorded.";
+        TPWrite "Origin 2 points recorded.";
         MoveJ pSafeS1Weld, v200, z50, tWeldGun;
     ENDPROC
 
     PROC SetupP03()
         MoveJ pSetup, v200, z50, tWeldGun;
-        TPWrite "Jog to P03 ORIGIN (most x-,y-). Press Play.";
+        TPWrite "Jog to Origin 3 Base (most x-,y-). Press Play.";
         Stop \NoRegain;
         P03Origin := CRobT(\Tool:=tWeldGun);
-        TPWrite "Jog to P03 MAX (most x+,y+). Press Play.";
+        TPWrite "Jog to Origin 3 Limit (most x+,y+). Press Play.";
         Stop \NoRegain;
         P03Max := CRobT(\Tool:=tWeldGun);
-        TPWrite "Jog to P03 Z0 plane (touch wire tip). Press Play.";
+        TPWrite "Jog to Origin 3 Z-Plane (touch wire tip). Press Play.";
         Stop \NoRegain;
         P03Zoff := CRobT(\Tool:=tWeldGun);
         wobjP03.uframe.trans := P03Origin.trans;
         wobjP03.uframe.rot := P03Origin.rot;
         wobjP03.oframe.trans := P03Zoff.trans;
         wobjP03.oframe.rot := P03Zoff.rot;
-        TPWrite "P03 frame points recorded.";
+        TPWrite "Origin 3 points recorded.";
         MoveJ pSafeS1Weld, v200, z50, tWeldGun;
     ENDPROC
 
     PROC SetupP04()
         MoveJ pSetup, v200, z50, tWeldGun;
-        TPWrite "Jog to P04 ORIGIN (most x-,y-). Press Play.";
+        TPWrite "Jog to Origin 4 Base (most x-,y-). Press Play.";
         Stop \NoRegain;
         P04Origin := CRobT(\Tool:=tWeldGun);
-        TPWrite "Jog to P04 MAX (most x+,y+). Press Play.";
+        TPWrite "Jog to Origin 4 Limit (most x+,y+). Press Play.";
         Stop \NoRegain;
         P04Max := CRobT(\Tool:=tWeldGun);
-        TPWrite "Jog to P04 Z0 plane (touch wire tip). Press Play.";
+        TPWrite "Jog to Origin 4 Z-Plane (touch wire tip). Press Play.";
         Stop \NoRegain;
         P04Zoff := CRobT(\Tool:=tWeldGun);
         wobjP04.uframe.trans := P04Origin.trans;
         wobjP04.uframe.rot := P04Origin.rot;
         wobjP04.oframe.trans := P04Zoff.trans;
         wobjP04.oframe.rot := P04Zoff.rot;
-        TPWrite "P04 frame points recorded.";
+        TPWrite "Origin 4 points recorded.";
         MoveJ pSafeS1Weld, v200, z50, tWeldGun;
     ENDPROC
 
     PROC SetupP05()
         MoveJ pSetup, v200, z50, tWeldGun;
-        TPWrite "Jog to P05 ORIGIN (most x-,y-). Press Play.";
+        TPWrite "Jog to Origin 5 Base (most x-,y-). Press Play.";
         Stop \NoRegain;
         P05Origin := CRobT(\Tool:=tWeldGun);
-        TPWrite "Jog to P05 MAX (most x+,y+). Press Play.";
+        TPWrite "Jog to Origin 5 Limit (most x+,y+). Press Play.";
         Stop \NoRegain;
         P05Max := CRobT(\Tool:=tWeldGun);
-        TPWrite "Jog to P05 Z0 plane (touch wire tip). Press Play.";
+        TPWrite "Jog to Origin 5 Z-Plane (touch wire tip). Press Play.";
         Stop \NoRegain;
         P05Zoff := CRobT(\Tool:=tWeldGun);
         wobjP05.uframe.trans := P05Origin.trans;
         wobjP05.uframe.rot := P05Origin.rot;
         wobjP05.oframe.trans := P05Zoff.trans;
         wobjP05.oframe.rot := P05Zoff.rot;
-        TPWrite "P05 frame points recorded.";
+        TPWrite "Origin 5 points recorded.";
         MoveJ pSafeS1Weld, v200, z50, tWeldGun;
     ENDPROC
 
     PROC SetupP06()
         MoveJ pSetup, v200, z50, tWeldGun;
-        TPWrite "Jog to P06 ORIGIN (most x-,y-). Press Play.";
+        TPWrite "Jog to Origin 6 Base (most x-,y-). Press Play.";
         Stop \NoRegain;
         P06Origin := CRobT(\Tool:=tWeldGun);
-        TPWrite "Jog to P06 MAX (most x+,y+). Press Play.";
+        TPWrite "Jog to Origin 6 Limit (most x+,y+). Press Play.";
         Stop \NoRegain;
         P06Max := CRobT(\Tool:=tWeldGun);
-        TPWrite "Jog to P06 Z0 plane (touch wire tip). Press Play.";
+        TPWrite "Jog to Origin 6 Z-Plane (touch wire tip). Press Play.";
         Stop \NoRegain;
         P06Zoff := CRobT(\Tool:=tWeldGun);
         wobjP06.uframe.trans := P06Origin.trans;
         wobjP06.uframe.rot := P06Origin.rot;
         wobjP06.oframe.trans := P06Zoff.trans;
         wobjP06.oframe.rot := P06Zoff.rot;
-        TPWrite "P06 frame points recorded.";
+        TPWrite "Origin 6 points recorded.";
         MoveJ pSafeS1Weld, v200, z50, tWeldGun;
     ENDPROC
 
@@ -8644,7 +8644,7 @@ MODULE WeldProgram
     ENDPROC
 
     PROC ShowRunSummary()
-        TPWrite "PART 1:";
+        TPWrite "ORIGIN 1:";
         TPWrite partNameP01;
         TPWrite "Enabled:"\Bool:=partEnabledP01;
         TPWrite "Welds: "\Num:=nWeldsP01;
@@ -8652,7 +8652,7 @@ MODULE WeldProgram
         TPWrite "Max:   "\Pos:=P01Max.trans;
         TPWrite "Z Off: "\Pos:=P01Zoff.trans;
         TPWrite " ";
-        TPWrite "PART 2:";
+        TPWrite "ORIGIN 2:";
         TPWrite partNameP02;
         TPWrite "Enabled:"\Bool:=partEnabledP02;
         TPWrite "Welds: "\Num:=nWeldsP02;
@@ -8660,7 +8660,7 @@ MODULE WeldProgram
         TPWrite "Max:   "\Pos:=P02Max.trans;
         TPWrite "Z Off: "\Pos:=P02Zoff.trans;
         TPWrite " ";
-        TPWrite "PART 3:";
+        TPWrite "ORIGIN 3:";
         TPWrite partNameP03;
         TPWrite "Enabled:"\Bool:=partEnabledP03;
         TPWrite "Welds: "\Num:=nWeldsP03;
@@ -8668,7 +8668,7 @@ MODULE WeldProgram
         TPWrite "Max:   "\Pos:=P03Max.trans;
         TPWrite "Z Off: "\Pos:=P03Zoff.trans;
         TPWrite " ";
-        TPWrite "PART 4:";
+        TPWrite "ORIGIN 4:";
         TPWrite partNameP04;
         TPWrite "Enabled:"\Bool:=partEnabledP04;
         TPWrite "Welds: "\Num:=nWeldsP04;
@@ -8676,7 +8676,7 @@ MODULE WeldProgram
         TPWrite "Max:   "\Pos:=P04Max.trans;
         TPWrite "Z Off: "\Pos:=P04Zoff.trans;
         TPWrite " ";
-        TPWrite "PART 5:";
+        TPWrite "ORIGIN 5:";
         TPWrite partNameP05;
         TPWrite "Enabled:"\Bool:=partEnabledP05;
         TPWrite "Welds: "\Num:=nWeldsP05;
@@ -8684,7 +8684,7 @@ MODULE WeldProgram
         TPWrite "Max:   "\Pos:=P05Max.trans;
         TPWrite "Z Off: "\Pos:=P05Zoff.trans;
         TPWrite " ";
-        TPWrite "PART 6:";
+        TPWrite "ORIGIN 6:";
         TPWrite partNameP06;
         TPWrite "Enabled:"\Bool:=partEnabledP06;
         TPWrite "Welds: "\Num:=nWeldsP06;
@@ -8710,9 +8710,9 @@ MODULE WeldProgram
         VAR num partNum;
         VAR num enable;
         VAR string newName;
-        TPWrite "Select Part (1-6):";
+        TPWrite "Select Origin (1-6):";
         TPReadNum partNum, "";
-        TPWrite "Enter new part name (0 to keep):";
+        TPWrite "Enter new origin name (0 to keep):";
         ReadStrFromNum newName, "";
         TPWrite "Enable? 1=Yes 0=No";
         TPReadNum enable, "";
@@ -8812,10 +8812,10 @@ MODULE WeldProgram
         VAR num choice;
         VAR num confirm1;
         VAR num confirm2;
-        TPWrite "Reset: 1=Slot 2=Frame 3=Full Part";
+        TPWrite "Reset: 1=Slot 2=Origin 3=Full Origin";
         TPReadNum choice, "";
         IF choice = 1 THEN
-            TPWrite "Part (1-6):";
+            TPWrite "Origin (1-6):";
             TPReadNum partNum, "";
             TPWrite "Slot (1-30):";
             TPReadNum slot, "";
@@ -8828,26 +8828,26 @@ MODULE WeldProgram
                 TPWrite "Slot reset.";
             ENDIF
         ELSEIF choice = 2 THEN
-            TPWrite "Part (1-6):";
+            TPWrite "Origin (1-6):";
             TPReadNum partNum, "";
-            TPWrite "Confirm reset frame? 1=Yes 0=No";
+            TPWrite "Confirm reset origin? 1=Yes 0=No";
             TPReadNum confirm1, "";
             TPWrite "Confirm again? 1=Yes 0=No";
             TPReadNum confirm2, "";
             IF confirm1 = 1 AND confirm2 = 1 THEN
                 ResetPartFrame partNum;
-                TPWrite "Frame reset.";
+                TPWrite "Origin reset.";
             ENDIF
         ELSEIF choice = 3 THEN
-            TPWrite "Part (1-6):";
+            TPWrite "Origin (1-6):";
             TPReadNum partNum, "";
-            TPWrite "Confirm reset full part? 1=Yes 0=No";
+            TPWrite "Confirm reset full origin? 1=Yes 0=No";
             TPReadNum confirm1, "";
             TPWrite "Confirm again? 1=Yes 0=No";
             TPReadNum confirm2, "";
             IF confirm1 = 1 AND confirm2 = 1 THEN
                 ResetPartAll partNum;
-                TPWrite "Part reset.";
+                TPWrite "Origin reset.";
             ENDIF
         ENDIF
     ENDPROC
@@ -8856,28 +8856,45 @@ MODULE WeldProgram
         VAR num choice;
         VAR num partNum;
         VAR num slot;
-        TPWrite "Teach Menu: 1=Add 2=Preview 3=Edit 4=Delete 5=Return";
+        TPWrite "Edit Origin: 1=Add Weld 2=Delete Weld 3=View Weld 4=Return";
         TPReadNum choice, "";
         IF choice = 1 THEN
-            TPWrite "Part (1-6):";
+            TPWrite "Origin (1-6):";
             TPReadNum partNum, "";
             AddWeld partNum;
         ELSEIF choice = 2 THEN
-            TPWrite "Part (1-6):";
-            TPReadNum partNum, "";
-            PreviewPart partNum;
-        ELSEIF choice = 3 THEN
-            TPWrite "Part (1-6):";
-            TPReadNum partNum, "";
-            TPWrite "Slot (1-30):";
-            TPReadNum slot, "";
-            EditWeld partNum, slot;
-        ELSEIF choice = 4 THEN
-            TPWrite "Part (1-6):";
+            TPWrite "Origin (1-6):";
             TPReadNum partNum, "";
             TPWrite "Slot (1-30):";
             TPReadNum slot, "";
             DeleteWeld partNum, slot;
+        ELSEIF choice = 3 THEN
+            TPWrite "Origin (1-6):";
+            TPReadNum partNum, "";
+            PreviewPart partNum;
+        ENDIF
+    ENDPROC
+
+    PROC PreviewOrigin()
+        VAR num partNum;
+        TPWrite "Select Origin (1-6):";
+        TPReadNum partNum, "";
+        PreviewPart partNum;
+    ENDPROC
+
+    PROC WipeOrigin()
+        VAR num partNum;
+        VAR num confirm1;
+        VAR num confirm2;
+        TPWrite "Select Origin (1-6):";
+        TPReadNum partNum, "";
+        TPWrite "Confirm wipe origin? 1=Yes 0=No";
+        TPReadNum confirm1, "";
+        TPWrite "Confirm again? 1=Yes 0=No";
+        TPReadNum confirm2, "";
+        IF confirm1 = 1 AND confirm2 = 1 THEN
+            ResetPartFrame partNum;
+            TPWrite "Origin wiped.";
         ENDIF
     ENDPROC
 
@@ -8895,7 +8912,7 @@ MODULE WeldProgram
     PROC EditSpeedMenu(num mode)
         VAR num choice;
         VAR num value;
-        TPWrite "Speed edit: 1=ArcStart 2=ArcEnd 3=Approach 4=Retract 5=Trans 6=Return";
+        TPWrite "Speed edit: 1=Arc Start 2=Arc End 3=Approach 4=Retract 5=Transfer 6=Return";
         TPReadNum choice, "";
         IF choice >= 1 AND choice <= 5 THEN
             TPWrite "Enter speed (mm/s):";
